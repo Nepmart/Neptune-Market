@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neptune Market</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🪐 Neptune Market</div>
+    <nav>
+      <button onclick="filterCategory('todos')">Todos</button>
+      <button onclick="filterCategory('electronica')">Electrónica</button>
+      <button onclick="filterCategory('hogar')">Hogar</button>
+      <button onclick="filterCategory('moda')">Moda</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="productContainer" class="container">
+      <!-- Productos dinámicos -->
+    </section>
+
+    <aside id="cart">
+      <h2>🛒 Carrito</h2>
+      <ul id="cartItems"></ul>
+      <p>Total: RD$ <span id="total">0</span></p>
+      <button onclick="checkout()">Proceder al pago</button>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
