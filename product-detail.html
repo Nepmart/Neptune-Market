@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto - Neptune Market</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* RESET Y ESTILOS BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    :root {
+      --primary: #3498db;
+      --secondary: #2c3e50;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --success: #2ecc71;
+      --warning: #f39c12;
+    }
+    
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #f8f9fa;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    /* HEADER RESPONSIVE */
+    header {
+      background: linear-gradient(135deg, var(--secondary), var(--dark));
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .logo i {
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    
+    .user-actions {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .user-welcome {
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+    }
+    
+    .nav-toggle {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .navigation {
+      background: rgba(44, 62, 80, 0.95);
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    
+    .navigation.active {
+      max-height: 300px;
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+    
+    .nav-links li {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-links li:last-child {
+      border-bottom: none;
+    }
+    
+    .nav-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      transition: all 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+      padding-left: 10px;
+    }
+    
+    .auth-container {
+      padding: 15px 20px;
+      background: var(--light);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .auth-section {
+      flex: 1;
+      min-width: 280px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .auth-section h3 {
+      margin-bottom: 15px;
+      color: var(--dark);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 8px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #2980b9;
+    }
+    
+    .btn-secondary {
+      background: var(--dark);
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background: #1a252f;
+    }
+    
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .btn-accent:hover {
+      background: #c0392b;
+    }
+    
+    .auth-switch {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+    
+    .auth-switch a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    /* CONTENIDO PRINCIPAL */
+    main {
+      flex: 1;
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    .product-detail-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .product-gallery {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    
+    .main-image {
+      width: 100%;
+      height: 400px;
+      background: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .main-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .thumbnails {
+      display: flex;
+      padding: 15px;
+      gap: 10px;
+      overflow-x: auto;
+    }
+    
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    
+    .thumbnail.active {
+      border-color: var(--primary);
+    }
+    
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .product-header {
+      margin-bottom: 20px;
+    }
+    
+    .product-title {
+      font-size: 2.2rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .stars {
+      color: var(--warning);
+    }
+    
+    .rating-count {
+      color: #777;
+    }
+    
+    .product-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .product-description {
+      margin-bottom: 30px;
+      line-height: 1.8;
+      color: #444;
+    }
+    
+    .product-meta {
+      margin-bottom: 30px;
+    }
+    
+    .meta-item {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    
+    .meta-label {
+      min-width: 120px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .quantity-btn {
+      width: 40px;
+      height: 40px;
+      background: #f1f1f1;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    .quantity-input {
+      width: 60px;
+      height: 40px;
+      text-align: center;
+      border: none;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+    
+    .add-to-cart {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .product-tabs {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin-top: 30px;
+    }
+    
+    .tab-headers {
+      display: flex;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .tab-header {
+      padding: 15px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #777;
+      border-bottom: 3px solid transparent;
+    }
+    
+    .tab-header.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .tab-content {
+      padding: 30px;
+    }
+    
+    .tab-pane {
+      display: none;
+    }
+    
+    .tab-pane.active {
+      display: block;
+    }
+    
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .spec-label {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .review-item {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .review-author {
+      font-weight: 600;
+    }
+    
+    .review-date {
+      color: #777;
+    }
+    
+    /* ERROR PAGE */
+    .error-message {
+      text-align: center;
+      padding: 50px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 50px auto;
+    }
+    
+    .error-message i {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .error-message h2 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+    
+    .error-message p {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: var(--secondary);
+      color: white;
+      padding: 40px 20px 20px;
+      margin-top: 50px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
+    }
+    
+    /* RESPONSIVE ADJUSTMENTS */
+    @media (max-width: 768px) {
+      .header-top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+      }
+      
+      .logo { 
+        justify-content: center;
+      }
+      
+      .user-actions {
+        justify-content: center;
+      }
+      
+      .product-title {
+        font-size: 1.8rem;
+      }
+      
+      .product-price {
+        font-size: 1.8rem;
+      }
+      
+      .main-image {
+        height: 300px;
+      }
+      
+      .tab-content {
+        padding: 20px 15px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .auth-section {
+        min-width: 100%;
+      }
+      
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .add-to-cart {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fas fa-fish"></i>
+        <span>Neptune Market</span>
+      </div>
+      
+      <div class="user-actions">
+        <div id="user-welcome" class="user-welcome">Bienvenido, Invitado</div>
+        <button class="nav-toggle">
+          <i class="fas fa-bars"></i>
+          Menú
+        </button>
+      </div>
+    </div>
+    
+    <nav class="navigation">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="#"><i class="fas fa-list"></i> Categorías</a></li>
+        <li><a href="#"><i class="fas fa-tag"></i> Ofertas</a></li>
+        <li><a href="#"><i class="fas fa-percent"></i> Descuentos</a></li>
+        <li><a href="#"><i class="fas fa-headset"></i> Soporte</a></li>
+      </ul>
+    </nav>
+    
+    <div class="auth-container">
+      <div id="userSection" class="auth-section">
+        <h3>Iniciar Sesión</h3>
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" placeholder="Tu nombre de usuario">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="Tu contraseña">
+        </div>
+        <button class="btn btn-primary" onclick="login()">
+          <i class="fas fa-sign-in-alt"></i> Entrar
+        </button>
+        <div class="auth-switch">
+          ¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate aquí</a>
+        </div>
+      </div>
+      
+      <div id="registerSection" class="auth-section" style="display: none;">
+        <h3>Crear Cuenta</h3>
+        <div class="form-group">
+          <label for="newUsername">Usuario</label>
+          <input type="text" id="newUsername" placeholder="Elige un nombre de usuario">
+        </div>
+        <div class="form-group">
+          <label for="newPassword">Contraseña</label>
+          <input type="password" id="newPassword" placeholder="Crea una contraseña segura">
+        </div>
+        <button class="btn btn-primary" onclick="register()">
+          <i class="fas fa-user-plus"></i> Crear cuenta
+        </button>
+        <div class="auth-switch">
+          ¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión aquí</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <div id="productDetailContent">
+      <!-- Ejemplo de contenido de detalle de producto -->
+      <div class="product-detail-container">
+        <div class="product-gallery">
+          <div class="main-image">
+            <img src="https://via.placeholder.com/600x400/3498db/ffffff?text=Producto+Destacado" alt="Producto Destacado" id="mainImage">
+          </div>
+          <div class="thumbnails">
+            <div class="thumbnail active" onclick="changeImage(this, 'https://via.placeholder.com/600x400/3498db/ffffff?text=Producto+Destacado')">
+              <img src="https://via.placeholder.com/100x80/3498db/ffffff?text=1" alt="Miniatura 1">
+            </div>
+            <div class="thumbnail" onclick="changeImage(this, 'https://via.placeholder.com/600x400/e74c3c/ffffff?text=Vista+2')">
+              <img src="https://via.placeholder.com/100x80/e74c3c/ffffff?text=2" alt="Miniatura 2">
+            </div>
+            <div class="thumbnail" onclick="changeImage(this, 'https://via.placeholder.com/600x400/2ecc71/ffffff?text=Vista+3')">
+              <img src="https://via.placeholder.com/100x80/2ecc71/ffffff?text=3" alt="Miniatura 3">
+            </div>
+            <div class="thumbnail" onclick="changeImage(this, 'https://via.placeholder.com/600x400/f39c12/ffffff?text=Vista+4')">
+              <img src="https://via.placeholder.com/100x80/f39c12/ffffff?text=4" alt="Miniatura 4">
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-info">
+          <div class="product-header">
+            <h1 class="product-title">Producto Premium de Alta Calidad</h1>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-count">(128 reseñas)</span>
+            </div>
+            <div class="product-price">$89.99</div>
+          </div>
+          
+          <p class="product-description">
+            Descubre nuestro producto premium, diseñado para ofrecerte la mejor experiencia. Con materiales de primera calidad y tecnología avanzada, este producto transformará tu día a día. Perfecto para uso profesional y personal, combina estilo y funcionalidad en un diseño elegante.
+          </p>
+          
+          <div class="product-meta">
+            <div class="meta-item">
+              <span class="meta-label">Disponibilidad:</span>
+              <span class="meta-value">En stock (25 unidades)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Marca:</span>
+              <span class="meta-value">PremiumBrand</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Categoría:</span>
+              <span class="meta-value">Electrónicos</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">SKU:</span>
+              <span class="meta-value">PRD-2023-001</span>
+            </div>
+          </div>
+          
+          <div class="product-actions">
+            <div class="quantity-selector">
+              <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+              <input type="text" class="quantity-input" value="1" id="quantity">
+              <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+            </div>
+            <button class="btn btn-accent add-to-cart">
+              <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+            </button>
+            <button class="btn btn-secondary">
+              <i class="fas fa-heart"></i> Favoritos
+            </button>
+          </div>
+          
+          <div class="product-tabs">
+            <div class="tab-headers">
+              <div class="tab-header active" data-tab="description">Descripción</div>
+              <div class="tab-header" data-tab="specs">Especificaciones</div>
+              <div class="tab-header" data-tab="reviews">Reseñas</div>
+            </div>
+            
+            <div class="tab-content">
+              <div class="tab-pane active" id="description">
+                <p>Este producto premium ha sido diseñado pensando en las necesidades del usuario moderno. Con más de 15 características innovadoras, ofrece un rendimiento excepcional en cualquier situación.</p>
+                <p>Características principales:</p>
+                <ul>
+                  <li>Diseño ergonómico para mayor comodidad</li>
+                  <li>Materiales de alta durabilidad</li>
+                  <li>Tecnología avanzada para un rendimiento óptimo</li>
+                  <li>Compatibilidad con múltiples dispositivos</li>
+                  <li>Garantía de 2 años</li>
+                </ul>
+              </div>
+              
+              <div class="tab-pane" id="specs">
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Dimensiones:</span>
+                    <span class="spec-value">15 x 10 x 5 cm</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Peso:</span>
+                    <span class="spec-value">350g</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Material:</span>
+                    <span class="spec-value">Aleación de aluminio</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Color:</span>
+                    <span class="spec-value">Plata/Gris espacial</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Voltaje:</span>
+                    <span class="spec-value">5V DC</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Conectividad:</span>
+                    <span class="spec-value">Bluetooth 5.0, USB-C</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Batería:</span>
+                    <span class="spec-value">Li-ion 2000mAh</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Autonomía:</span>
+                    <span class="spec-value">Hasta 20 horas</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane" id="reviews">
+                <div class="review-item">
+                  <div class="review-header">
+                    <span class="review-author">Carlos Martínez</span>
+                    <span class="review-date">15 Junio 2023</span>
+                  </div>
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Excelente producto. Superó mis expectativas en cuanto a calidad y rendimiento. La entrega fue rápida y el empaquetado impecable. Definitivamente recomiendo esta tienda.</p>
+                </div>
+                
+                <div class="review-item">
+                  <div class="review-header">
+                    <span class="review-author">Laura Gómez</span>
+                    <span class="review-date">10 Junio 2023</span>
+                  </div>
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <p>Muy buen producto en general. La calidad es notable y el diseño es muy atractivo. Mi única observación sería que la batería podría durar un poco más, pero en general estoy muy satisfecha con mi compra.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Neptune Market</h3>
+        <p>Tu destino para productos de calidad a precios competitivos. Ofrecemos la mejor selección con entrega rápida y servicio al cliente excepcional.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Enlaces Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Productos Destacados</a></li>
+          <li><a href="#">Ofertas Especiales</a></li>
+          <li><a href="#">Nuevos Productos</a></li>
+          <li><a href="#">Testimonios</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Categorías</h3>
+        <ul class="footer-links">
+          <li><a href="#">Electrónicos</a></li>
+          <li><a href="#">Hogar</a></li>
+          <li><a href="#">Moda</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Juguetes</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <ul class="footer-links">
+          <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad</li>
+          <li><i class="fas fa-phone"></i> +34 912 345 678</li>
+          <li><i class="fas fa-envelope"></i> info@neptunemarket.com</li>
+          <li><i class="fas fa-clock"></i> Lunes-Viernes: 9:00-20:00</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2023 Neptune Market. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // Función para mostrar/ocultar menú en móviles
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.navigation').classList.toggle('active');
+    });
+    
+    // Función para cambiar entre login y registro
+    function showRegister() {
+      document.getElementById('userSection').style.display = 'none';
+      document.getElementById('registerSection').style.display = 'block';
+    }
+    
+    function showLogin() {
+      document.getElementById('userSection').style.display = 'block';
+      document.getElementById('registerSection').style.display = 'none';
+    }
+    
+    // Cambio de pestañas
+    document.querySelectorAll('.tab-header').forEach(header => {
+      header.addEventListener('click', function() {
+        // Remover activo de todos los headers
+        document.querySelectorAll('.tab-header').forEach(h => {
+          h.classList.remove('active');
+        });
+        
+        // Añadir activo al header clickeado
+        this.classList.add('active');
+        
+        // Ocultar todos los paneles
+        document.querySelectorAll('.tab-pane').forEach(pane => {
+          pane.style.display = 'none';
+        });
+        
+        // Mostrar el panel correspondiente
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).style.display = 'block';
+      });
+    });
+    
+    // Cambiar imagen principal
+    function changeImage(thumbnail, imageUrl) {
+      // Remover clase activa de todas las miniaturas
+      document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
+      
+      // Añadir clase activa a la miniatura clickeada
+      thumbnail.classList.add('active');
+      
+      // Cambiar la imagen principal
+      document.getElementById('mainImage').src = imageUrl;
+    }
+    
+    // Actualizar cantidad
+    function updateQuantity(change) {
+      const input = document.getElementById('quantity');
+      let value = parseInt(input.value) || 1;
+      value += change;
+      
+      if (value < 1) value = 1;
+      if (value > 99) value = 99;
+      
+      input.value = value;
+    }
+    
+    // Simular login
+    function login() {
+      const username = document.getElementById('username').value;
+      if (username) {
+        document.getElementById('user-welcome').textContent = `Bienvenido, ${username}`;
+      } else {
+        alert('Por favor ingresa un nombre de usuario');
+      }
+    }
+    
+    // Simular registro
+    function register() {
+      const username = document.getElementById('newUsername').value;
+      if (username) {
+        alert(`¡Cuenta creada para ${username}! Ahora puedes iniciar sesión.`);
+        showLogin();
+      } else {
+        alert('Por favor ingresa un nombre de usuario');
+      }
+    }
+  </script>
+</body>
+</html>
