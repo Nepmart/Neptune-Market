@@ -9,40 +9,49 @@ let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 const products = [
   { 
     id: 1, 
-    name: "Audífonos Inalámbricos", 
-    price: 1000, 
-    image: "https://github.com/Nepmart/Neptune-Market/blob/main/Audifono%20Bluetooth.jpg?raw=true",  
+    name: "Scanner Automotriz", 
+    price: 1400, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Escaner%202025/Ecanner%200.png",  
     images: [
-      "https://via.placeholder.com/500/1a237e/ffffff?text=Audifonos+1",
-      "https://via.placeholder.com/500/283593/ffffff?text=Audifonos+2",
-      "https://via.placeholder.com/500/5c6bc0/ffffff?text=Audifonos+3"
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Escaner%202025/Ecanner%200.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Escaner%202025/Escanner%201.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Escaner%202025/Escanner%202.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Escaner%202025/Escanner%203.png",
     ],
-    category: "electronica",
-    description: "Audífonos Bluetooth con cancelación de ruido y 20 horas de batería.",
+    category: "Herramientas",
+    description: "Escáner OBD2 V410 es una herramienta de escaneo de diagnóstico",
     features: [
-      "Tecnología Bluetooth 5.0",
-      "Cancelación activa de ruido",
-      "Batería de 20 horas"
+      "El escáner OBD2 V410 es una herramienta de escaneo de diagnóstico diseñada para vehículos de pasajeros fabricados después de 1996 en los Estados Unidos.", 
+      "Esta herramienta es compatible con nueve protocolos estándar OBDII/EOBD y ofrece funciones como prueba EVAP, prueba de voltaje, consulta de código de falla y más.", 
+      "Viene con una guía del usuario, cable adaptador, cable USB y cuenta con una pantalla LCD para facilitar la lectura.",
+      "Con soporte para varios idiomas y compatibilidad con varias interfaces OBD,", 
+      "este escáner es una herramienta conveniente y versátil para solucionar problemas de fallas del motor en tu vehículo",
     ],
     reviews: [],
     rating: 4.5
   },
   { 
     id: 2, 
-    name: "Cargador Solar", 
-    price: 1500, 
-    image: "https://github.com/Nepmart/Neptune-Market/blob/main/Cargado%20Solar.jpg?raw=true", 
+    name: "Cargador Celular para Vehiculo 250Watts", 
+    price: 650,
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Cargadores%20de%20Celular%20Seniceros/Cargador%201.png", 
     images: [
-      "https://via.placeholder.com/500/2e7d32/ffffff?text=Cargador+1",
-      "https://via.placeholder.com/500/388e3c/ffffff?text=Cargador+2",
-      "https://via.placeholder.com/500/66bb6a/ffffff?text=Cargador+3"
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Cargadores%20de%20Celular%20Seniceros/Cargador%202.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Cargadores%20de%20Celular%20Seniceros/Cargador%203.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Cargadores%20de%20Celular%20Seniceros/Cargador%204.png"
     ],
-    category: "electronica",
-    description: "Cargador solar portátil de alta eficiencia con batería integrada.",
+    category: "Accesorios de Autos",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
     features: [
-      "Panel solar de alta eficiencia",
-      "Batería de 20,000 mAh",
-      "Dual USB para carga rápida"
+      "Nombre del producto: Pantalla digital 4USB + 2PD",
+      "Parámetros de entrada: 12-24V",
+      "Parámetro de salida: Verde Súper Puerto: 5V/3A 9V/2.2A12V/1.6A (pantalla carga súper rápida)",
+      "3 puertos USB: 5V/3,1A",
+      "PD: 5V/3,1A",
+      "Tamaño del producto: 65 mm * 40 mm * 40 mm",
+      "Color del producto: negro",
+      "Peso del producto: 27 g (peso desnudo)",
+      "Material del producto: material ignífugo ABS + anillo de aleación de aluminio",
     ],
     reviews: [],
     rating: 5
@@ -50,45 +59,147 @@ const products = [
   { 
     id: 3, 
     name: "Regleta Cuadrada\"", 
-    price: 3500, 
-    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/51G92c4tj0L._AC_SL1500_.jpg",
+    price: 1200, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Regletas/Regleta%20Cuadrada%201/Regleta%20Cuadrada%201.jpg",
     images: [
-      "https://github.com/Nepmart/Neptune-Market/blob/b9c6abac296be83ff20140c5bfa0cfa17b6a54f6/51G92c4tj0L._AC_SL1500_.jpg",
-      "https://via.placeholder.com/500/1976d2/ffffff?text=Monitor+2",
-      "https://via.placeholder.com/500/64b5f6/ffffff?text=Monitor+3"
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Regletas/Regleta%20Cuadrada%201/Regleta%20Cuadrada%202.jpg",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Regletas/Regleta%20Cuadrada%201/Regleta%20Cuadrada%203.jpg",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Regletas/Regleta%20Cuadrada%201/Regleta%20Cuadrada%204.jpg",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Regletas/Regleta%20Cuadrada%201/Regleta%20Cuadrada%205.jpg",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Regletas/Regleta%20Cuadrada%201/Regleta%20Cuadrada%206.jpg",
       
     ],
     category: "electronica",
-    description: "Monitor profesional Dell 27\" QHD con colores precisos.",
+    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
     features: [
-      "Resolución QHD 2560x1440",
-      "Tasa de refresco 144Hz",
-      "Tiempo de respuesta 1ms"
+      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
     ],
     reviews: [],
     rating: 4.8
   },
   { 
     id: 4, 
-    name: "Reloj Smartwatch", 
-    price: 2200, 
-    image: "https://github.com/Nepmart/Neptune-Market/blob/main/SmartWatch.jpg?raw=true", 
+    name: "LAXASFIT Reloj Inteligente", 
+    price: 1350, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%201.png", 
     images: [
-      "https://via.placeholder.com/500/d32f2f/ffffff?text=Smartwatch+1",
-      "https://via.placeholder.com/500/f44336/ffffff?text=Smartwatch+2",
-      "https://via.placeholder.com/500/ef9a9a/ffffff?text=Smartwatch+3"
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%202.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%203.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%204.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%205.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%206.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Cuadrado/Reloj%20Laxafit%207.png",
+
 
     ],
     category: "electronica",
-    description: "Smartwatch con monitor de ritmo cardíaco y seguimiento de actividad física.",
+    description: "LAXASFIT nuevo reloj inteligente para hombrese monitoreo ritmo cardíaco y seguimiento de actividad física.",
     features: [
-      "Pantalla AMOLED táctil",
-      "Resistente al agua 5ATM",
-      "Monitoreo de sueño"
+      "Parámetro",
+      "Pantalla: HD de 1,71 pulgadas",
+      "Toque TP: toque de pantalla completa",
+      "Tiempo de trabajo: 3 días",
+      "Tiempo en espera: alrededor de 7 días",
+      "Bluetooth: BLE5.2",
+      "Soporte del sistema: Android 5.0 o superior, IOS 9.0 o superior.",
+      "Funciones",
+      "Conexión con una sola tecla, múltiples modos de ejercicio, detección de sueño, podómetro", 
+      "frecuencia cardíaca, presión arterial, oxígeno en sangre, notificación de mensajes, marcación de",
+      "llamadas bluetooth, música bluetooth, clima, calculadora, despertador, recordatorio de sedentarismo", 
+      "cronómetro, toma de fotografías, asistente de voz, buscar teléfono celular, juego de carreras, linterna", 
+      "calendario, contactos, recordatorio de intervalo de bebida, reinicio, apagado, configuración de idioma, configuración de estilo, código QR de la aplicación, puntero de pantalla de descanso",
+
+      "Ver idiomas",
+      "Inglés, chino, italiano, portugués, polaco, español, francés, griego, húngaro, checo, ruso, turco, holandés, alemán, vietnamita, indonesio, malayo, filipino, hebreo, sueco, finlandés, ucraniano, tailandés, farsi, árabe."
     ],
+    
+    
     reviews: [],
     rating: 4.2
-  }
+  },
+
+{ 
+    id: 5, 
+    name: "Memoria MicroSD 512MB", 
+    price: 1200, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%201.png",
+    images: [
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20512mb.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%201.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%202.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%203.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%204.png",
+          ],
+    category: "electronica",
+    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    features: [
+      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+    ],
+    reviews: [],
+    rating: 4.8
+  },
+
+{ 
+    id: 6, 
+    name: "KESHUYOU 2025 Reloj Inteligente", 
+    price: 1450, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Redondo/Reloj%20Smart%20Watch%206%200.png",
+    images: [
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Redondo/Reloj%20Smart%20Watch%206%200.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Redondo/Reloj%20Smart%20Watch%206%203.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Redondo/Reloj%20Smart%20Watch%206%204.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Redondo/Reloj%20Smart%20Watch%206%205.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Reloj%20Inteligente%20Redondo/Reloj%20Smart%20Watch%206%206.png",
+          ],
+    category: "electronica",
+    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    features: [
+      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+    ],
+    reviews: [],
+    rating: 4.8
+  },
+
+  { 
+    id: 7, 
+    name: "Punta de Presentacion Laser", 
+    price: 1200, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Puntero%20Presentacion/Puntero%201.png",
+    images: [
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Puntero%20Presentacion/Puntero%202.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Puntero%20Presentacion/Puntero%203.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Puntero%20Presentacion/Puntero%204.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Puntero%20Presentacion/Puntero%205.png",
+      
+          ],
+    category: "electronica",
+    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    features: [
+      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+    ],
+    reviews: [],
+    rating: 4.8
+  },
+
+  { 
+    id: 8, 
+    name: "Cartera de Caballero Negro",
+    price: 1200, 
+    image: "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Cartera%20Negra%20Hombres/Cartera%201.png",
+    images: [
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20512mb.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%201.png",
+      "https://raw.githubusercontent.com/Nepmart/Neptune-Market/refs/heads/main/Memorias%20Micro%20SD/Memoria%20Micro%20SD%202.png",
+            
+          ],
+    category: "electronica",
+    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    features: [
+      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+    ],
+    reviews: [],
+    rating: 4.8
+  },
 ];
 
 const coupons = { "NEP10": 0.10, "VERANO20": 0.20 };

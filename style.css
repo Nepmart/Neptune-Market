@@ -10,7 +10,7 @@ body {
 header {
   background-color: #030e13;
   color: white;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -70,7 +70,7 @@ nav {
 
 .search-container {
   display: flex;
-  gap: 0.5rem;
+  gap: 5rem;
 }
 
 .search-container input, .search-container select {
@@ -88,6 +88,7 @@ nav {
   flex-wrap: wrap;
 }
 
+/* Modificaciones de Botones de Catergorias */
 .category-filters button {
   padding: 0.5rem 1rem;
   background-color: #e0e0e0;
@@ -120,7 +121,7 @@ main {
 /* Producto */
 .product {
   background: white;
-  border-radius: 10px;
+  border-radius: 1px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: all 0.3s ease;
@@ -133,8 +134,8 @@ main {
 }
 
 .product img {
-  width: 50%; 
-  height: 160px; 
+  width: %; 
+  height: 130px; 
   object-fit: cover;
   cursor: pointer;
 }
@@ -256,7 +257,9 @@ main {
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* para que el contenido se alinee arriba */
+  overflow-y: auto;       /* ✅ permite desplazarse verticalmente */
+  padding: 2rem 0;        /* opcional, da espacio arriba y abajo */
   z-index: 1000;
   animation: fadeIn 0.3s;
 }
