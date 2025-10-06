@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagar por Transferencia - Neptune Market</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .payment-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    .payment-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .payment-section h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    
+    ul {
+      padding-left: 1.2rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    strong {
+      color: #2c3e50;
+    }
+    
+    .btn-confirm {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-confirm:hover {
+      background-color: #2980b9;
+    }
+    
+    .bank-icon {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #3498db;
+    }
+    
+    @media (max-width: 768px) {
+      .payment-container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <div class="bank-icon">🏦</div>
+    <h2>Pago por Transferencia Bancaria</h2>
+    
+    <div class="payment-section">
+      <h3>Datos Bancarios</h3>
+      <ul>
+        <li><strong>Banco:</strong> BanReservas</li>
+        <li><strong>Tipo de Cuenta:</strong> Corriente</li>
+        <li><strong>Número de Cuenta:</strong> 123-456789-0</li>
+        <li><strong>Titular:</strong> Neptune Market SRL</li>
+      </ul>
+    </div>
+    
+    <div class="payment-section">
+      <h3>Confirmación de Pago</h3>
+      <p>Una vez realizado el pago, por favor envía el comprobante a:</p>
+      <ul>
+        <li><strong>Correo Electrónico:</strong> pagos@neptunemarket.com</li>
+        <li><strong>WhatsApp:</strong> +1 809-882-1260</li>
+      </ul>
+      <p>Incluye en el mensaje tu número de pedido para agilizar el proceso.</p>
+    </div>
+    
+    <button class="btn-confirm" onclick="confirmar()">Confirmar Transferencia Realizada</button>
+  </div>
+
+  <script>
+    function confirmar() {
+      const total = localStorage.getItem("cartTotal") || "0";
+      if(confirm(`¿Has completado la transferencia de RD$ ${total} y enviado el comprobante?`)) {
+        alert("¡Gracias! Estaremos verificando tu pago y te contactaremos pronto.");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("cartTotal");
+        window.location.href = "../index.html";
+      }
+    }
+  </script>
+</body>
+</html>
