@@ -132,9 +132,25 @@ const products = [
       "./images/memoriaMicroSD4.png",
                 ],
     category: "electronica",
-    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
-    features: [
-      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+    description: "Tarjeta de memoria TF de pequeña capacidad para CCTV o cámara Clase 10, tarjeta de memoria de alta velocidad, 64M, 128M, 256M, 512M",
+features: [
+      "• Origen : China continental",
+      "• Marca other : La tarjeta está de la marca 'other', lo que significa que ofrece una excelente relación calidad-precio.",
+      "• Tipo TF / Micro SD Card : Es un tipo TF / Micro SD Card, lo que permite una gran capacidad de almacenamiento y una alta velocidad de acceso.",
+      "• Aplicación : Tachógrafo",
+      "• Capacidad de alta velocidad : Con capacidades que van desde 64M hasta 512M, esta tarjeta ofrece una alta velocidad de memoria para soportar todas sus necesidades de grabación de video.",
+      "• Clase 10 : Es una tarjeta de clase 10, lo que garantiza su compatibilidad con los dispositivos más modernos y eficientes.",
+      "Notas de capacidad: 128M = aprox. 110M-115M, 256M = aprox. 220M-230M, 512M = aproximadamente 460M-480M. Esta es la diferencia en el cálculo entre el fabricante y su PC, por favor Google 'capacidad de almacenamiento del producto' para obtener más información.",
+      "PC define 1GB = 1,073,741,824 bytes, mientras que el mercado define 1GB = 1,000,000,000 bytes. 100% de Capacidad real, a través de H2testw.",
+      "Por favor, no utilice los lectores de tarjetas baratas para probar la velocidad, se reducirá debido a los lectores de tarjetas de baja calidad.",
+      "Descripción del producto:",
+      "Nombre: Tarjeta de memoria",
+      "Capacidad: 128M, 256M, 512M",
+      "Equipo aplicable: computadoras de escritorio, teléfonos celulares, computadoras portátiles y más dispositivos",
+      "Temperatura de funcionamiento: -13°F a 185°F (-25°C a 85°C)",
+      "Temperatura de almacenamiento: -40°F a 185°F (-40°C a 85°C)",
+      "Tamaño: 49*18*10mm, peso: 14.2g",
+      "El paquete incluye: 1X TARJETA DE Memoria"
     ],
     reviews: [],
     rating: 4.8
@@ -155,9 +171,33 @@ const products = [
       "./images/relojSmartWatch66.png",
           ],
     category: "electronica",
-    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+description: `Descripción del producto
+Marca: KESHUYOU
+Modelo: 2025
+Color: negro, plata
+Software de aplicación: LAXASFIT
+Embalaje: correa de silicona + cargador + manual
+Chip: 5609
+Capacidad de la batería: 150 mAh
+Tamaño de la pantalla: pantalla LCD HD de pantalla completamente táctil de 1,32 pulgadas
+Resolución: 128*128
+Frecuencia cardíaca: soporte
+Llamadas Bluetooth: soporte
+Reproducción de música Bluetooth: soporte
+Método de carga: carga magnética
+Bluetooth: BLE5.0
+Caja: Aleación de zinc
+Idioma de la aplicación
+Inglés, italiano, portugués, polaco, español, francés, griego, húngaro, checo, ruso, turco, holandés, alemán, vietnamita, indonesio, malayo, filipino, sueco, finlandés, ucraniano, tailandés, persa, árabe
+Registro de ejercicio: pasos, frecuencia cardíaca, distancia, calorías, duración del ejercicio
+Monitoreo dla salud: frecuencia cardíaca, presión arterial, nivel de oxígeno en sangre, monitoreo del sueño
+Registro de ejercicio: pasos, frecuencia cardíaca, distancia del ejercicio, calorías, duración del ejercicio
+Monitoreo de la salud: presión arterial, nivel de oxígeno en sangre, monitoreo del sueño
+Alertas inteligentes: WeChat, QQ, Skype, WHATSAPP, Facebook, Twitter, Line, Kakaotalk, Instagram, etc.
+Otras funciones: dial personalizado, modo de movimiento múltiple, pantalla de elevación manual (levantar rostros, activar el dial automáticamente), ajuste de brillo, visualización del tiempo, cronómetro, visualización de la hora, toma de fotografías remota, control de música (controlar el reproductor de música del teléfono, control de volumen), buscar teléfono celular
+Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera personalizada/pantalla redonda múltiple Ul /1.32 incorporada`,
     features: [
-      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+      "KESHUYOU 2025 nuevo reloj inteligente de moda para mujer 6 llamadas Bluetooth monitoreo de salud alarma reloj inteligente deportivo para hombres"
     ],
     reviews: [],
     rating: 4.8
@@ -174,11 +214,25 @@ const products = [
       "./images/puntero3.png",
       "./images/puntero4.png",
       "./images/puntero5.png",
+      "./images/puntero6.webp",
+      "./images/puntero7.webp",
+      "./images/puntero8.webp",
+      "./images/puntero9.webp",
+      "./images/puntero10.webp",
+    
           ],
     category: "electronica",
-    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    description: "Puntero de presentación láser 2,4G, bolígrafo de Control remoto de demostración inalámbrica para PowerPoint PPT para conferencias y reuniones",
     features: [
-      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+"Batería NO",
+"Control remoto Sí",
+"Con puertos USB Sí",
+"Número de modelo S9",
+"Página de la placa de rebote Sí",
+"Color claro Rojo",
+"Inalámbrico Sí",
+"Origen CN(Origen)",
+"Certificación CE,FCC,RoHS"
     ],
     reviews: [],
     rating: 4.8
@@ -188,18 +242,60 @@ const products = [
     id: 8, 
     name: "Cartera de Caballero Negro",
     price: 1200, 
-    image: "./images/cartera1.png",
+    image: "./images/cartera1.webp",
     images: [
-      "./images/cartera1.png",
+      "./images/cartera1.webp",
+      "./images/cartera2.png",
+      "./images/cartera3.webp",
+      "./images/cartera4.webp",
+      "./images/cartera5.webp",
           ],
-    category: "electronica",
-    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    category: "ropa",
+    description: " cartera para hombre, bolso de hombro de tela Oxford a la moda, informal, cruzado Diagonal, máquina de mano a la moda, bolso cuadrado pequeño",
     features: [
-      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+      "Número de modelo lw2053",
+      "Exterior Ninguno",
+      "Dureza HARD",
+      "Tipo de diseño Liso",
+      "Estilo Casual",
+      "Material del revestimiento: POLIÉSTER",
+      "Material principal: Oxford",
+      "Forma: Se pliega",
+      "Origen: CN(Origen)",
+      "CN: Hebei",
+      "Ocasión: Negocios",
+      "Género: Unisex",
+      "Tipo de cierre: Cremallera"
     ],
     reviews: [],
     rating: 4.8
-  },
+},
+
+{ 
+  id: 9,
+  name: "Linterna de Cabeza Recargable",
+  price: 1200,
+  image: "./images/linternacabeza1.jpeg",
+  images: [
+    "./images/linternacabeza1.jpeg",
+    "./images/linternacabeza2.jpeg",
+    "./images/linternacabeza3.jpeg",
+    "./images/linternacabeza4.jpeg",
+    "./images/linternacabeza5.jpeg",
+    "./images/linternacabeza6.jpeg",
+  ],
+  category: "electronica",
+  description: "Tecnología de detección inteligente: a diferencia de otros productos, nuestro faro está equipado con los últimos sensores inteligentes. Controla fácilmente la luz encendida y apagada agitando tu mano incluso si tienes guantes puestos, no ensuciará la unidad. Enciende la lámpara frontal y el interruptor de inducción al mismo tiempo.",
+  features: [
+    "Haz amplio de 230°: estos faros delanteros de barra de luz brillante proporcionan una excelente iluminación de gran angular de 230° y 350 lúmenes, en lugar de iluminar solo una pequeña zona delante de ti como los faros tradicionales. También diseñado con un foco lateral LED extra brillante para satisfacer tus diferentes necesidades de escenarios, por ejemplo, camping, correr, ciclismo, trabajo y reparación.",
+    "5 modos de luz: el faro tiene 5 modos de iluminación: modo alto COB, modo bajo COB, modo alto XPE, modo bajo XPE y modo estroboscópico. Fácil de operar, pulsa brevemente el botón de encendido para cambiar el modo, pulsa durante mucho tiempo para encender el modo estroboscópico.",
+    "【Linterna frontal recargable por USB】Batería recargable integrada de gran capacidad de 1200 mAh. No solo ahorra el costo de reemplazar las baterías, sino que es respetuoso con el medio ambiente. Tiempo de carga: 2 horas completamente cargada. Tiempo de trabajo durante 3-8 horas en diferentes modos de luz. Si se requiere iluminación durante mucho tiempo, se recomienda llevar dos a la vez para estar en espera.",
+    "Ligera y cómoda: nuestra linterna frontal está hecha de ABS y silicona, con una diadema ajustable y elástica, es suave y cómoda. Solo 3.4 onzas, sin un foco pesado como los faros tradicionales. Diseño de tamaño pequeño que se puede plegar para caber fácilmente en tu bolsillo. IPX4 resistente al agua significa que está protegido contra salpicaduras de agua desde todos los ángulos, no tienes que preocuparte si llueve o nieve inesperadamente.",
+    "Faros delanteros LED, paquete de 2 linternas recargables para adultos, faros delanteros de haz ancho de 230°, lámpara de cabeza con sensor de movimiento, diadema ajustable impermeable para exteriores, para correr, campamento, senderismo"
+  ],
+  reviews: [],
+  rating: 4.8
+},
 ];
 
 const coupons = { "NEP10": 0.10, "VERANO20": 0.20 };

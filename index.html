@@ -6,8 +6,6 @@
   <title>Neptune Market</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-</head>
-<body>
   <style>
     .visually-hidden {
       position: absolute;
@@ -19,60 +17,71 @@
       clip: rect(0,0,0,0);
       border: 0;
     }
+    #user-welcome {
+      margin-left: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    #registerSection {
+      display: none;
+    }
   </style>
+</head>
+<body>
   <header>
     <div class="header-container">
-      <img src="logo/nepMarket.png" width="300"  alt="Logo de Neptune Market" class="logo" />
-        <h1></h1>
-        <div id="user-welcome" class="user-welcome"></div>
+      <img src="/logo/nepMarket.png" width="300" alt="Logo de Neptune Market" class="logo" />
+      <div id="user-welcome"></div>
     </div>
+
+    <!-- Sección de login -->
     <div id="userSection">
       <input type="text" id="username" placeholder="Usuario" />
       <input type="password" id="password" placeholder="Contraseña" />
       <button onclick="login()">Entrar</button>
-      <label for="searchCategory" class="visually-hidden">Categoría de búsqueda</label>
-      <select id="searchCategory">
-        <option value="all">Todas categorías</option>
-        <option value="electronica">Electrónica</option>
-        <option value="ropa">Ropa</option>
-        <option value="Hierramienta">Hierramientas</option>
-        <option value="Accesorios Autos">Accesorios de Autos</option>
-      </select>
-      <button onclick="register()">Crear cuenta</button>
+      <button onclick="showRegister()">Crear cuenta</button>
     </div>
-  </header>
-  
-<button onclick="bajarPagina()">Bajar ↓</button>
 
+<button id="logoutBtn" onclick="logout()">Cerrar sesión</button>
 
-  <nav>
+    <!-- Sección de registro -->
+    <div id="registerSection">
+      <input type="text" id="newUsername" placeholder="Nuevo usuario" />
+      <input type="password" id="newPassword" placeholder="Nueva contraseña" />
+      <button onclick="register()">Registrar</button>
+      <button onclick="document.getElementById('registerSection').style.display='none'">Cancelar</button>
+    </div>
+
+    <!-- Buscador principal -->
     <div class="search-container">
       <input type="text" id="search" placeholder="Buscar productos..." onkeyup="searchProducts()" />
-      <select id="searchCategory">
-        <option value="all">Todas categorías</option>
-        <option value="electronica">Electrónica</option>
-        <option value="ropa">Ropa</option>
-        <option value="Hierramienta">Hierramientas</option>
-        <option value="Accesorios Autos">Accesorios de Autos</option>
-      </select>
+      <label for="searchCategoryMain" class="visually-hidden">Categoría de búsqueda</label>
+      <select id="searchCategoryMain">
+  <option value="all">Todas categorías</option>
+  <option value="electronica">Electrónica</option>
+  <option value="ropa">Ropa</option>
+  <option value="Hierramienta">Hierramientas</option>
+  <option value="Accesorios Autos">Accesorios de Autos</option>
+</select>
       <input type="number" id="searchPrice" placeholder="Precio máximo" />
-      <button onclick="advancedSearch()" title="Buscar"><i class="fas fa-search" aria-hidden="true"></i><span class="visually-hidden">Buscar</span></button>
+      <button onclick="advancedSearch()" title="Buscar"><i class="fas fa-search"></i><span class="visually-hidden">Buscar</span></button>
     </div>
-    
+  </header>
 
-    <!-- Cuadros de Filtros--> 
+  <nav>
+    <!-- Filtros por categoría -->
     <div class="category-filters">
       <button onclick="filterByCategory('all')"><i class="fas fa-border-all"></i> Todos</button>
       <button onclick="filterByCategory('electronica')"><i class="fas fa-laptop"></i> Electrónica</button>
       <button onclick="filterByCategory('ropa')"><i class="fas fa-tshirt"></i> Ropa</button>
       <button onclick="filterByCategory('Hierramienta')"><i class="fas fa-tools"></i> Hierramientas</button>
       <button onclick="filterByCategory('Accesorios Autos')"><i class="fas fa-car"></i> Accesorios de Autos</button>
-
     </div>
   </nav>
-  
+
   <main>
     <section id="productContainer"></section>
+
     <aside id="cart">
       <h2><i class="fas fa-shopping-cart"></i> Mi Carrito</h2>
       <ul id="cartItems"></ul>
@@ -84,7 +93,7 @@
       <button id="checkoutBtn" onclick="checkout()">Pagar</button>
     </aside>
   </main>
-  
+
   <!-- Modal Detalle Producto -->
   <div id="productDetailModal" class="modal-overlay">
     <div class="modal-content modal-content-large">
@@ -92,16 +101,16 @@
       <div id="productDetailContent"></div>
     </div>
   </div>
-  
-  <!-- Modal de Pago (oculto inicialmente) -->
+
+  <!-- Modal de Pago -->
   <div id="paymentModal" class="modal-overlay">
     <div class="modal-content">
       <span class="close-button" onclick="closePaymentModal()">&times;</span>
       <h2>Elige un método de pago</h2>
       <div class="payment-options">
-          <button onclick="goToPayment('pagos/paypal.html')"><i class="fab fa-paypal"></i> PayPal</button>
-          <button onclick="goToPayment('pagos/stripe.html')"><i class="far fa-credit-card"></i> Tarjeta</button>
-          <button onclick="goToPayment('pagos/transferencia.html')"><i class="fas fa-university"></i> Transferencia</button>
+        <button onclick="goToPayment('pagos/paypal.html')"><i class="fab fa-paypal"></i> PayPal</button>
+        <button onclick="goToPayment('pagos/stripe.html')"><i class="far fa-credit-card"></i> Tarjeta</button>
+        <button onclick="goToPayment('pagos/transferencia.html')"><i class="fas fa-university"></i> Transferencia</button>
       </div>
     </div>
   </div>
