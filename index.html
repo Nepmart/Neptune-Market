@@ -30,9 +30,20 @@
 </head>
 <body>
   <header>
+    <!-- 🌌 Franja superior animada del sistema solar -->
+<section id="solar-header">
+  <div class="solar-system">
+    <div class="sun"></div>
+    <div class="orbit orbit-1"><div class="planet mercury"></div></div>
+    <div class="orbit orbit-2"><div class="planet venus"></div></div>
+    <div class="orbit orbit-3"><div class="planet earth"></div></div>
+    <div class="orbit orbit-4"><div class="planet mars"></div></div>
+  </div>
+</section>
     <div class="header-container">
       <img src="logo/nepMarket.png" width="300" alt="Logo de Neptune Market" class="logo" />
       <div id="user-welcome"></div>
+      
     </div>
 
     <!-- Sección de login -->
@@ -141,13 +152,7 @@
   </div>
 
 <div class="modal-favorite-wrapper">
-  <span class="modal-favorite-label">Favorito</span>
-  <button class="modal-favorite-btn"
-          onclick="toggleFavorite(this.getAttribute('data-product-id'), this)"
-          data-product-id=""
-          title="Agregar a favoritos">
-    <i class="fas fa-heart"></i>
-  </button>
+  
 <div id="deliverySection">
         <h4>Opciones de Entrega</h4>
         <div class="delivery-option">
@@ -174,7 +179,8 @@
         <button onclick="goToPayment('pagos/transferencia.html')"><i class="fas fa-university"></i> Transferencia</button>
       </div>
     </div>
+    </div>
   </div>
   <script src="script.js"></script>
-</body>
+  </body>
 </html>
