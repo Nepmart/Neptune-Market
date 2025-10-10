@@ -20,12 +20,13 @@
     #user-welcome {
       margin-left: 20px;
       font-weight: bold;
-      color: #333;
+      color: #95eed8;
     }
     #registerSection {
       display: none;
     }
   </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> 
 </head>
 <body>
   <header>
@@ -81,19 +82,56 @@
 
   <main>
     <section id="productContainer"></section>
-
-    <aside id="cart">
-      <h2><i class="fas fa-shopping-cart"></i> Mi Carrito</h2>
-      <ul id="cartItems"></ul>
-      <p class="total-text">Total: RD$<span id="total">0.00</span></p>
-      <div class="coupon-section">
-        <input type="text" id="coupon" placeholder="Código de cupón" />
-        <button onclick="applyCoupon()">Aplicar</button>
-      </div>
-      <button id="checkoutBtn" onclick="checkout()">Pagar</button>
-    </aside>
+<aside id="cart">
+  <h2><i class="fas fa-shopping-cart"></i> Mi Carrito</h2>
+  <ul id="cartItems"></ul>
+  <p class="total-text">Total: RD$<span id="total">0.00</span></p>
+  <div class="coupon-section">
+    <input type="text" id="coupon" placeholder="Código de cupón" />
+    <button onclick="applyCoupon()">Aplicar</button>
+  </div>
+  
+  <form id="order-form">
+    <h3 class="shipping-data-title">Datos de Envío</h3>
+    <input type="text" name="nombre" id="client-name" placeholder="Nombre completo" required>
+    <input type="tel" name="telefono" id="client-phone" placeholder="Teléfono" required>
+    <input type="text" name="direccion" id="client-address" placeholder="Dirección de envío" required>
+      <select name="envio" id="client-shipping" required>
+      <option value="">Seleccione método de envío</option>
+      <option value="Standard">Envío Estándar</option>
+      <option value="Express">Envío Express</option>
+    </select>
+    
+    <input type="hidden" name="productos" id="order-products-data"> 
+    <input type="hidden" name="total" id="order-total-amount">
+    
+    <button type="button" id="sendOrderBtn" onclick="sendOrderEmail()">
+      <i class="fas fa-paper-plane"></i> Enviar Pedido
+    </button>
+  </form>
+  
+  <button id="checkoutBtn" class="checkout-btn" onclick="checkout()">
+    Pagar
+  </button>
+</aside>
+    
   </main>
-
+</main>
+<div id="deliveryFormModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeDeliveryForm()">&times;</span>
+    <h2>Formulario de Entrega</h2>
+    <p>Completa tus datos para coordinar el envío.</p>
+    <form id="order-form">
+      <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
+      <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
+      <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+      <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+      <textarea id="address" name="address" placeholder="Dirección de Envío" required rows="3"></textarea>
+      <button type="submit" id="submit-order-btn">Confirmar y Enviar Pedido</button>
+    </form>
+  </div>
+</div>
   <!-- Modal Detalle Producto -->
   <div id="productDetailModal" class="modal-overlay">
     <div class="modal-content modal-content-large">
@@ -101,6 +139,29 @@
       <div id="productDetailContent"></div>
     </div>
   </div>
+
+<div class="modal-favorite-wrapper">
+  <span class="modal-favorite-label">Favorito</span>
+  <button class="modal-favorite-btn"
+          onclick="toggleFavorite(this.getAttribute('data-product-id'), this)"
+          data-product-id=""
+          title="Agregar a favoritos">
+    <i class="fas fa-heart"></i>
+  </button>
+<div id="deliverySection">
+        <h4>Opciones de Entrega</h4>
+        <div class="delivery-option">
+          <input type="radio" id="pickup" name="delivery" value="pickup" checked onchange="updateDeliveryOption()">
+          <label for="pickup" style="color: #75cae4;">Recoger en tienda (Gratis)</label>
+        </div>
+        <div class="delivery-option">
+          <input type="radio" id="shipping" name="delivery" value="shipping" onchange="updateDeliveryOption()">
+          <label for="shipping" style="color: #7fc7e9;">Envío a domicilio (RD$ <span id="shippingCostText">250.00</span>)</label>
+        </div>
+      </div>
+      ```
+
+</div>
 
   <!-- Modal de Pago -->
   <div id="paymentModal" class="modal-overlay">
@@ -114,7 +175,6 @@
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

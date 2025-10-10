@@ -4,6 +4,9 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 let cartTotal = 0;
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let shippingCost = 150.00;
+let deliveryMethod = 'pickup'; // 'pickup' o 'shipping'
+
 
 // Productos con placeholders temporales
 const products = [
@@ -365,7 +368,7 @@ function renderProducts(prodList = products) {
     div.className = "product";
     div.innerHTML = `
       <button class="favorite-btn ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(${p.id}, this)">
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart"></i> <span>Favorito</span>
       </button>
       <img src="${p.image}" alt="${p.name}" onclick="showProductDetail(${p.id})">
       <div class="product-info">
@@ -427,7 +430,9 @@ function filterByCategory(category) {
 
 function showProductDetail(id) {
   const product = products.find(p => p.id === id);
-  if (!product) return;
+  if (!product) {
+    return;
+  }
 
   const modal = document.getElementById("productDetailModal");
   const content = document.getElementById("productDetailContent");
@@ -516,7 +521,9 @@ function changeProductImage(src, element) {
 // --- FUNCIONES DEL CARRITO ---
 function addToCart(id) {
   const productToAdd = products.find(p => p.id === id);
-  if (!productToAdd) return;
+  if (!productToAdd) {
+    return;
+  }
   
   const itemInCart = cart.find(item => item.id === id);
 
@@ -527,7 +534,7 @@ function addToCart(id) {
   }
   
   updateCart();
-  
+
   // Animación de confirmación
   const button = event.target;
   button.innerHTML = '<i class="fas fa-check"></i> Agregado';
@@ -541,10 +548,10 @@ function addToCart(id) {
 function updateCart() {
   const list = document.getElementById("cartItems");
   list.innerHTML = "";
-  let total = 0;
-  
+  let itemsTotal = 0;
+
   cart.forEach(item => {
-    total += item.price * item.qty;
+    itemsTotal += item.price * item.qty;
     const li = document.createElement("li");
     li.innerHTML = `
       <span>${item.name} x${item.qty}</span>
@@ -555,10 +562,32 @@ function updateCart() {
     `;
     list.appendChild(li);
   });
-  
-  cartTotal = total;
-  document.getElementById("total").textContent = total.toFixed(2);
+
+  // Calculamos el total final incluyendo el envío
+  let finalTotal = itemsTotal;
+  if (deliveryMethod === 'shipping' && itemsTotal > 0) {
+    finalTotal += shippingCost;
+  }
+
+  cartTotal = finalTotal; // Actualizamos la variable global del total
+  document.getElementById("total").textContent = finalTotal.toFixed(2);
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Reemplaza tu función actual con esta
+function updateDeliveryOption() {
+  deliveryMethod = document.querySelector('input[name="delivery"]:checked').value;
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const sendOrderBtn = document.getElementById('sendOrderBtn');
+
+  if (deliveryMethod === 'shipping') {
+    checkoutBtn.style.display = 'none'; // Oculta el botón de pagar
+    sendOrderBtn.style.display = 'block'; // Muestra el botón de enviar pedido
+  } else {
+    checkoutBtn.style.display = 'block';
+    sendOrderBtn.style.display = 'none';
+  }
+  updateCart(); // Volvemos a calcular el total del carrito
 }
 
 function removeFromCart(id) {
@@ -621,7 +650,181 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   updateCart();
+  updateDeliveryOption(); // Initialize delivery option display
+
+  // Add event listeners for delivery method changes
+  document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+    radio.addEventListener('change', updateDeliveryOption);
+  });
   
   // Ocultar modal de pago al inicio
   document.getElementById("paymentModal").style.display = "none";
 });
+// --- FUNCIONES DE ENVÍO DE PEDIDO ---
+function sendOrder() {
+  if (!currentUser) {
+    alert("Por favor inicia sesión para enviar tu pedido.");
+    return;
+  }
+
+  const name = prompt("Ingresa tu nombre completo:");
+  const email = prompt("Ingresa tu correo electrónico:");
+  const phone = prompt("Ingresa tu teléfono:");
+  const address = prompt("Ingresa tu dirección de envío:");
+
+  if (!name || !email || !phone || !address) {
+    alert("Todos los campos son obligatorios.");
+    return;
+  }
+
+  const orderDetails = cart.map(item => `${item.name} x${item.qty} - RD$ ${item.price.toFixed(2)}`).join("\n");
+  const totalAmount = cartTotal.toFixed(2);
+
+  const templateParams = {
+    from_name: currentUser.username,
+    to_name: "Neptune Market",
+    message: `Pedido:\n${orderDetails}\nTotal: RD$ ${totalAmount}\n\nDatos de envío:\nNombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nDirección: ${address}`
+  };
+
+  emailjs.send("service_id", "template_id", templateParams)
+    .then(function(response) {
+       alert("Pedido enviado con éxito!");
+       cart = [];
+       updateCart();
+       closePaymentModal();
+    }, function(error) {
+       alert("Error al enviar el pedido. Intenta de nuevo.");
+    });
+}
+// --- FUNCION CERRAR SESIÓN ---
+function logout() {
+  // Borrar usuario actual
+  currentUser = null;
+  localStorage.removeItem('currentUser');
+
+  // Restaurar vistas de login y registro
+  document.getElementById("userSection").style.display = "block";
+  document.getElementById("registerSection").style.display = "none";
+  document.getElementById("user-welcome").textContent = "";
+
+  // Opcional: limpiar carrito al cerrar sesión
+  // cart = [];
+  // updateCart();
+
+  alert("Has cerrado sesión correctamente.");
+}
+// Event Listener para el envío del formulario
+document.getElementById('order-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previene que la página se recargue
+
+    const submitBtn = document.getElementById('submit-order-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    // 1. Formatear los productos del carrito para el correo
+    let orderDetails = '';
+    cart.forEach(item => {
+        orderDetails += `${item.name} (x${item.qty}) - RD$ ${(item.price * item.qty).toFixed(2)}\n`;
+    });
+    orderDetails += `\nSubtotal: RD$ ${(cartTotal - (deliveryMethod === 'shipping' ? shippingCost : 0)).toFixed(2)}`;
+    orderDetails += `\nCosto de Envío: RD$ ${shippingCost.toFixed(2)}`;
+    orderDetails += `\n--------------------------------------`;
+    orderDetails += `\nTotal del Pedido: RD$ ${cartTotal.toFixed(2)}`;
+
+
+    // 2. Preparar los parámetros para la plantilla de EmailJS
+    const templateParams = {
+        from_name: document.getElementById('fullname').value,
+        cedula: document.getElementById('cedula').value,
+        phone: document.getElementById('phone').value,
+        from_email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        order_details: orderDetails,
+    };
+
+    // 3. Enviar el correo usando EmailJS
+    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams) // <-- REEMPLAZA ESTO
+        .then(function(response) {
+           console.log('SUCCESS!', response.status, response.text);
+           alert('✅ ¡Tu pedido ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
+
+           // Limpiar carrito y formulario
+           cart = [];
+           localStorage.setItem("cart", JSON.stringify(cart));
+           updateCart();
+           document.getElementById('order-form').reset();
+           closeDeliveryForm();
+
+           submitBtn.disabled = false;
+           submitBtn.textContent = 'Confirmar y Enviar Pedido';
+
+        }, function(error) {
+           console.log('FAILED...', error);
+           alert('❌ Hubo un error al enviar tu pedido. Por favor, intenta de nuevo.');
+           submitBtn.disabled = false;
+           submitBtn.textContent = 'Confirmar y Enviar Pedido';
+        });
+});
+function openDeliveryForm() {
+  document.getElementById('deliveryFormModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDeliveryForm() {
+  document.getElementById('deliveryFormModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+// Cargar la librería de EmailJS y el PUBLIC KEY
+(function(){
+  emailjs.init("b83D3JpJuZ0Ke_kgf"); 
+})();
+
+const SERVICE_ID = "service_up3dtue"; 
+const TEMPLATE_ID = "template_4k5e1m4"; 
+
+function sendOrderEmail() {
+  if (cart.length === 0) {
+    alert("Tu carrito está vacío. Añade productos para enviar un pedido.");
+    return;
+  }
+  
+  // 1. Recolección y validación de campos visibles
+  const nombre = document.getElementById("client-name").value;
+  const telefono = document.getElementById("client-phone").value;
+  const direccion = document.getElementById("client-address").value;
+  const envio = document.getElementById("client-shipping").value;
+
+  if (!nombre || !telefono || !direccion || !envio) {
+    alert("Por favor, rellena todos los datos de envío.");
+    return;
+  }
+  
+  // 2. Preparación de la lista de productos para EmailJS (formato JSON)
+  // EmailJS usa una sintaxis similar a Handlebars para iterar arrays DE OBJETOS.
+  const productosArray = cart.map(item => ({
+    nombre: item.name,
+    cantidad: item.qty.toString(), // Convertir a string
+    precio: `RD$ ${item.price.toFixed(2)}`
+  }));
+
+  // 3. Llenar los campos ocultos del formulario con la DATA JSON y el total
+  // OJO: La lista de productos NO se envía directamente, sino el JSON STRINGIFIED.
+  // EmailJS procesará este JSON string en el campo 'productos'.
+  document.getElementById("order-products-data").value = JSON.stringify(productosArray);
+  document.getElementById("order-total-amount").value = document.getElementById("total").textContent;
+
+  // 4. Obtener el formulario y enviar
+  const form = document.getElementById('order-form');
+
+  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
+    .then(function() {
+      alert("✅ ¡Pedido enviado con éxito! Recibirás la confirmación pronto.");
+      // Opcional: limpiar el carrito
+      cart = [];
+      updateCart();
+    }, function(error) {
+      // Este error debería ser el último recurso, el error de corrupción debería desaparecer.
+      alert(`❌ Error al enviar el pedido. Por favor, inténtalo de nuevo. Error: ${error.text}`);
+      console.error("EmailJS Error:", error);
+    });
+}
