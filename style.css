@@ -654,5 +654,122 @@ main {
 #order-form button:hover {
   background-color: #0056b3;
 }
+/* ✅ AJUSTES PARA MÓVILES (pantallas menores a 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    width: 180px !important;
+    height: auto;
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .search-container input,
+  .search-container select,
+  .search-container button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .category-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-filters button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #cart {
+    width: 100%;
+    margin-top: 1.5rem;
+    position: static;
+  }
+
+  #productContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .product img {
+    height: 100px;
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  /* Detalle del producto */
+  .product-detail {
+    flex-direction: column;
+  }
+
+  .product-main-image {
+    height: 250px;
+  }
+
+  .product-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  /* Carrito y formularios */
+  #order-form input,
+  #order-form textarea,
+  #order-form button {
+    font-size: 0.9rem;
+  }
+
+  /* Botones generales */
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+#deliverySection h4 {
+  margin-bottom: 0.8rem;
+  color: #00c853; /* Verde título sección */
+}
+
+/* Recoger en tienda */
+.delivery-option input[value="pickup"] + label {
+  color: #00e676; /* Verde brillante */
+  font-weight: 600;
+}
+
+/* Envío a domicilio */
+.delivery-option input[value="shipping"] + label {
+  color: #40c4ff; /* Azul claro */
+  font-weight: 600;
+}
 
 

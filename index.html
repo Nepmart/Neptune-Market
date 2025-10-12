@@ -6,26 +6,7 @@
   <title>Neptune Market</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-    #user-welcome {
-      margin-left: 20px;
-      font-weight: bold;
-      color: #95eed8;
-    }
-    #registerSection {
-      display: none;
-    }
-  </style>
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> 
 </head>
 <body>
@@ -157,11 +138,11 @@
         <h4>Opciones de Entrega</h4>
         <div class="delivery-option">
           <input type="radio" id="pickup" name="delivery" value="pickup" checked onchange="updateDeliveryOption()">
-          <label for="pickup" style="color: #75cae4;">Recoger en tienda (Gratis)</label>
+          <label for="pickup">Recoger en tienda (Gratis)</label>
         </div>
         <div class="delivery-option">
           <input type="radio" id="shipping" name="delivery" value="shipping" onchange="updateDeliveryOption()">
-          <label for="shipping" style="color: #7fc7e9;">Envío a domicilio (RD$ <span id="shippingCostText">250.00</span>)</label>
+          <label for="shipping">Envío a domicilio (RD$ <span id="shippingCostText">250.00</span>)</label>
         </div>
       </div>
       ```
