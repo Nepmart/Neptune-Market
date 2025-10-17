@@ -10,8 +10,9 @@ body {
 header {
   background-color: #030e13;
   color: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 0.4rem 0.5rem;
+  box-shadow: 0px 6px rgba(0,0,0,0.1);
+  
 }
 
 .header-container {
@@ -19,8 +20,9 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-}
+    }
 
+    
 h1 {
   margin: 0;
   font-size: 2.5rem;
@@ -37,7 +39,7 @@ h1 {
 }
 
 input[type="text"], input[type="password"], input[type="number"], select {
-  padding: 0.6rem;
+  padding: 0.4rem;
   margin: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -45,10 +47,10 @@ input[type="text"], input[type="password"], input[type="number"], select {
 }
 
 button {
-  padding: 0.7rem 1.5rem;
+  padding: 0.4rem 1.5rem;
   border: none;
   border-radius: 5px;
-  background-color: #2226ff;
+  background-color: #226fff;
   color: white;
   cursor: pointer;
   font-size: 1rem;
@@ -91,8 +93,8 @@ nav {
 /* Modificaciones de Botones de Catergorias */
 .category-filters button {
   padding: 0.5rem 1rem;
-  background-color: #e0e0e0;
-  color: #333;
+  background-color: #057794;
+  color: #eeeef0;
   border: none;
   display: flex;
   align-items: center;
@@ -122,7 +124,7 @@ main {
 .product {
   background: white;
   border-radius: 1px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -141,7 +143,7 @@ main {
 }
 
 .product-info {
-  padding: 1rem;
+  padding: 0.5rem
 }
 
 .product h3 {
@@ -383,7 +385,7 @@ main {
 }
 
 .product-title {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   color: #1a237e;
 }
@@ -667,7 +669,7 @@ main {
   }
 
   .logo {
-    width: 180px !important;
+    width: 100px !important;
     height: auto;
   }
 
@@ -772,4 +774,118 @@ main {
   font-weight: 600;
 }
 
+/* === AJUSTE FINAL DEL ENCABEZADO Y ANIMACIÓN === */
 
+/* Mantiene el encabezado compacto */
+header {
+  position: relative !important;
+  height: 100px !important; /* 🔹 altura total del header */
+  background-color: #030e13 !important;
+  overflow: hidden !important;
+  z-index: 1;
+}
+
+/* Franja del sistema solar */
+#solar-header {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* usa todo el header */
+  overflow: visible !important;
+  z-index: 1;
+}
+
+/* 🔧 Baja visualmente toda la animación */
+.solar-system {
+  position: relative !important;
+  top: 60px !important; /* 🔹 Aumenta este número para bajarla más (prueba 40, 60, 80) */
+  transform: scale(0.4) !important; /* reduce el tamaño */
+  transform-origin: top center;
+  z-index: 1;
+}
+
+/* Mantén el logo visible sobre la animación */
+.header-container {
+  position: relative !important;
+  z-index: 5 !important;
+}
+header {
+  background-color: #030e13 !important;
+  height: 258px !important;   /* 🔹 Cambia este valor para subir o bajar el fondo negro */
+  overflow: hidden !important;
+  position: relative;
+}
+/* 🔧 Corrige superposición del sistema solar sobre el login */
+#solar-header, .solar-system {
+  pointer-events: none !important; /* ya no bloquea clics debajo */
+  z-index: 1 !important;
+}
+
+/* 🔧 Asegura que el área del login quede por encima */
+#userSection,
+#registerSection,
+#logoutBtn,
+.header-container {
+  position: relative;
+  z-index: 5 !important; /* más alto que el fondo animado */
+}
+/* 🔼 Subir toda la sección de login (inputs + botones) */
+#userSection {
+  position: relative;
+  top: -175px; /* 🔹 Mueve todo hacia arriba. Aumenta el número para subir más */
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Ajusta también el bloque de botones */
+.login-buttons {
+  margin-top: 0.3rem;
+}
+
+/* Asegura que los botones no se desalineen */
+.login-buttons button {
+  min-width: 100px;
+}
+#logoutBtn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  position: relative;
+  z-index: 10;
+  margin-top: 5px;
+}
+
+#logoutBtn:hover {
+  background-color: #cc0000;
+}
+/* === Ajuste de raya debajo del título de entrega === */
+
+/* Elimina cualquier borde superior anterior */
+#deliverySection {
+  border-top: none !important;
+}
+
+/* Agrega una línea (raya) justo debajo del título */
+#deliverySection h4 {
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#deliverySection h4::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;              /* grosor de la línea */
+  background-color: #007bff; /* color azul (puedes cambiarlo) */
+  margin-top: 4px;
+}

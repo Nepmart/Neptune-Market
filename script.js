@@ -21,7 +21,7 @@ const products = [
       "./images/escanner2.png",
       "./images/escanner3.png",
     ],
-    category: "Herramientas",
+    category: "Accesorios Autos",
     description: "Escáner OBD2 V410 es una herramienta de escaneo de diagnóstico",
     features: [
       "El escáner OBD2 V410 es una herramienta de escaneo de diagnóstico diseñada para vehículos de pasajeros fabricados después de 1996 en los Estados Unidos.", 
@@ -43,7 +43,7 @@ const products = [
       "./images/cargador3.png",
       "./images/cargador4.png"
     ],
-    category: "Accesorios de Autos",
+    category: "Accesorios Autos",
     description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
     features: [
       "Nombre del producto: Pantalla digital 4USB + 2PD",
@@ -271,7 +271,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
       "Tipo de cierre: Cremallera"
     ],
     reviews: [],
-    rating: 4.8
+    rating: 4.8,
 },
 
 { 
@@ -299,6 +299,128 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   reviews: [],
   rating: 4.8
 },
+
+{ 
+  id: 10,
+  name: "Puntadores de presentador inalámbricos de 2,4G",
+  price: 1200,
+  image: "./images/wirelessPresenter1.avif",
+  images: [
+    "./images/wirelessPresenter1.avif",
+    "./images/wirelessPresenter2.avif",
+    "./images/wirelessPresenter3.avif",
+    "./images/wirelessPresenter4.avif",
+    "./images/wirelessPresenter5.avif",
+  ],
+  category: "electronica",
+  description: "Característica: Este puntero rojo remoto inalámbrico de 2,4 GHz presentación en negro es pequeño y exquisito, portátil y con aplicaciones más ricas. Un asistente esencial para demostraciones o presentaciones, puede señalar fácilmente el PPT o la pizarra en cualquier rincón del aula. Hacer que sus demostraciones o presentaciones parezcan más dinámicos y hacer que los oyentes se sientan liberados. Este puntero también es el mejor regalo para amigos y familiares. Configuración sin complicaciones, simplemente conéctelo al puerto USB de su computadora. El receptor USB es plug and play, no requiere controlador. Ahorro de energía, liviano, adecuado para guardar en el bolsillo o en el bolso.",
+  features: [
+    "Especificaciones técnicas: Admite MS Word, Excel, PowerPoint, ACD See, sitio web, etc., con función de subir y bajar página. Fuente de alimentación: 1 pila AAA (no incluida). Interruptor: botón. Frecuencia de transmisión: 2,4 GHz. Longitud de onda: 650 mm. Potencia: <5 mw. Alcance: <15m. Sistema operativo: interfaz USB y para Microsoft Windows 2000 / XP / Vista. Tamaño: 10,5x3,9x2,6 cm. Peso neto: 29 g. Color negro. Paquete incluido: 1 mando a distancia inalámbrico para presentador, 1 receptor inalámbrico USB ultradelgado, 1 manual de usuario."
+  ],
+  reviews: [],
+  rating: 4.8
+},
+
+{ 
+  id: 11,
+  name: "Cargador portátil de batería de 50000 mAh, cargador de batería de carga rápida de 22.5 W con cables integrados, cargador de teléfono portátil USB-C esencial para viajes, campamento, para iPhone",
+  price: 1200,
+  image: "./images/PowerBank1.jpg"
+  ,images: [
+    "./images/PowerBank1.jpg",
+    "./images/PowerBank2.jpg",
+    "./images/PowerBank3.jpg",
+    "./images/PowerBank4.jpg",
+    "./images/PowerBank5.jpg",
+    "./images/PowerBank6.jpg",
+    "./images/PowerBank7.jpg",
+    "./images/PowerBank8.jpg",
+    "./images/PowerBank9.jpg",
+    "./images/PowerBank10.jpg",
+  ],
+  category: "electronica",
+  description:
+`• Gran capacidad de 50000 mAh: el cargador portátil OHOVIV de capacidad masiva ultra alta proporciona 10 cargas para iPhone 15, que hacen de una nueva batería de polímero de alta densidad. Dependiendo del tamaño de la batería, la mayoría de los teléfonos inteligentes obtendrán más de 10 cargas completas. El banco de energía portátil funciona y no ocupa ningún espacio adicional, adecuado para camping, senderismo, vacaciones, viajes y otros espacios al aire libre.
+• Carga 6 dispositivos a la vez: cargador de teléfono portátil OHOVIV de 50000 mAh con 4 cables integrados (Lightning, Type-C, Micro, USB-A) y 3 puertos de carga (2 USB-A, 1 tipo C), puedes cargar hasta 6 dispositivos a la vez sin sacrificar la energía para máxima comodidad. Estos cables de cargador portátil están hechos de materiales de alta calidad, soportando más de 10,000 curvas.
+• Carga súper rápida de 22.5 W: el cargador portátil para teléfono celular cuenta con salida PD de 22.5 W y tecnología de carga rápida QC4.0, lo que le permite cargar tu iPhone al 55% en solo 30 minutos, 3 veces más rápido que un banco de baterías estándar. La carga bidireccional USB-C (IN&OUT) y la pantalla digital LED eliminan la ansiedad de energía, asegurando la mejor experiencia durante tus vacaciones.
+• Diseño compacto con amplia compatibilidad: colócalo fácilmente en tu mochila, bolsillo o bolso y llévalo a cualquier lugar. Este paquete de batería externa ligera es de 5.82 x 2.83 x 1.18 pulgadas y pesa solo 1.07 libras. Compatible con casi todos los dispositivos electrónicos, batería externa para iPhone 16/15/14/13/12, serie iPad, para Samsung s24/s23/s22/s21/s20, Google Pixel y otros Android, tabletas, etc.
+• Powerbank seguro y seguro: cargador de batería portátil integrado con baterías de calidad y 10 sistemas de protección múltiple para evitar sobrecargas, cortocircuitos y una serie de peligros potenciales. El chip inteligente AI actualizado y la tecnología de control de temperatura NTC minimizan la pérdida de energía en tiempo real, pueden reducir los riesgos de sobrecalentamiento en un 97%, que son esenciales para picnic familiar.
+• Servicio posventa confiable: disfruta de la tranquilidad con 365 días de garantía de reemplazo, atención al cliente profesional 24/7. Estamos dedicados a proporcionar soluciones satisfactorias para cualquier problema que pueda encontrar. Lo que obtienes: 1 cargador portátil de 50000 mAh, 1 manual de usuario (idioma español no garantizado), 1 cable tipo C (bloque de cargador de pared no incluido)`,
+  features: [
+"Características y especificaciones",
+"Entradas analógicas rgb	USB Tipo A, USB Tipo C",
+"Capacidad Batería	50000 Miliamperios Hora",
+"Características del producto: 4 cables incorporados, Carga rápida, Cargador de teléfono celular 50000mAh, Pantalla digital, Protección contra sobrecarga, Protección de sobrecarga.",
+"Voltaje	3,7 Voltios",
+"Fuente de energía Eléctrico con cable",
+"Número de puertos 3",
+"Dispositivos compatibles	Smartphone",
+  ],
+  reviews: [],
+  rating: 4.8
+},
+
+{ 
+  id: 12,
+  name: "Arrancador de batería para automóvil, 1000 A, pico 12800 mAh, 12 V, con carga rápida por USB 3.0 (hasta 7 L de gas o motor diésel de 5,5 L) (1000A)",
+  price: 1200,
+  image: "./images/ArrancadorBateria1.jpg"
+  ,images: [
+    "./images/ArrancadorBateria1.jpg",
+    "./images/ArrancadorBateria2.jpg",
+    "./images/ArrancadorBateria3.jpg",
+    "./images/ArrancadorBateria4.jpg",
+    "./images/ArrancadorBateria5.jpg",
+    "./images/ArrancadorBateria6.jpg",
+    "./images/ArrancadorBateria7.jpg",
+    "./images/ArrancadorBateria8.jpg",
+    "./images/ArrancadorBateria9.jpg",
+    "./images/ArrancadorBateria10.jpg",
+  ],
+  category: "Accesorios Autos",
+  description: 
+    `• Potente arrancador: Arranca tu vehículo (hasta 7,0 l de gasolina o 5,5 l de diésel) con 1000 amperios de corriente máxima y abrazaderas resistentes. En cuestión de segundos.
+• 12 meses en espera: Arranca tus coches de 12 V 20 veces con una carga completa. Autodescarga extremadamente baja, no te preocupes por perder carga durante el almacenamiento. Prepárate para empezar.
+• El banco de energía de 12800 mAh tiene 2 salidas USB inteligentes (puerto de carga rápida de 18 W incluido). Puede cargar tu teléfono y tableta de forma rápida y segura al mismo tiempo. (Carga completa tipo C en 4 horas).
+• Un salvavidas: La luz LED ultrabrillante tiene 4 modos de luz con linterna, intermitente, luz SOS, luz estroboscópica.
+• Protecciones inteligentes: Cables de arranque inteligentes incorporados de 8 protecciones mejoradas, especialmente a prueba de chispas, protección de polaridad inversa, protección contra sobrecorriente, protección de alta temperatura, protección contra sobrecarga.`,
+
+  features: [
+"",
+  ],
+  reviews: [],
+  rating: 4.8
+},
+
+{ 
+  id: 13,
+  name: "Arrancador de batería para automóvil, 1000 A, pico 12800 mAh, 12 V, con carga rápida por USB 3.0 (hasta 7 L de gas o motor diésel de 5,5 L) (1000A)",
+  price: 1200,
+  image: "./images/AltaVocesBano0.avif",
+  images: [
+    "./images/AltaVocesBano0.avif",
+    "./images/AltaVocesBano1.avif",
+    "./images/AltaVocesBano3.avif",
+    "./images/AltaVocesBano4.avif",
+    "./images/AltaVocesBano5.avif",
+    "./images/AltaVocesBano6.avif",
+    "./images/AltaVocesBano7.avif",
+  ],
+  category: "Accesorios de Autos",
+  description: 
+    `• Potente arrancador: Arranca tu vehículo (hasta 7,0 l de gasolina o 5,5 l de diésel) con 1000 amperios de corriente máxima y abrazaderas resistentes. En cuestión de segundos.
+• 12 meses en espera: Arranca tus coches de 12 V 20 veces con una carga completa. Autodescarga extremadamente baja, no te preocupes por perder carga durante el almacenamiento. Prepárate para empezar.
+• El banco de energía de 12800 mAh tiene 2 salidas USB inteligentes (puerto de carga rápida de 18 W incluido). Puede cargar tu teléfono y tableta de forma rápida y segura al mismo tiempo. (Carga completa tipo C en 4 horas).
+• Un salvavidas: La luz LED ultrabrillante tiene 4 modos de luz con linterna, intermitente, luz SOS, luz estroboscópica.
+• Protecciones inteligentes: Cables de arranque inteligentes incorporados de 8 protecciones mejoradas, especialmente a prueba de chispas, protección de polaridad inversa, protección contra sobrecorriente, protección de alta temperatura, protección contra sobrecarga.`,
+
+  features: [
+"",
+  ],
+  reviews: [],
+  rating: 4.8
+},
+
 ];
 
 const coupons = { "NEP10": 0.10, "VERANO20": 0.20 };
@@ -312,7 +434,7 @@ function login() {
   if (found) {
     currentUser = found;
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    alert(`Bienvenido ${currentUser.username}!`);
+    alert("Bienvenido " + currentUser.username + "!");
     document.getElementById("userSection").style.display = "none";
     document.getElementById("registerSection").style.display = "none";
     document.getElementById("user-welcome").textContent = `¡Hola, ${currentUser.username}!`;
@@ -441,7 +563,7 @@ function showProductDetail(id) {
   const relatedProducts = products
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
-  
+
   content.innerHTML = `
     <div class="product-detail">
       <div class="product-gallery">
@@ -828,3 +950,84 @@ function sendOrderEmail() {
       console.error("EmailJS Error:", error);
     });
 }
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (username && password) {
+    localStorage.setItem("loggedInUser", username);
+    document.getElementById("user-welcome").textContent = "Bienvenido, " + username;
+    document.getElementById("userSection").style.display = "none"; // Oculta formulario
+    document.getElementById("logoutBtn").style.display = "inline-block"; // Muestra botón
+  } else {
+    alert("Por favor introduce usuario y contraseña.");
+  }
+}
+
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  document.getElementById("user-welcome").textContent = "";
+  document.getElementById("logoutBtn").style.display = "none"; // Oculta botón
+  document.getElementById("userSection").style.display = "flex"; // Muestra login
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("loggedInUser");
+  if (user) {
+    document.getElementById("user-welcome").textContent = "Bienvenido, " + user;
+    document.getElementById("userSection").style.display = "none";
+    document.getElementById("logoutBtn").style.display = "inline-block";
+  } else {
+    document.getElementById("userSection").style.display = "flex";
+    document.getElementById("logoutBtn").style.display = "none";
+  }
+});
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (username && password) {
+    localStorage.setItem("loggedInUser", username);
+    document.getElementById("user-welcome").textContent = "Bienvenido, " + username;
+    document.getElementById("userSection").style.display = "none"; // Oculta formulario
+    document.getElementById("logoutBtn").style.display = "inline-block"; // Muestra botón
+  } else {
+    alert("Por favor introduce usuario y contraseña.");
+  }
+}
+
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  document.getElementById("user-welcome").textContent = "";
+  document.getElementById("logoutBtn").style.display = "none"; // Oculta botón
+  document.getElementById("userSection").style.display = "flex"; // Muestra login
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("loggedInUser");
+  if (user) {
+    document.getElementById("user-welcome").textContent = "Bienvenido, " + user;
+    document.getElementById("userSection").style.display = "none";
+    document.getElementById("logoutBtn").style.display = "inline-block";
+  } else {
+    document.getElementById("userSection").style.display = "flex";
+    document.getElementById("logoutBtn").style.display = "none";
+  }
+});
+// Espera a que el DOM cargue completamente
+document.addEventListener("DOMContentLoaded", function() {
+    // Busca el botón por su texto "Cerrar sesión"
+    const botones = Array.from(document.querySelectorAll("button, a, div"));
+    const logout = botones.find(el => el.textContent.trim() === "Cerrar sesión");
+
+    if (logout) {
+        // Forzar estilo
+        logout.style.position = "relative";  // o absolute si quieres sacarlo del flujo
+        logout.style.top = "-70px";          // sube el botón
+        logout.style.zIndex = "1000";        // asegurarte que esté por encima
+        logout.style.transition = "top 0.3s"; // opcional, animación
+        console.log("Botón de cerrar sesión movido arriba");
+    } else {
+        console.log("No se encontró el botón de cerrar sesión");
+    }
+});
