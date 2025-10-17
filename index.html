@@ -21,29 +21,36 @@
     <div class="orbit orbit-4"><div class="planet mars"></div></div>
   </div>
 </section>
-    <div class="header-container">
+   <div class="header-container">
       <img src="logo/nepMarket.png" width="300" alt="Logo de Neptune Market" class="logo" />
       <div id="user-welcome"></div>
       
     </div>
 
-    <!-- Sección de login -->
-    <div id="userSection">
-      <input type="text" id="username" placeholder="Usuario" />
-      <input type="password" id="password" placeholder="Contraseña" />
-      <button onclick="login()">Entrar</button>
-      <button onclick="showRegister()">Crear cuenta</button>
+    <div class="login-form" id="loginContainer">
+  <h2 id="loginTitle">Acceso de Usuario</h2>
+
+  <div id="loginFields">
+    <input type="text" id="username" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+
+    <div class="login-actions">
+      <button id="entrar">Entrar</button>
+      <button id="crear-cuenta">Crear Cuenta</button>
     </div>
+  </div>
 
-<button id="logoutBtn" onclick="logout()">Cerrar sesión</button>
+  <div id="userPanel" class="hidden">
+    <p id="welcomeText"></p>
+    <button id="cerrarSesion">Cerrar Sesión</button>
+  </div>
+</div>
 
+
+
+<div id="user-welcome"></div>
     <!-- Sección de registro -->
-    <div id="registerSection">
-      <input type="text" id="newUsername" placeholder="Nuevo usuario" />
-      <input type="password" id="newPassword" placeholder="Nueva contraseña" />
-      <button onclick="register()">Registrar</button>
-      <button onclick="document.getElementById('registerSection').style.display='none'">Cancelar</button>
-    </div>
+    
 
     <!-- Buscador principal -->
     <div class="search-container">
@@ -52,12 +59,17 @@
       <select id="searchCategoryMain">
   <option value="all">Todas categorías</option>
   <option value="electronica">Electrónica</option>
-  <option value="ropa">Ropa</option>
+  <option value="ropa">Ropa y Calzados</option>
   <option value="Hierramienta">Hierramientas</option>
   <option value="Accesorios Autos">Accesorios de Autos</option>
+  <option value="Suplementos">Suplementos</option>
+  <option value="Deportes">Deportes</option>
 </select>
-      <input type="number" id="searchPrice" placeholder="Precio máximo" />
-      <button onclick="advancedSearch()" title="Buscar"><i class="fas fa-search"></i><span class="visually-hidden">Buscar</span></button>
+      <input type="number" id="minPrice" placeholder="Precio mínimo" />
+  <input type="number" id="searchPrice" placeholder="Precio máximo" />
+  <button onclick="advancedSearch()" title="Buscar">
+    <i class="fas fa-search"></i>
+  </button>
     </div>
   </header>
 
@@ -66,9 +78,11 @@
     <div class="category-filters">
       <button onclick="filterByCategory('all')"><i class="fas fa-border-all"></i> Todos</button>
       <button onclick="filterByCategory('electronica')"><i class="fas fa-laptop"></i> Electrónica</button>
-      <button onclick="filterByCategory('ropa')"><i class="fas fa-tshirt"></i> Ropa</button>
+      <button onclick="filterByCategory('ropa')"><i class="fas fa-tshirt"></i> Ropa y Calzados</button>
       <button onclick="filterByCategory('Hierramienta')"><i class="fas fa-tools"></i> Hierramientas</button>
       <button onclick="filterByCategory('Accesorios Autos')"><i class="fas fa-car"></i> Accesorios de Autos</button>
+      <button onclick="filterByCategory('Suplementos')"><i class="fas fa-capsules"></i> Suplementos</button>
+      <button onclick="filterByCategory('Deportes')"><i class="fas fa-football-ball"></i> Deportes</button>
     </div>
   </nav>
 

@@ -394,7 +394,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 
 { 
   id: 13,
-  name: "Arrancador de batería para automóvil, 1000 A, pico 12800 mAh, 12 V, con carga rápida por USB 3.0 (hasta 7 L de gas o motor diésel de 5,5 L) (1000A)",
+  name: "Altavoz Bluetooth, Mini subwoofer de ducha, manos libres impermeables con micrófono de ventosa para baño, piscina, playa, teléfono de coche",
   price: 1200,
   image: "./images/AltaVocesBano0.avif",
   images: [
@@ -406,16 +406,56 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
     "./images/AltaVocesBano6.avif",
     "./images/AltaVocesBano7.avif",
   ],
-  category: "Accesorios de Autos",
-  description: 
-    `• Potente arrancador: Arranca tu vehículo (hasta 7,0 l de gasolina o 5,5 l de diésel) con 1000 amperios de corriente máxima y abrazaderas resistentes. En cuestión de segundos.
-• 12 meses en espera: Arranca tus coches de 12 V 20 veces con una carga completa. Autodescarga extremadamente baja, no te preocupes por perder carga durante el almacenamiento. Prepárate para empezar.
-• El banco de energía de 12800 mAh tiene 2 salidas USB inteligentes (puerto de carga rápida de 18 W incluido). Puede cargar tu teléfono y tableta de forma rápida y segura al mismo tiempo. (Carga completa tipo C en 4 horas).
-• Un salvavidas: La luz LED ultrabrillante tiene 4 modos de luz con linterna, intermitente, luz SOS, luz estroboscópica.
-• Protecciones inteligentes: Cables de arranque inteligentes incorporados de 8 protecciones mejoradas, especialmente a prueba de chispas, protección de polaridad inversa, protección contra sobrecorriente, protección de alta temperatura, protección contra sobrecarga.`,
+  category: "Electronica",  
+  description: "Descripción del producto:\n\
+- Modelo: Opansten-2024\n\
+- Compatibilidad: Universal\n\
+- Entrada/Salida: USB\n\
+- Modo de sonido: Modo estándar\n\
+- Categoría: Altavoces\n\
+- Potencia de entrada: <25 W\n\
+- Control por voz: No\n\
+- Impermeable: Sí\n\
+- Apoyo APP: No\n\
+- Material: Metal\n\
+- Adaptador de bandeja de entrada: No\n\
+- Asistente personal inteligente: Ninguno\n\
+- Mezcla de audio: Rango completo\n\
+- Número de carcasas de altavoz: 1\n\
+- Fuente de alimentación: CA, USB\n\
+- Canales: 1\n\
+- Batería: Sí\n\
+- Comunicación: Inducción\n\
+- Tipo de altavoz: Portátil\n\
+- Material de la carcasa: PVC\n\
+- Nombre de la marca: Opansten\n\
+- Fuente de energía: Batería",
 
   features: [
+"Características clave",
+"1.Impermeable y portátil, cabe en tu bolsillo",
+"2.Soporte manos libres",
+"3.Controles fáciles de usar para reproducir música y contestar llamadas telefónicas",
+"4.Micrófono incorporado de calidad cristalina",
+"5.Transmite música desde cualquier dispositivo habilitado para Bluetooth",
 "",
+"Especificación",
+"• Tamaño: 85X45mm",
+"• Bluetooth: 3,0 + EDR",
+"• Frecuencia inalámbrica: 2,4 GHz",
+"• Bluetooth manos libres: Sí",
+"• Distancia disponible: 10 m",
+"• Potencia: 3W",
+"• A prueba de agua: IPX4",
+"• Uso: reproductor de audio portátil, teléfono móvil, computadora",
+"• Capacidad de la batería incorporada: 400 mAh",
+"• Tipo de batería: batería de litio",
+"• Tiempo del reproductor de música: 2-4 horas",
+
+"El paquete incluye:",
+"• 1 altavoz",
+"• 1 cable USB",
+"• 1 x caja al por menor",
   ],
   reviews: [],
   rating: 4.8
@@ -437,7 +477,10 @@ function login() {
     alert("Bienvenido " + currentUser.username + "!");
     document.getElementById("userSection").style.display = "none";
     document.getElementById("registerSection").style.display = "none";
-    document.getElementById("user-welcome").textContent = `¡Hola, ${currentUser.username}!`;
+    const welcomeElement = document.getElementById("user-welcome");
+    if (welcomeElement) {
+      welcomeElement.textContent = "¡Hola, " + currentUser.username + "!";
+    }
     document.getElementById("search").value = "";
     renderProducts();
   } else {
@@ -489,8 +532,8 @@ function renderProducts(prodList = products) {
     const div = document.createElement("div");
     div.className = "product";
     div.innerHTML = `
-      <button class="favorite-btn ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(${p.id}, this)">
-        <i class="fas fa-heart"></i> <span>Favorito</span>
+      <button class='favorite-btn ${isFavorite ? "active" : ""}' onclick='toggleFavorite(${p.id}, this)'>
+        <div><i class="fas fa-heart"></i> <span>Favorito</span></div>
       </button>
       <img src="${p.image}" alt="${p.name}" onclick="showProductDetail(${p.id})">
       <div class="product-info">
@@ -652,7 +695,7 @@ function addToCart(id) {
   if (itemInCart) {
     itemInCart.qty += 1;
   } else {
-    cart.push({ ...productToAdd, qty: 1 });
+    cart.push({ id: productToAdd.id, name: productToAdd.name, price: productToAdd.price, image: productToAdd.image, qty: 1 });
   }
   
   updateCart();
@@ -1030,4 +1073,192 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.log("No se encontró el botón de cerrar sesión");
     }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const loginFields = document.getElementById("loginFields");
+  const userPanel = document.getElementById("userPanel");
+  const welcomeText = document.getElementById("welcomeText");
+
+  // Crear cuenta ejecuta Registrar
+  document.getElementById("crear-cuenta").addEventListener("click", () => {
+    document.getElementById("registrar").click();
+  });
+
+  // Entrar (simula inicio de sesión)
+  document.getElementById("entrar").addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim();
+    if (user) {
+      localStorage.setItem("usuario", user);
+      mostrarPanelUsuario(user);
+    } else {
+      alert("Por favor, introduce un usuario.");
+    }
+  });
+
+  // Registrar nuevo usuario (simulado)
+  document.getElementById("registrar").addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim();
+    if (user) {
+      alert(`Usuario ${user} registrado correctamente.`);
+    } else {
+      alert("Por favor, completa los campos.");
+    }
+  });
+
+  // Cancelar limpia los campos
+  document.getElementById("cancelar").addEventListener("click", () => {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  });
+
+  // Cerrar sesión
+  document.getElementById("cerrarSesion").addEventListener("click", () => {
+    localStorage.removeItem("usuario");
+    mostrarFormularioLogin();
+  });
+
+  // Mostrar panel del usuario logueado
+  function mostrarPanelUsuario(usuario) {
+    loginFields.style.display = "none";
+    userPanel.style.display = "block";
+    welcomeText.textContent = `Bienvenido, ${usuario}`;
+  }
+
+  // Mostrar formulario de login
+  function mostrarFormularioLogin() {
+    loginFields.style.display = "block";
+    userPanel.style.display = "none";
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  }
+
+  // Verifica si hay sesión activa al cargar
+  const usuarioGuardado = localStorage.getItem("usuario");
+  if (usuarioGuardado) {
+    mostrarPanelUsuario(usuarioGuardado);
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const loginFields = document.getElementById("loginFields");
+  const userPanel = document.getElementById("userPanel");
+  const welcomeText = document.getElementById("welcomeText");
+  const registrarBtn = document.getElementById("registrar");
+  const cancelarBtn = document.getElementById("cancelar");
+
+  // Crear cuenta muestra botones de registro
+  document.getElementById("crear-cuenta").addEventListener("click", () => {
+    registrarBtn.style.display = "inline-block";
+    cancelarBtn.style.display = "inline-block";
+  });
+
+  // Entrar (inicia sesión)
+  document.getElementById("entrar").addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim();
+    if (user) {
+      localStorage.setItem("usuario", user);
+      mostrarPanelUsuario(user);
+    } else {
+      alert("Por favor, introduce un usuario.");
+    }
+  });
+
+  // Registrar nuevo usuario (simulado)
+  registrarBtn.addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim();
+    if (user) {
+      alert(`Usuario ${user} registrado correctamente.`);
+      registrarBtn.style.display = "none";
+      cancelarBtn.style.display = "none";
+    } else {
+      alert("Por favor, completa los campos.");
+    }
+  });
+
+  // Cancelar oculta los botones de registro
+  cancelarBtn.addEventListener("click", () => {
+    registrarBtn.style.display = "none";
+    cancelarBtn.style.display = "none";
+  });
+
+  // Cerrar sesión
+  document.getElementById("cerrarSesion").addEventListener("click", () => {
+    localStorage.removeItem("usuario");
+    mostrarFormularioLogin();
+  });
+
+  // Mostrar panel del usuario logueado
+  function mostrarPanelUsuario(usuario) {
+    loginFields.style.display = "none";
+    userPanel.style.display = "block";
+    welcomeText.textContent = `Bienvenido, ${usuario}`;
+  }
+
+  // Mostrar formulario de login
+  function mostrarFormularioLogin() {
+    loginFields.style.display = "block";
+    userPanel.style.display = "none";
+    registrarBtn.style.display = "none";
+    cancelarBtn.style.display = "none";
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  }
+
+  // Verificar sesión activa
+  const usuarioGuardado = localStorage.getItem("usuario");
+  if (usuarioGuardado) {
+    mostrarPanelUsuario(usuarioGuardado);
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const loginFields = document.getElementById("loginFields");
+  const userPanel = document.getElementById("userPanel");
+  const welcomeText = document.getElementById("welcomeText");
+
+  // Entrar
+  document.getElementById("entrar").addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim();
+    if (user) {
+      localStorage.setItem("usuario", user);
+      mostrarPanelUsuario(user);
+    } else {
+      alert("Por favor, introduce un usuario.");
+    }
+  });
+
+  // Crear Cuenta (solo simula registro)
+  document.getElementById("crear-cuenta").addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim();
+    if (user) {
+      alert(`Cuenta creada correctamente para: ${user}`);
+      localStorage.setItem("usuario", user);
+      mostrarPanelUsuario(user);
+    } else {
+      alert("Por favor, introduce un usuario.");
+    }
+  });
+
+  // Cerrar sesión
+  document.getElementById("cerrarSesion").addEventListener("click", () => {
+    localStorage.removeItem("usuario");
+    mostrarFormularioLogin();
+  });
+
+  function mostrarPanelUsuario(usuario) {
+    loginFields.style.display = "none";
+    userPanel.style.display = "block";
+    welcomeText.textContent = `Bienvenido, ${usuario}`;
+  }
+
+  function mostrarFormularioLogin() {
+    loginFields.style.display = "block";
+    userPanel.style.display = "none";
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  }
+
+  // Verificar si hay sesión activa
+  const usuarioGuardado = localStorage.getItem("usuario");
+  if (usuarioGuardado) {
+    mostrarPanelUsuario(usuarioGuardado);
+  }
 });
