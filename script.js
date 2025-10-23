@@ -406,7 +406,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
     "./images/AltaVocesBano6.avif",
     "./images/AltaVocesBano7.avif",
   ],
-  category: "Electronica",  
+  category: "electronica",  
   description: "Descripción del producto:\n\
 - Modelo: Opansten-2024\n\
 - Compatibilidad: Universal\n\
@@ -438,7 +438,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 "3.Controles fáciles de usar para reproducir música y contestar llamadas telefónicas",
 "4.Micrófono incorporado de calidad cristalina",
 "5.Transmite música desde cualquier dispositivo habilitado para Bluetooth",
-"",
+
 "Especificación",
 "• Tamaño: 85X45mm",
 "• Bluetooth: 3,0 + EDR",
@@ -457,6 +457,84 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 "• 1 cable USB",
 "• 1 x caja al por menor",
   ],
+  reviews: [],
+  rating: 4.8
+},
+//---
+{ 
+  id: 14,
+  name: "Cargador inalámbrico de 65W para móvil, base de carga rápida por inducción para iPhone 15, 14, 13, 12, 11 Pro, X, XS, Max, XR, 8, Samsung y Xiaomi",
+  price: 1200,
+  image: "./images/deskchargerwireless1.jpeg",
+  images: [
+    "./images/deskchargerwireless1.jpeg",   
+    "./images/deskchargerwireless2.jpeg",
+    "./images/deskchargerwireless3.jpeg",
+    "./images/deskchargerwireless4.jpeg",
+    "./images/deskchargerwireless5.png",
+    "./images/deskchargerwireless6.png",
+    "./images/deskchargerwireless7.png"
+    
+],
+  category: "electronica",
+  description: `Lleve su experiencia de carga inalámbrica al siguiente nivel con nuestro soporte de carga rápida.
+
+CONVENIENTE CARGA INALÁMBRICA QI - Dígale adiós a los cables enredados y disfrute de la carga inalámbrica simplemente colocando su teléfono en el soporte de carga. Nota: no se carga a través de fundas de teléfono de metal o fundas más gruesas de 0,2 pulgadas.
+
+ÁNGULOS DE VISIÓN DOBLE - La almohadilla inalámbrica de 2 bobinas carga su teléfono vertical u horizontalmente para una vista y soporte más ideales al ver videos, escuchar música, jugar juegos y más. Perfecto para oficina, dormitorio o sala de estar.
+
+ÚLTIMA GARANTÍA DE SEGURIDAD - Protecciones internas contra sobrecarga, sobrecorriente, sobretensión y sobrecalentamiento. Borde inferior de silicona antideslizante y soporte elevado brindan estabilidad adicional para cualquier superficie de escritorio.
+
+ESPECIFICACIONES:
+* Estándar de carga inalámbrica: Qi
+* Admite carga: 5W/7,5W/10W/15W/30W/65W, admite todos los teléfonos con cargador inalámbrico.
+* Rango de transmisión: 5-8mm
+* Tasa de conversión de energía inalámbrica: ≥ 80
+* Interfaz: USB tipo C
+* Amplia compatibilidad: Compatible con todos los teléfonos que admiten carga inalámbrica.
+
+EL PAQUETE INCLUYE:
+* 1 cargador inalámbrico rápido
+* 1 manual de usuario
+* Dispositivos compatibles: Teléfonos`,
+  features: [
+    "Carga rápida de 65W",
+    "Diseño delgado y portátil",
+    "Compatible con múltiples dispositivos",
+    "Protección contra sobrecalentamiento",
+    "Base antideslizante"
+  ],
+  reviews: [],
+  rating: 4.8
+},
+
+{ 
+  id: 15,
+  name: `UTHAI T22 2,5 \"SATA a USB3.0 HDD carcasa de disco duro móvil para SSD caja de almacenamiento HDD externo con Cable USB3.0/2,0 ABS.`
+  ,price: 1200,
+  image: "./images/Encloser0.png",
+  images: [
+    "./images/encloser1.jpeg",
+    "./images/encloser2.jpeg",
+    "./images/encloser3.jpeg",
+    "./images/encloser4.jpeg",
+    "./images/encloser5.png",
+    "./images/encloser6.png"
+    
+  ],
+  category: "electronica",
+  description: `Detalles del producto:
+1. Modelo: UTHAI T2
+2. Material: carcasa de plástico
+3. Chip: IS621/JM57
+4. Interfaz: USB 3.0 A SATA
+5. Tratamiento superficial: inyección
+6. Interfaz de transferencia USB 3.0 de alta velocidad, compatible con USB 2.0 y 1.1
+7. Admite intercambio en caliente
+8. Sistema operativo compatible: Win7/Win8/Win10/Mac OS 8.6 o superior
+9. Velocidad de transmisión teórica USB 3.0: hasta 5 GB/s, USB2.0: 480 MB/s
+10. Admite todo tipo de discos duros mecánicos SATA de 2,5" y unidades SSD`,
+  features: [],
   reviews: [],
   rating: 4.8
 },
