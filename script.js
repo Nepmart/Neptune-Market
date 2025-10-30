@@ -13,7 +13,7 @@ const products = [
   { 
     id: 1, 
     name: "Scanner Automotriz", 
-    price: 1400, 
+    price: 1200, 
     image: "./images/ecanner0.png",  
     images: [
       "./images/ecanner0.png",
@@ -36,7 +36,7 @@ const products = [
   { 
     id: 2, 
     name: "Cargador Celular para Vehiculo 250Watts", 
-    price: 650,
+    price: 400,
     image: "./images/cargador1.png", 
     images: [
       "./images/cargador2.png",
@@ -62,7 +62,7 @@ const products = [
   { 
     id: 3, 
     name: "Regleta Cuadrada\"", 
-    price: 1200, 
+    price: 0, 
     image: "./images/regletaCuadrada1.jpg",
     images: [
       "./images/regletaCuadrada1.jpg",
@@ -83,7 +83,7 @@ const products = [
   { 
     id: 4, 
     name: "LAXASFIT Reloj Inteligente", 
-    price: 1350, 
+    price: 1000, 
     image: "./images/relojLaxafit1.png", 
     images: [
       "./images/relojLaxafit1.png",
@@ -123,7 +123,7 @@ const products = [
 { 
     id: 5, 
     name: "Memoria MicroSD 512MB", 
-    price: 1200, 
+    price: 800, 
     image: "./images/memoriaMicroSD1.png",
     images: [
       "./images/memoria128mb.png",
@@ -162,7 +162,7 @@ features: [
 { 
     id: 6, 
     name: "KESHUYOU 2025 Reloj Inteligente", 
-    price: 1450, 
+    price: 1200, 
     image: "./images/relojSmartWatch60.png",
     images: [
       "./images/relojSmartWatch60.png",
@@ -209,7 +209,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   { 
     id: 7, 
     name: "Punta de Presentacion Laser", 
-    price: 1200, 
+    price: 900, 
     image: "./images/puntero1.png",
     images: [
       "./images/puntero1.png",
@@ -244,7 +244,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   { 
     id: 8, 
     name: "Cartera de Caballero Negro",
-    price: 1200, 
+    price: 450, 
     image: "./images/cartera1.webp",
     images: [
       "./images/cartera1.webp",
@@ -277,7 +277,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 9,
   name: "Linterna de Cabeza Recargable",
-  price: 1200,
+  price: 575,
   image: "./images/linternacabeza1.jpeg",
   images: [
     "./images/linternacabeza1.jpeg",
@@ -303,7 +303,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 10,
   name: "Puntadores de presentador inalámbricos de 2,4G",
-  price: 1200,
+  price: 0,
   image: "./images/wirelessPresenter1.avif",
   images: [
     "./images/wirelessPresenter1.avif",
@@ -324,7 +324,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 11,
   name: "Cargador portátil de batería de 50000 mAh, cargador de batería de carga rápida de 22.5 W con cables integrados, cargador de teléfono portátil USB-C esencial para viajes, campamento, para iPhone",
-  price: 1200,
+  price: 0,
   image: "./images/PowerBank1.jpg"
   ,images: [
     "./images/PowerBank1.jpg",
@@ -363,7 +363,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 12,
   name: "Arrancador de batería para automóvil, 1000 A, pico 12800 mAh, 12 V, con carga rápida por USB 3.0 (hasta 7 L de gas o motor diésel de 5,5 L) (1000A)",
-  price: 1200,
+  price: 0,
   image: "./images/ArrancadorBateria1.jpg"
   ,images: [
     "./images/ArrancadorBateria1.jpg",
@@ -395,7 +395,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 13,
   name: "Altavoz Bluetooth, Mini subwoofer de ducha, manos libres impermeables con micrófono de ventosa para baño, piscina, playa, teléfono de coche",
-  price: 1200,
+  price: 0,
   image: "./images/AltaVocesBano0.avif",
   images: [
     "./images/AltaVocesBano0.avif",
@@ -464,7 +464,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 14,
   name: "Cargador inalámbrico de 65W para móvil, base de carga rápida por inducción para iPhone 15, 14, 13, 12, 11 Pro, X, XS, Max, XR, 8, Samsung y Xiaomi",
-  price: 1200,
+  price: 0,
   image: "./images/deskchargerwireless1.jpeg",
   images: [
     "./images/deskchargerwireless1.jpeg",   
@@ -511,7 +511,7 @@ EL PAQUETE INCLUYE:
 { 
   id: 15,
   name: `UTHAI T22 2,5 \"SATA a USB3.0 HDD carcasa de disco duro móvil para SSD caja de almacenamiento HDD externo con Cable USB3.0/2,0 ABS.`
-  ,price: 1200,
+  ,price: 0,
   image: "./images/Encloser0.png",
   images: [
     "./images/encloser1.jpeg",
