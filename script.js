@@ -4,7 +4,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 let cartTotal = 0;
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-let shippingCost = 150.00;
+let shippingCost = 250.00;
 let deliveryMethod = 'pickup'; // 'pickup' o 'shipping'
 
 
@@ -78,7 +78,7 @@ const products = [
       "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
     ],
     reviews: [],
-    rating: 4.8
+    rating: 4.8 
   },
   { 
     id: 4, 
@@ -122,8 +122,12 @@ const products = [
 
 { 
     id: 5, 
-    name: "Memoria MicroSD 512MB", 
-    price: 800, 
+    name: "Memoria MicroSD", 
+    priceOptions: [
+    { size: "128MB", price: 350, image: "./images/memoria128mb.png" },
+    { size: "256MB", price: 650, image: "./images/memoria256mb.png" },
+    { size: "512MB", price: 950, image: "./images/memoria512mb.png" },
+    ],
     image: "./images/memoriaMicroSD1.png",
     images: [
       "./images/memoria128mb.png",
@@ -135,7 +139,7 @@ const products = [
       "./images/memoriaMicroSD4.png",
                 ],
     category: "electronica",
-    description: "Tarjeta de memoria TF de pequeña capacidad para CCTV o cámara Clase 10, tarjeta de memoria de alta velocidad, 64M, 128M, 256M, 512M",
+    description: "Tarjeta de memoria TF de pequeña capacidad para CCTV o cámara Clase 10, tarjeta de memoria de alta velocidad.",
 features: [
       "• Origen : China continental",
       "• Marca other : La tarjeta está de la marca 'other', lo que significa que ofrece una excelente relación calidad-precio.",
@@ -209,7 +213,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   { 
     id: 7, 
     name: "Punta de Presentacion Laser", 
-    price: 900, 
+    price: 950, 
     image: "./images/puntero1.png",
     images: [
       "./images/puntero1.png",
@@ -303,7 +307,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 { 
   id: 10,
   name: "Puntadores de presentador inalámbricos de 2,4G",
-  price: 0,
+  price: 650,
   image: "./images/wirelessPresenter1.avif",
   images: [
     "./images/wirelessPresenter1.avif",
@@ -323,8 +327,8 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 
 { 
   id: 11,
-  name: "Cargador portátil de batería de 50000 mAh, cargador de batería de carga rápida de 22.5 W con cables integrados, cargador de teléfono portátil USB-C esencial para viajes, campamento, para iPhone",
-  price: 0,
+  name: "Cargador portátil de batería de 50000 mAh",
+  price: 1500, // Precio corregido, estaba en 0
   image: "./images/PowerBank1.jpg"
   ,images: [
     "./images/PowerBank1.jpg",
@@ -362,619 +366,644 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 
 { 
   id: 12,
-  name: "Arrancador de batería para automóvil, 1000 A, pico 12800 mAh, 12 V, con carga rápida por USB 3.0 (hasta 7 L de gas o motor diésel de 5,5 L) (1000A)",
-  price: 0,
-  image: "./images/ArrancadorBateria1.jpg"
-  ,images: [
-    "./images/ArrancadorBateria1.jpg",
-    "./images/ArrancadorBateria2.jpg",
-    "./images/ArrancadorBateria3.jpg",
-    "./images/ArrancadorBateria4.jpg",
-    "./images/ArrancadorBateria5.jpg",
-    "./images/ArrancadorBateria6.jpg",
-    "./images/ArrancadorBateria7.jpg",
-    "./images/ArrancadorBateria8.jpg",
-    "./images/ArrancadorBateria9.jpg",
-    "./images/ArrancadorBateria10.jpg",
+  name: "Arrancador de batería para automóvil, 1000 A, pico 1280",
+  price: 1800, // Precio asumido
+  image: "./images/arrancadorBateria1.jpg",
+  images: [
+    "./images/arrancadorBateria1.jpg",
+    "./images/arrancadorBateria2.jpg",
+    "./images/arrancadorBateria3.jpg",
+    "./images/arrancadorBateria4.jpg",
+    "./images/arrancadorBateria5.jpg",
+    "./images/arrancadorBateria6.jpg",
+    "./images/arrancadorBateria7.jpg",
+    "./images/arrancadorBateria8.jpg",
+    "./images/arrancadorBateria9.jpg",  
+    "./images/arrancadorBateria10.jpg",
+
   ],
   category: "Accesorios Autos",
-  description: 
-    `• Potente arrancador: Arranca tu vehículo (hasta 7,0 l de gasolina o 5,5 l de diésel) con 1000 amperios de corriente máxima y abrazaderas resistentes. En cuestión de segundos.
-• 12 meses en espera: Arranca tus coches de 12 V 20 veces con una carga completa. Autodescarga extremadamente baja, no te preocupes por perder carga durante el almacenamiento. Prepárate para empezar.
-• El banco de energía de 12800 mAh tiene 2 salidas USB inteligentes (puerto de carga rápida de 18 W incluido). Puede cargar tu teléfono y tableta de forma rápida y segura al mismo tiempo. (Carga completa tipo C en 4 horas).
-• Un salvavidas: La luz LED ultrabrillante tiene 4 modos de luz con linterna, intermitente, luz SOS, luz estroboscópica.
-• Protecciones inteligentes: Cables de arranque inteligentes incorporados de 8 protecciones mejoradas, especialmente a prueba de chispas, protección de polaridad inversa, protección contra sobrecorriente, protección de alta temperatura, protección contra sobrecarga.`,
-
+  description: "Arrancador de batería para automóvil, 1000 A, pico 12800 mAh, cargador de batería portátil de carga rápida de 18 W, con linterna LED ultrabrillante.",
   features: [
-"",
+    "• Potente Arrancador de Coche: Arranca de forma segura la batería agotada de tu vehículo con 1000 amperios de corriente máxima y abrazaderas resistentes. En cuestión de segundos.",
+    "• 12 meses en espera: Arranca tus coches de 12 V 20 veces con una carga completa. Autodescarga extremadamente baja, no te preocupes por perder carga durante el almacenamiento. Prepárate para empezar.",
+    "• El banco de energía de 12800 mAh tiene 2 salidas USB inteligentes (puerto de carga rápida de 18 W incluido). Puede cargar tu teléfono y tableta de forma rápida y segura al mismo tiempo. (Carga completa tipo C en 4 horas).",
+    "• Un salvavidas: La luz LED ultrabrillante tiene 4 modos de luz con linterna, intermitente, luz SOS, luz estroboscópica.",
+    "• Protecciones inteligentes: Cables de arranque inteligentes incorporados de 8 protecciones mejoradas, especialmente a prueba de chispas, protección de polaridad inversa, protección contra sobrecorriente, protección de alta temperatura, protección contra sobrecarga.",
   ],
   reviews: [],
   rating: 4.8
 },
 
 { 
-  id: 13,
-  name: "Altavoz Bluetooth, Mini subwoofer de ducha, manos libres impermeables con micrófono de ventosa para baño, piscina, playa, teléfono de coche",
-  price: 0,
+  id: 13, 
+  name: "Altavoz Bluetooth Mini", 
+  price: 550, // Precio asumido
   image: "./images/AltaVocesBano0.avif",
-  images: [
+  images: [ 
     "./images/AltaVocesBano0.avif",
     "./images/AltaVocesBano1.avif",
+    "./images/AltaVocesBano2.avif",
     "./images/AltaVocesBano3.avif",
-    "./images/AltaVocesBano4.avif",
-    "./images/AltaVocesBano5.avif",
-    "./images/AltaVocesBano6.avif",
-    "./images/AltaVocesBano7.avif",
   ],
-  category: "electronica",  
-  description: "Descripción del producto:\n\
-- Modelo: Opansten-2024\n\
-- Compatibilidad: Universal\n\
-- Entrada/Salida: USB\n\
-- Modo de sonido: Modo estándar\n\
-- Categoría: Altavoces\n\
-- Potencia de entrada: <25 W\n\
-- Control por voz: No\n\
-- Impermeable: Sí\n\
-- Apoyo APP: No\n\
-- Material: Metal\n\
-- Adaptador de bandeja de entrada: No\n\
-- Asistente personal inteligente: Ninguno\n\
-- Mezcla de audio: Rango completo\n\
-- Número de carcasas de altavoz: 1\n\
-- Fuente de alimentación: CA, USB\n\
-- Canales: 1\n\
-- Batería: Sí\n\
-- Comunicación: Inducción\n\
-- Tipo de altavoz: Portátil\n\
-- Material de la carcasa: PVC\n\
-- Nombre de la marca: Opansten\n\
-- Fuente de energía: Batería",
-
+  category: "electronica",
+  description: "Altavoz Bluetooth, Mini subwoofer de ducha, manos libres impermeables con micrófono de ventosa para baño, piscina, playa, teléfono de coche.",
   features: [
-"Características clave",
-"1.Impermeable y portátil, cabe en tu bolsillo",
-"2.Soporte manos libres",
-"3.Controles fáciles de usar para reproducir música y contestar llamadas telefónicas",
-"4.Micrófono incorporado de calidad cristalina",
-"5.Transmite música desde cualquier dispositivo habilitado para Bluetooth",
-
-"Especificación",
-"• Tamaño: 85X45mm",
-"• Bluetooth: 3,0 + EDR",
-"• Frecuencia inalámbrica: 2,4 GHz",
-"• Bluetooth manos libres: Sí",
-"• Distancia disponible: 10 m",
-"• Potencia: 3W",
-"• A prueba de agua: IPX4",
-"• Uso: reproductor de audio portátil, teléfono móvil, computadora",
-"• Capacidad de la batería incorporada: 400 mAh",
-"• Tipo de batería: batería de litio",
-"• Tiempo del reproductor de música: 2-4 horas",
-
-"El paquete incluye:",
-"• 1 altavoz",
-"• 1 cable USB",
-"• 1 x caja al por menor",
+    "• Impermeable al agua: IPX4",
+    "• Uso: reproductor de audio portátil, teléfono móvil, computadora",
+    "• Capacidad de la batería incorporada: 400 mAh",
+    "• Tipo de batería: batería de litio",
+    "• Tiempo del reproductor de música: 2-4 horas",
   ],
   reviews: [],
-  rating: 4.8
-},
-//---
+  rating: 4.8 
+}, 
+
 { 
-  id: 14,
-  name: "Cargador inalámbrico de 65W para móvil, base de carga rápida por inducción para iPhone 15, 14, 13, 12, 11 Pro, X, XS, Max, XR, 8, Samsung y Xiaomi",
-  price: 0,
+  id: 14, 
+  name: "Cargador inalámbrico de 65W para móvil", 
+  price: 850, // Precio asumido
   image: "./images/deskchargerwireless1.jpeg",
-  images: [
-    "./images/deskchargerwireless1.jpeg",   
+  images: [ 
+    "./images/deskchargerwireless1.jpeg",
     "./images/deskchargerwireless2.jpeg",
     "./images/deskchargerwireless3.jpeg",
     "./images/deskchargerwireless4.jpeg",
     "./images/deskchargerwireless5.png",
     "./images/deskchargerwireless6.png",
     "./images/deskchargerwireless7.png"
-    
-],
+  ],
   category: "electronica",
-  description: `Lleve su experiencia de carga inalámbrica al siguiente nivel con nuestro soporte de carga rápida.
-
-CONVENIENTE CARGA INALÁMBRICA QI - Dígale adiós a los cables enredados y disfrute de la carga inalámbrica simplemente colocando su teléfono en el soporte de carga. Nota: no se carga a través de fundas de teléfono de metal o fundas más gruesas de 0,2 pulgadas.
-
-ÁNGULOS DE VISIÓN DOBLE - La almohadilla inalámbrica de 2 bobinas carga su teléfono vertical u horizontalmente para una vista y soporte más ideales al ver videos, escuchar música, jugar juegos y más. Perfecto para oficina, dormitorio o sala de estar.
-
-ÚLTIMA GARANTÍA DE SEGURIDAD - Protecciones internas contra sobrecarga, sobrecorriente, sobretensión y sobrecalentamiento. Borde inferior de silicona antideslizante y soporte elevado brindan estabilidad adicional para cualquier superficie de escritorio.
-
-ESPECIFICACIONES:
-* Estándar de carga inalámbrica: Qi
-* Admite carga: 5W/7,5W/10W/15W/30W/65W, admite todos los teléfonos con cargador inalámbrico.
-* Rango de transmisión: 5-8mm
-* Tasa de conversión de energía inalámbrica: ≥ 80
-* Interfaz: USB tipo C
-* Amplia compatibilidad: Compatible con todos los teléfonos que admiten carga inalámbrica.
-
-EL PAQUETE INCLUYE:
-* 1 cargador inalámbrico rápido
-* 1 manual de usuario
-* Dispositivos compatibles: Teléfonos`,
+  description: `Lleve su experiencia de carga inalámbrica al siguiente nivel con nuestro soporte de carga rápida. CONVENIENTE CARGA INALÁMBRICA QI - Dígale adiós a los cables enredados y disfrute de la carga inalámbrica simplemente colocando su teléfono en el soporte de carga. Nota: no se carga a través de fundas de teléfono de metal o fundas demasiado gruesas.`,
   features: [
-    "Carga rápida de 65W",
-    "Diseño delgado y portátil",
-    "Compatible con múltiples dispositivos",
-    "Protección contra sobrecalentamiento",
-    "Base antideslizante"
+    "• Entrada: 9V/2A", 
+    "• Salida: 5W/7.5W/10W/15W (máx.)",
+    "• Distancia de carga: ≤8mm"
   ],
   reviews: [],
-  rating: 4.8
+  rating: 4.8 
 },
 
 { 
-  id: 15,
-  name: `UTHAI T22 2,5 \"SATA a USB3.0 HDD carcasa de disco duro móvil para SSD caja de almacenamiento HDD externo con Cable USB3.0/2,0 ABS.`
-  ,price: 0,
-  image: "./images/Encloser0.png",
+  id: 15, 
+  name: "Caja para Disco Duro USB 3.0", 
+  price: 300, 
+  image: "./images/encloser1.jpeg",
   images: [
-    "./images/encloser1.jpeg",
-    "./images/encloser2.jpeg",
-    "./images/encloser3.jpeg",
-    "./images/encloser4.jpeg",
-    "./images/encloser5.png",
+    "./images/encloser1.jpeg", 
+    "./images/encloser2.jpeg", 
+    "./images/encloser3.jpeg", 
+    "./images/encloser4.jpeg", 
+    "./images/encloser5.png", 
     "./images/encloser6.png"
-    
-  ],
+  ], 
   category: "electronica",
-  description: `Detalles del producto:
-1. Modelo: UTHAI T2
-2. Material: carcasa de plástico
-3. Chip: IS621/JM57
-4. Interfaz: USB 3.0 A SATA
-5. Tratamiento superficial: inyección
-6. Interfaz de transferencia USB 3.0 de alta velocidad, compatible con USB 2.0 y 1.1
-7. Admite intercambio en caliente
-8. Sistema operativo compatible: Win7/Win8/Win10/Mac OS 8.6 o superior
-9. Velocidad de transmisión teórica USB 3.0: hasta 5 GB/s, USB2.0: 480 MB/s
-10. Admite todo tipo de discos duros mecánicos SATA de 2,5" y unidades SSD`,
-  features: [],
-  reviews: [],
-  rating: 4.8
-},
+  description: `Caja/Carcasa (Enclosure) para Disco Duro Mecánico SATA de 2,5" y Unidades SSD. Interfaz USB 3.0.`,
+  features: [
+    "1. Modelo: UTHAI T2", 
+    "2. Material: carcasa de plástico", 
+    "3. Chip: IS621/JM57", 
+    "4. Interfaz: USB 3.0 A SATA", 
+    "5. Interfaz de transferencia USB 3.0 de alta velocidad, compatible con USB 2.0 y 1.1", 
+    "6. Admite intercambio en caliente", 
+    "7. Sistema operativo compatible: Win7/Win8/Win10/Mac OS 8.6 o superior", 
+    "8. Velocidad de transmisión teórica USB 3.0: hasta 5 GB/s, USB2.0: 480 MB/s", 
+    "9. Admite todo tipo de discos duros mecánicos SATA de 2,5\" y unidades SSD"
+  ], 
+  reviews: [], 
+  rating: 4.8 
+}, 
 
-];
+{ 
+  id: 16, 
+  name: `Shampoo Tinte Negro`, 
+  price: 300, 
+  image: "./images/ShampooTinteNegro0.jpg",
+  images: [
+    "./images/ShampooTinteNegro0.jpg", 
+    "./images/ShampooTinteNegro1.jpg", 
+    "./images/ShampooTinteNegro2.jpg", 
+    "./images/ShampooTinteNegro3.jpg",
+    "./images/ShampooTinteNegro4.jpg", 
+    "./images/ShampooTinteNegro5.jpg",
+    "./images/ShampooTinteNegro6.jpg",
 
-const coupons = { "NEP10": 0.10, "VERANO20": 0.20 };
+  ], 
+  category: "Cosmeticos",
+  description: `Champú 3 en 1 de tinte para el cabello negro, fórmula herbaria natural de argán, cubre cabello gris para mujeres y hombres (16.9 onzas líquidas, negro)`,
+  features: [
+    "100% cobertura de cabello gris] Obtén un color de cabello vibrante con nuestro champú de tinte para cabello negro. Diseñado para una cobertura del 100% de las canas, este champú no solo refresca el color de tu cabello, sino que también mejora la salud y vitalidad de tu cabello.",
+    "Fácil de usar y ahorra tiempo: nuestro champú de tinte para el cabello no requiere herramientas tradicionales de color para el cabello, simplemente aplícalo como lo harías con el champú normal, ahorrando tiempo y esfuerzo, y tiene una función 3 en 1.",
+    "Ingredientes herbales: nuestro champú de color para el cabello está hecho de ingredientes herbales cuidadosamente seleccionados que garantizan que tu cabello esté saludable, nutre profundamente el cuero cabelludo y es suave con el cabello y el cuero cabelludo.",
+    "Múltiples opciones de color: satisface las necesidades de diferentes colores y texturas de cabello, ya sea cabello liso o rizado, cabello grueso, cabello fino y cabello con densidad normal, adecuado tanto para hombres como para mujeres, lo que permite que tu cabello recupere su aspecto juvenil",
+    "Instrucciones de uso: moja tu cabello, aplica una cantidad adecuada de champú de tinte para el cabello y masajea suavemente el cuero cabelludo hasta hacer espuma, deja actuar durante 3-5 minutos y luego enjuaga con agua tibia. Para obtener mejores resultados, úsalo regularmente."
+    
+],
 
-// --- FUNCIONES DE AUTENTICACIÓN ---
-function login() {
-  const u = document.getElementById("username").value;
-  const p = document.getElementById("password").value;
-  const found = users.find(user => user.username === u && user.password === p);
+  reviews: [], 
+  rating: 4.8 
+}, 
 
-  if (found) {
-    currentUser = found;
-    localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    alert("Bienvenido " + currentUser.username + "!");
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("registerSection").style.display = "none";
-    const welcomeElement = document.getElementById("user-welcome");
-    if (welcomeElement) {
-      welcomeElement.textContent = "¡Hola, " + currentUser.username + "!";
+
+]; 
+
+const coupons = { 
+    "NEP10": 0.10, 
+    "VERANO20": 0.20 
+}; 
+
+// --- FUNCIONES DE RENDERING Y FILTRADO ---
+
+/**
+ * Función principal para renderizar los productos en el contenedor.
+ * @param {Array} productsToRender Lista de productos a mostrar. Por defecto, usa la lista completa.
+ */
+function renderProducts(productsToRender = products) {
+    const container = document.getElementById("productContainer");
+    if (!container) {
+        console.error("El contenedor de productos no fue encontrado (ID: productContainer)");
+        return;
     }
-    document.getElementById("search").value = "";
-    renderProducts();
-  } else {
-    alert("Credenciales incorrectas. Inténtalo de nuevo.");
-  }
-}
 
-function showRegister() {
-  document.getElementById("registerSection").style.display = "block";
-}
+    container.innerHTML = ""; // Limpiar el contenedor
 
-function register() {
-  const u = document.getElementById("newUsername").value;
-  const p = document.getElementById("newPassword").value;
-  
-  if (!u || !p) {
-    alert("Por favor completa todos los campos.");
-    return;
-  }
-  
-  if (users.find(user => user.username === u)) {
-    alert("Este nombre de usuario ya existe.");
-    return;
-  }
-  
-  users.push({ username: u, password: p });
-  localStorage.setItem("users", JSON.stringify(users));
-  alert("¡Usuario registrado con éxito! Ahora puedes iniciar sesión.");
-  document.getElementById("registerSection").style.display = "none";
-}
+    productsToRender.forEach(product => {
+        let priceText = "";
+        let buttonText = '<i class="fas fa-cart-plus"></i> Agregar';
+        let addToCartAction = `addToCart(${product.id})`;
+        
+        if (product.priceOptions && product.priceOptions.length > 0) {
+            // Producto con múltiples opciones de precio (ej: Memoria MicroSD)
+            const minPrice = Math.min(...product.priceOptions.map(opt => opt.price));
+            priceText = `Desde RD$ ${minPrice.toFixed(2)}`;
+            buttonText = '<i class="fas fa-eye"></i> Ver Opciones'; // Cambiar botón para invitar a ver detalles
+            addToCartAction = `showProductDetail(${product.id})`;
+        } else if (product.price > 0) {
+            // Producto con precio único
+            priceText = `RD$ ${product.price.toFixed(2)}`;
+        } else {
+            // Producto sin precio (e.g. precio en 0)
+            priceText = "Consultar Precio";
+            addToCartAction = `showProductDetail(${product.id})`; // No permite agregar si el precio es 0
+        }
 
-// --- FUNCIONES DE PRODUCTOS ---
-function renderProducts(prodList = products) {
-  const container = document.getElementById("productContainer");
-  container.innerHTML = "";
-  
-  if (!container) {
-    console.error("Contenedor de productos no encontrado!");
-    return;
-  }
-  
-  if (prodList.length === 0) {
-    container.innerHTML = '<p class="no-products">No se encontraron productos.</p>';
-    return;
-  }
-  
-  prodList.forEach(p => {
-    const isFavorite = favorites.includes(p.id);
-    const div = document.createElement("div");
-    div.className = "product";
-    div.innerHTML = `
-      <button class='favorite-btn ${isFavorite ? "active" : ""}' onclick='toggleFavorite(${p.id}, this)'>
-        <div><i class="fas fa-heart"></i> <span>Favorito</span></div>
-      </button>
-      <img src="${p.image}" alt="${p.name}" onclick="showProductDetail(${p.id})">
-      <div class="product-info">
-        <h3 onclick="showProductDetail(${p.id})">${p.name}</h3>
-        <div class="product-meta">
-          <span class="rating">${'★'.repeat(Math.round(p.rating))}${'☆'.repeat(5 - Math.round(p.rating))}</span>
-          <span>RD$ ${p.price.toFixed(2)}</span>
-        </div>
-        <button onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Agregar</button>
-      </div>
-    `;
-    container.appendChild(div);
-  });
-}
+        const isFavorite = favorites.includes(product.id);
+        const favoriteClass = isFavorite ? 'active' : '';
+        const favoriteIcon = isFavorite ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
 
-function toggleFavorite(productId, element) {
-  const index = favorites.indexOf(productId);
-  if (index === -1) {
-    favorites.push(productId);
-    element.classList.add('active');
-    element.innerHTML = '<i class="fas fa-heart"></i>';
-    element.classList.add('pulse');
-    setTimeout(() => element.classList.remove('pulse'), 1500);
-  } else {
-    favorites.splice(index, 1);
-    element.classList.remove('active');
-  }
-  localStorage.setItem("favorites", JSON.stringify(favorites));
+        const productHTML = `
+            <div class="product">
+                <button class="favorite-btn ${favoriteClass}" onclick="toggleFavorite(event, ${product.id})" title="Añadir a favoritos">
+                    ${favoriteIcon}
+                </button>
+                <img src="${product.image}" alt="${product.name}" onclick="showProductDetail(${product.id})" />
+                <div class="product-info">
+                    <h3 onclick="showProductDetail(${product.id})">${product.name}</h3>
+                    <p class="price-display">${priceText}</p>
+                    <button class="add-to-cart-btn" onclick="${addToCartAction}">
+                        ${buttonText}
+                    </button>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', productHTML);
+    });
 }
 
 function searchProducts() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const filtered = products.filter(p => p.name.toLowerCase().includes(q));
-  renderProducts(filtered);
-}
+    const q = document.getElementById("search").value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(q));
+    renderProducts(filtered);
+} 
 
 function advancedSearch() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const category = document.getElementById("searchCategory").value;
-  const maxPrice = parseFloat(document.getElementById("searchPrice").value) || Infinity;
-  
-  const filtered = products.filter(p => 
-    p.name.toLowerCase().includes(q) &&
-    (category === 'all' || p.category === category) &&
-    p.price <= maxPrice
-  );
-  
-  renderProducts(filtered);
+    const q = document.getElementById("search").value.toLowerCase();
+    const category = document.getElementById("searchCategoryMain").value;
+    const minPrice = parseFloat(document.getElementById("minPrice").value) || 0;
+    const maxPrice = parseFloat(document.getElementById("searchPrice").value) || Infinity;
+
+    const filtered = products.filter(p => {
+        const nameMatch = p.name.toLowerCase().includes(q);
+        const categoryMatch = category === 'all' || p.category === category;
+        
+        let price = p.price || (p.priceOptions && p.priceOptions.length > 0 ? p.priceOptions[0].price : 0);
+        
+        // Si tiene priceOptions, comprobamos si alguna opción cumple el rango de precio.
+        if (p.priceOptions && p.priceOptions.length > 0) {
+             const priceMatches = p.priceOptions.some(option => option.price >= minPrice && option.price <= maxPrice);
+             return nameMatch && categoryMatch && priceMatches;
+        }
+
+        const priceMatch = price >= minPrice && price <= maxPrice;
+
+        return nameMatch && categoryMatch && priceMatch;
+    });
+
+    renderProducts(filtered);
 }
 
 function filterByCategory(category) {
-  if (category === 'all') {
-    renderProducts();
-    return;
-  }
-  const filtered = products.filter(p => p.category === category);
-  renderProducts(filtered);
+    if (category === 'all') {
+        renderProducts();
+        return;
+    }
+    const filtered = products.filter(p => p.category === category);
+    renderProducts(filtered);
+}
+
+function toggleFavorite(event, productId) {
+    event.stopPropagation();
+    const element = event.currentTarget;
+    const index = favorites.indexOf(productId);
+    
+    if (index === -1) {
+        favorites.push(productId);
+        element.classList.add('active');
+        element.innerHTML = '<i class="fas fa-heart"></i>';
+        element.classList.add('pulse');
+        setTimeout(() => element.classList.remove('pulse'), 1500);
+    } else {
+        favorites.splice(index, 1);
+        element.classList.remove('active');
+        element.innerHTML = '<i class="far fa-heart"></i>';
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
 }
 
 function showProductDetail(id) {
-  const product = products.find(p => p.id === id);
-  if (!product) {
-    return;
-  }
+    const product = products.find(p => p.id === id);
+    if (!product) {
+        return;
+    }
 
-  const modal = document.getElementById("productDetailModal");
-  const content = document.getElementById("productDetailContent");
-  
-  // Obtener productos relacionados
-  const relatedProducts = products
-    .filter(p => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
+    const modal = document.getElementById("productDetailModal");
+    const content = document.getElementById("productDetailContent");
 
-  content.innerHTML = `
-    <div class="product-detail">
-      <div class="product-gallery">
-        <img src="${product.image}" alt="${product.name}" class="product-main-image" id="mainProductImage">
-        <div class="product-thumbnails">
-          ${product.images.map((img, index) => `
-            <img src="${img}" alt="Miniatura ${index + 1}" class="product-thumbnail ${index === 0 ? 'active' : ''}" 
-                 onclick="changeProductImage('${img}', this)">
-          `).join('')}
-        </div>
-      </div>
-      <div class="product-info">
-        <h1 class="product-title">${product.name}</h1>
-        <div class="product-meta">
-          <span class="rating">${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5 - Math.round(product.rating))} ${product.rating}</span>
-          <span>${product.reviews.length} reseñas</span>
-        </div>
-        <div class="product-price">RD$ ${product.price.toFixed(2)}</div>
-        
-        <div class="product-actions">
-          <button onclick="addToCart(${product.id})"><i class="fas fa-cart-plus"></i> Agregar al Carrito</button>
-          <button class="favorite-btn ${favorites.includes(product.id) ? 'active' : ''}" 
-                  onclick="toggleFavorite(${product.id}, this)">
-            <i class="fas fa-heart"></i> Favorito
-          </button>
-        </div>
-        
-        <div class="product-description">
-          <h3>Descripción</h3>
-          <p>${product.description}</p>
-        </div>
-        
-        <div class="product-features">
-          <h3>Características</h3>
-          <ul>
-            ${product.features.map(f => `<li>${f}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    ${relatedProducts.length > 0 ? `
-      <div class="related-products">
-        <h2>Productos relacionados</h2>
-        <div class="related-products-grid">
-          ${relatedProducts.map(p => `
-            <div class="product" style="cursor: pointer;" onclick="showProductDetail(${p.id})">
-              <img src="${p.image}" alt="${p.name}" style="height: 120px;">
-              <div class="product-info">
-                <h4>${p.name}</h4>
-                <p>RD$ ${p.price.toFixed(2)}</p>
-              </div>
+    // Lógica para precio y opciones (si existen)
+    let priceHTML = '';
+    if (product.priceOptions && product.priceOptions.length > 0) {
+        priceHTML = `<div class="price-options">
+            <h4>Opciones de Tamaño/Capacidad:</h4>
+            <div id="option-list">
+            ${product.priceOptions.map(opt => `
+                <button class="option-btn" 
+                        onclick="selectProductOption(${product.id}, '${opt.size}', ${opt.price}, '${opt.image}', this)">
+                    ${opt.size}: RD$ ${opt.price.toFixed(2)}
+                </button>
+            `).join('')}
             </div>
-          `).join('')}
+            <p class="product-price">Precio Seleccionado: <span id="selectedPrice">Selecciona una opción</span></p>
+        </div>`;
+    } else {
+        const displayPrice = product.price > 0 ? `RD$ ${product.price.toFixed(2)}` : 'Consultar Precio';
+        priceHTML = `<p class="product-price">Precio: ${displayPrice}</p>`;
+    }
+    
+    // Obtener productos relacionados
+    const relatedProducts = products 
+        .filter(p => p.category === product.category && p.id !== product.id)
+        .slice(0, 4);
+
+    // Contenido del modal
+    content.innerHTML = `
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img src="${product.image}" alt="${product.name}" class="product-main-image" id="mainProductImage">
+                <div class="product-thumbnails">
+                    ${product.images.map(img => `
+                        <img src="${img}" alt="${product.name} thumbnail" 
+                             class="product-thumbnail" 
+                             onclick="changeMainImage('${img}')">
+                    `).join('')}
+                </div>
+            </div>
+            <div class="product-info-detail">
+                <h2 class="product-title">${product.name}</h2>
+                <div class="product-meta">
+                    <span class="rating">
+                        ${'★'.repeat(Math.floor(product.rating))}
+                        ${product.rating % 1 !== 0 ? '½' : ''} 
+                        (${product.rating})
+                    </span>
+                    <span class="category-tag">${product.category}</span>
+                </div>
+                ${priceHTML}
+                <p class="product-description">${product.description}</p>
+                
+                <h4>Características Principales</h4>
+                <ul class="features-list">
+                    ${product.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                        <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    ` : ''}
-  `;
-  
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
+        
+        ${relatedProducts.length > 0 ? `
+            <div class="related-products-section">
+                <h3>Productos Relacionados</h3>
+                <div class="related-products">
+                    ${relatedProducts.map(p => `
+                        <div class="related-product-card" onclick="showProductDetail(${p.id});">
+                            <img src="${p.image}" alt="${p.name}">
+                            <p>${p.name}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        ` : ''}
+    `;
+    
+    // Abrir modal y seleccionar la primera opción por defecto si existe
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    
+    if (product.priceOptions && product.priceOptions.length > 0) {
+        // Ejecutar la selección de la primera opción si está disponible
+        const firstOptionButton = document.querySelector('.option-btn');
+        if(firstOptionButton) {
+            selectProductOption(product.id, product.priceOptions[0].size, product.priceOptions[0].price, product.priceOptions[0].image, firstOptionButton);
+        }
+    }
 }
 
-function closeProductDetail() {
-  document.getElementById("productDetailModal").style.display = "none";
-  document.body.style.overflow = "auto";
+function changeMainImage(image) {
+    document.getElementById("mainProductImage").src = image;
 }
 
-function changeProductImage(src, element) {
-  document.getElementById("mainProductImage").src = src;
-  document.querySelectorAll('.product-thumbnail').forEach(img => {
-    img.classList.remove('active');
-  });
-  element.classList.add('active');
+function selectProductOption(id, size, price, image, buttonElement) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    // Actualizar imagen principal
+    document.getElementById("mainProductImage").src = image;
+
+    // Actualizar precio en el detalle
+    document.getElementById("selectedPrice").textContent = `RD$ ${price.toFixed(2)} (${size})`;
+    
+    // Desactivar todas las opciones y activar la seleccionada
+    document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+    buttonElement.classList.add('active');
+    
+    // Guardamos la opción seleccionada en el objeto producto para usarla en addToCart.
+    product.selectedOption = { id: id, size: size, price: price, image: image, originalId: product.id };
 }
 
 // --- FUNCIONES DEL CARRITO ---
+
 function addToCart(id) {
-  const productToAdd = products.find(p => p.id === id);
-  if (!productToAdd) {
-    return;
-  }
-  
-  const itemInCart = cart.find(item => item.id === id);
+    const productToAdd = products.find(p => p.id === id);
+    if (!productToAdd) {
+        return;
+    }
 
-  if (itemInCart) {
-    itemInCart.qty += 1;
-  } else {
-    cart.push({ id: productToAdd.id, name: productToAdd.name, price: productToAdd.price, image: productToAdd.image, qty: 1 });
-  }
-  
-  updateCart();
+    let itemDetails = {
+        id: productToAdd.id,
+        name: productToAdd.name,
+        price: productToAdd.price,
+        image: productToAdd.image
+    };
 
-  // Animación de confirmación
-  const button = event.target;
-  button.innerHTML = '<i class="fas fa-check"></i> Agregado';
-  button.style.backgroundColor = '#4caf50';
-  setTimeout(() => {
-    button.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
-    button.style.backgroundColor = '#ff5722';
-  }, 1500);
+    // Manejar producto con opciones
+    if (productToAdd.priceOptions) {
+        const option = productToAdd.selectedOption;
+        if (!option) {
+            alert("Por favor, selecciona una opción antes de agregar al carrito.");
+            return;
+        }
+        // Crear un ID compuesto para que cada opción sea un artículo diferente en el carrito
+        itemDetails = {
+            id: `${productToAdd.id}-${option.size.replace(/\s/g, '')}`,
+            name: `${productToAdd.name} (${option.size})`,
+            price: option.price,
+            image: option.image
+        };
+    } else if (productToAdd.price <= 0) {
+        alert("Este producto requiere consulta de precio antes de agregar al carrito.");
+        return;
+    }
+
+    const itemInCart = cart.find(item => item.id === itemDetails.id);
+
+    if (itemInCart) {
+        itemInCart.qty += 1;
+    } else {
+        cart.push({ 
+            id: itemDetails.id, 
+            name: itemDetails.name, 
+            price: itemDetails.price, 
+            image: itemDetails.image, 
+            qty: 1 
+        });
+    }
+    
+    updateCart();
+
+    // Animación de confirmación
+    const button = event.target.closest('button');
+    if (button) {
+        const originalHTML = button.innerHTML;
+        const originalBG = button.style.backgroundColor;
+        button.innerHTML = '<i class="fas fa-check"></i> Agregado';
+        button.style.backgroundColor = '#4caf50';
+        setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.style.backgroundColor = originalBG;
+        }, 1500);
+    }
+} 
+
+function removeFromCart(itemId) {
+    const index = cart.findIndex(item => item.id == itemId); // Usar == para comparar IDs
+    if (index > -1) {
+        cart.splice(index, 1);
+    }
+    updateCart();
 }
 
 function updateCart() {
-  const list = document.getElementById("cartItems");
-  list.innerHTML = "";
-  let itemsTotal = 0;
+    const list = document.getElementById("cartItems");
+    list.innerHTML = "";
+    let itemsTotal = 0;
 
-  cart.forEach(item => {
-    itemsTotal += item.price * item.qty;
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <span>${item.name} x${item.qty}</span>
-      <span>RD$ ${(item.price * item.qty).toFixed(2)}</span>
-      <button onclick="removeFromCart(${item.id})" style="padding: 0.2rem 0.5rem; font-size: 0.8rem;">
-        <i class="fas fa-trash"></i>
-      </button>
-    `;
-    list.appendChild(li);
-  });
+    cart.forEach(item => {
+        itemsTotal += item.price * item.qty;
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span>${item.name} x${item.qty}</span>
+            <span>RD$ ${(item.price * item.qty).toFixed(2)}</span>
+            <button onclick="removeFromCart('${item.id}')" style="padding: 0.2rem 0.5rem; background-color: #f44336;">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        `;
+        list.appendChild(li);
+    });
 
-  // Calculamos el total final incluyendo el envío
-  let finalTotal = itemsTotal;
-  if (deliveryMethod === 'shipping' && itemsTotal > 0) {
-    finalTotal += shippingCost;
-  }
-
-  cartTotal = finalTotal; // Actualizamos la variable global del total
-  document.getElementById("total").textContent = finalTotal.toFixed(2);
-  localStorage.setItem("cart", JSON.stringify(cart));
+    cartTotal = itemsTotal; // Guardamos el subtotal (antes de cupones y envío)
+    
+    // Aplicar cupones y actualizar total
+    applyCoupon(true); // Recalcular total con cupón si ya hay uno aplicado
+    
+    // Guardar carrito
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Reemplaza tu función actual con esta
+function applyCoupon(isSilent = false) {
+    const input = document.getElementById("couponCode");
+    const coupon = input.value.toUpperCase();
+    const discount = coupons[coupon];
+    const totalElement = document.getElementById("total");
+    
+    let currentTotal = cartTotal;
+
+    if (discount) {
+        currentTotal = cartTotal * (1 - discount);
+        if (!isSilent) {
+            alert(`Cupón aplicado: ${discount*100}% de descuento!`);
+        }
+    } else if (!isSilent && input.value !== "") {
+        alert("Cupón inválido o expirado.");
+    }
+    
+    // Añadir costo de envío
+    if (deliveryMethod === 'shipping') {
+        currentTotal += shippingCost;
+    }
+    
+    totalElement.textContent = currentTotal.toFixed(2);
+}
+
 function updateDeliveryOption() {
-  deliveryMethod = document.querySelector('input[name="delivery"]:checked').value;
-  const checkoutBtn = document.getElementById('checkoutBtn');
-  const sendOrderBtn = document.getElementById('sendOrderBtn');
-
-  if (deliveryMethod === 'shipping') {
-    checkoutBtn.style.display = 'none'; // Oculta el botón de pagar
-    sendOrderBtn.style.display = 'block'; // Muestra el botón de enviar pedido
-  } else {
-    checkoutBtn.style.display = 'block';
-    sendOrderBtn.style.display = 'none';
-  }
-  updateCart(); // Volvemos a calcular el total del carrito
+    const pickupRadio = document.getElementById('pickup');
+    const shippingRadio = document.getElementById('shipping');
+    const pickupPointsDiv = document.getElementById('pickupPoints');
+    
+    if (pickupRadio.checked) {
+        deliveryMethod = 'pickup';
+        pickupPointsDiv.style.display = 'block';
+    } else if (shippingRadio.checked) {
+        deliveryMethod = 'shipping';
+        pickupPointsDiv.style.display = 'none';
+    }
+    
+    applyCoupon(true); // Recalcular total con el nuevo costo de envío
 }
 
-function removeFromCart(id) {
-  const index = cart.findIndex(item => item.id === id);
-  if (index !== -1) {
-    cart.splice(index, 1);
-    updateCart();
-  }
+
+// --- FUNCIONES DE AUTENTICACIÓN --- 
+
+function login() {
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const u = usernameInput.value;
+    const p = passwordInput.value;
+    
+    // Simulación de autenticación (solo verifica si no están vacíos)
+    if (u && p) {
+        localStorage.setItem('usuario', u);
+        mostrarPanelUsuario(u);
+    } else {
+        alert("Por favor, introduce usuario y contraseña.");
+    }
 }
 
-function applyCoupon() {
-  const code = document.getElementById("coupon").value.trim();
-  if (coupons[code]) {
-    const discount = coupons[code];
-    const discountedTotal = cartTotal * (1 - discount);
-    document.getElementById("total").textContent = discountedTotal.toFixed(2);
-    alert(`Cupón aplicado: ${discount*100}% de descuento!`);
-  } else {
-    alert("Cupón inválido o expirado.");
-  }
+function register() {
+    const u = document.getElementById("username").value.trim();
+    if (u) {
+        alert(`Cuenta creada correctamente para: ${u}`);
+        localStorage.setItem("usuario", u);
+        mostrarPanelUsuario(u);
+    } else {
+        alert("Por favor, introduce un nombre de usuario.");
+    }
 }
+
+function logout() {
+    localStorage.removeItem("usuario");
+    mostrarFormularioLogin();
+}
+
+function mostrarPanelUsuario(usuario) {
+    document.getElementById("loginFields").style.display = "none";
+    document.getElementById("userPanel").style.display = "block";
+    document.getElementById("welcomeText").textContent = `Bienvenido, ${usuario}`;
+    document.getElementById("user-welcome").textContent = `¡Hola, ${usuario}!`;
+}
+
+function mostrarFormularioLogin() {
+    document.getElementById("loginFields").style.display = "flex";
+    document.getElementById("userPanel").style.display = "none";
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("user-welcome").textContent = "";
+}
+
+
+// --- FUNCIONES DE PEDIDO Y PAGO --- 
 
 function checkout() {
-  if (cart.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
-  }
-  
-  if (!currentUser) {
-    alert("Por favor inicia sesión para continuar con la compra.");
-    return;
-  }
-  
-  document.getElementById("paymentModal").style.display = "flex";
-  document.body.style.overflow = "hidden";
+    if (cart.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+    
+    const usuarioGuardado = localStorage.getItem("usuario");
+    if (!usuarioGuardado) {
+        alert("Por favor inicia sesión para continuar con la compra.");
+        return;
+    }
+    
+    // Actualizar datos del modal de pedido
+    const deliveryMethodText = deliveryMethod === 'pickup' ? 'Recogida en Tienda (Gratis)' : `Envío a domicilio (RD$ ${shippingCost.toFixed(2)})`;
+    document.getElementById('modalDeliveryMethod').textContent = deliveryMethodText;
+    
+    let locationText = '';
+    if (deliveryMethod === 'pickup') {
+        const selectedLocation = document.getElementById('pickupLocation').value;
+        if (!selectedLocation) {
+            alert("Por favor, selecciona un punto de recogida.");
+            return;
+        }
+        locationText = `Punto de Recogida: ${selectedLocation}`;
+    } else {
+        locationText = 'La dirección se especificará en el formulario.';
+    }
+    document.getElementById('modalDeliveryLocation').textContent = locationText;
+    
+    // Mostrar modal
+    document.getElementById("paymentModal").style.display = "flex";
+    document.body.style.overflow = "hidden";
 }
 
 function closePaymentModal() {
-  document.getElementById("paymentModal").style.display = "none";
-  document.body.style.overflow = "auto";
+    document.getElementById("paymentModal").style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
-function goToPayment(url) {
-  // Guardar carrito y redirigir
-  localStorage.setItem("cart", JSON.stringify(cart));
-  localStorage.setItem("cartTotal", cartTotal.toString());
-  window.location.href = url;
-}
 
-// Inicialización al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("DOM cargado - Inicializando aplicación");
-  
-  renderProducts();
-  
-  if (currentUser) {
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("registerSection").style.display = "none";
-    document.getElementById("user-welcome").textContent = `¡Hola, ${currentUser.username}!`;
-  }
-  
-  updateCart();
-  updateDeliveryOption(); // Initialize delivery option display
-
-  // Add event listeners for delivery method changes
-  document.querySelectorAll('input[name="delivery"]').forEach(radio => {
-    radio.addEventListener('change', updateDeliveryOption);
-  });
-  
-  // Ocultar modal de pago al inicio
-  document.getElementById("paymentModal").style.display = "none";
-});
-// --- FUNCIONES DE ENVÍO DE PEDIDO ---
 function sendOrder() {
-  if (!currentUser) {
-    alert("Por favor inicia sesión para enviar tu pedido.");
-    return;
-  }
-
-  const name = prompt("Ingresa tu nombre completo:");
-  const email = prompt("Ingresa tu correo electrónico:");
-  const phone = prompt("Ingresa tu teléfono:");
-  const address = prompt("Ingresa tu dirección de envío:");
-
-  if (!name || !email || !phone || !address) {
-    alert("Todos los campos son obligatorios.");
-    return;
-  }
-
-  const orderDetails = cart.map(item => `${item.name} x${item.qty} - RD$ ${item.price.toFixed(2)}`).join("\n");
-  const totalAmount = cartTotal.toFixed(2);
-
-  const templateParams = {
-    from_name: currentUser.username,
-    to_name: "Neptune Market",
-    message: `Pedido:\n${orderDetails}\nTotal: RD$ ${totalAmount}\n\nDatos de envío:\nNombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nDirección: ${address}`
-  };
-
-  emailjs.send("service_id", "template_id", templateParams)
-    .then(function(response) {
-       alert("Pedido enviado con éxito!");
-       cart = [];
-       updateCart();
-       closePaymentModal();
-    }, function(error) {
-       alert("Error al enviar el pedido. Intenta de nuevo.");
-    });
-}
-// --- FUNCION CERRAR SESIÓN ---
-function logout() {
-  // Borrar usuario actual
-  currentUser = null;
-  localStorage.removeItem('currentUser');
-
-  // Restaurar vistas de login y registro
-  document.getElementById("userSection").style.display = "block";
-  document.getElementById("registerSection").style.display = "none";
-  document.getElementById("user-welcome").textContent = "";
-
-  // Opcional: limpiar carrito al cerrar sesión
-  // cart = [];
-  // updateCart();
-
-  alert("Has cerrado sesión correctamente.");
-}
-// Event Listener para el envío del formulario
-document.getElementById('order-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previene que la página se recargue
-
-    const submitBtn = document.getElementById('submit-order-btn');
+    const submitBtn = document.getElementById('submitOrderBtn');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
-    // 1. Formatear los productos del carrito para el correo
+    // 1. Recoger datos de la orden
     let orderDetails = '';
     cart.forEach(item => {
         orderDetails += `${item.name} (x${item.qty}) - RD$ ${(item.price * item.qty).toFixed(2)}\n`;
     });
-    orderDetails += `\nSubtotal: RD$ ${(cartTotal - (deliveryMethod === 'shipping' ? shippingCost : 0)).toFixed(2)}`;
-    orderDetails += `\nCosto de Envío: RD$ ${shippingCost.toFixed(2)}`;
+    
+    const totalElement = document.getElementById("total");
+    const finalTotal = parseFloat(totalElement.textContent);
+    
     orderDetails += `\n--------------------------------------`;
-    orderDetails += `\nTotal del Pedido: RD$ ${cartTotal.toFixed(2)}`;
-
-
+    orderDetails += `\nTotal del Pedido: RD$ ${finalTotal.toFixed(2)}`;
+    
+    const pickupLocation = deliveryMethod === 'pickup' ? document.getElementById('pickupLocation').value : 'N/A';
+    
     // 2. Preparar los parámetros para la plantilla de EmailJS
     const templateParams = {
         from_name: document.getElementById('fullname').value,
@@ -982,361 +1011,58 @@ document.getElementById('order-form').addEventListener('submit', function(event)
         phone: document.getElementById('phone').value,
         from_email: document.getElementById('email').value,
         address: document.getElementById('address').value,
+        delivery_method: deliveryMethod === 'pickup' ? 'Recogida en Tienda' : 'Envío a domicilio',
+        pickup_location: pickupLocation,
         order_details: orderDetails,
+        order_total: finalTotal.toFixed(2)
     };
 
-    // 3. Enviar el correo usando EmailJS
+    // ** IMPORTANTE: REEMPLAZA LOS PLACEHOLDERS DE EmailJS CON TUS PROPIOS VALORES **
+    
     emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams) // <-- REEMPLAZA ESTO
-        .then(function(response) {
-           console.log('SUCCESS!', response.status, response.text);
-           alert('✅ ¡Tu pedido ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
-
-           // Limpiar carrito y formulario
-           cart = [];
-           localStorage.setItem("cart", JSON.stringify(cart));
-           updateCart();
-           document.getElementById('order-form').reset();
-           closeDeliveryForm();
-
-           submitBtn.disabled = false;
-           submitBtn.textContent = 'Confirmar y Enviar Pedido';
-
-        }, function(error) {
-           console.log('FAILED...', error);
-           alert('❌ Hubo un error al enviar tu pedido. Por favor, intenta de nuevo.');
-           submitBtn.disabled = false;
-           submitBtn.textContent = 'Confirmar y Enviar Pedido';
-        });
-});
-function openDeliveryForm() {
-  document.getElementById('deliveryFormModal').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeDeliveryForm() {
-  document.getElementById('deliveryFormModal').style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-// Cargar la librería de EmailJS y el PUBLIC KEY
-(function(){
-  emailjs.init("b83D3JpJuZ0Ke_kgf"); 
-})();
-
-const SERVICE_ID = "service_up3dtue"; 
-const TEMPLATE_ID = "template_4k5e1m4"; 
-
-function sendOrderEmail() {
-  if (cart.length === 0) {
-    alert("Tu carrito está vacío. Añade productos para enviar un pedido.");
-    return;
-  }
-  
-  // 1. Recolección y validación de campos visibles
-  const nombre = document.getElementById("client-name").value;
-  const telefono = document.getElementById("client-phone").value;
-  const direccion = document.getElementById("client-address").value;
-  const envio = document.getElementById("client-shipping").value;
-
-  if (!nombre || !telefono || !direccion || !envio) {
-    alert("Por favor, rellena todos los datos de envío.");
-    return;
-  }
-  
-  // 2. Preparación de la lista de productos para EmailJS (formato JSON)
-  // EmailJS usa una sintaxis similar a Handlebars para iterar arrays DE OBJETOS.
-  const productosArray = cart.map(item => ({
-    nombre: item.name,
-    cantidad: item.qty.toString(), // Convertir a string
-    precio: `RD$ ${item.price.toFixed(2)}`
-  }));
-
-  // 3. Llenar los campos ocultos del formulario con la DATA JSON y el total
-  // OJO: La lista de productos NO se envía directamente, sino el JSON STRINGIFIED.
-  // EmailJS procesará este JSON string en el campo 'productos'.
-  document.getElementById("order-products-data").value = JSON.stringify(productosArray);
-  document.getElementById("order-total-amount").value = document.getElementById("total").textContent;
-
-  // 4. Obtener el formulario y enviar
-  const form = document.getElementById('order-form');
-
-  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
-    .then(function() {
-      alert("✅ ¡Pedido enviado con éxito! Recibirás la confirmación pronto.");
-      // Opcional: limpiar el carrito
-      cart = [];
-      updateCart();
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('✅ ¡Tu pedido ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
+        // Limpiar carrito y formulario
+        cart = [];
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCart();
+        document.getElementById('order-form').reset();
+        closePaymentModal();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirmar y Enviar Pedido';
     }, function(error) {
-      // Este error debería ser el último recurso, el error de corrupción debería desaparecer.
-      alert(`❌ Error al enviar el pedido. Por favor, inténtalo de nuevo. Error: ${error.text}`);
-      console.error("EmailJS Error:", error);
+        console.log('FAILED...', error);
+        alert('❌ Hubo un error al enviar tu pedido. Por favor, asegúrate de haber configurado EmailJS correctamente e intenta de nuevo.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirmar y Enviar Pedido';
     });
 }
-function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
 
-  if (username && password) {
-    localStorage.setItem("loggedInUser", username);
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + username;
-    document.getElementById("userSection").style.display = "none"; // Oculta formulario
-    document.getElementById("logoutBtn").style.display = "inline-block"; // Muestra botón
-  } else {
-    alert("Por favor introduce usuario y contraseña.");
-  }
-}
-
-function logout() {
-  localStorage.removeItem("loggedInUser");
-  document.getElementById("user-welcome").textContent = "";
-  document.getElementById("logoutBtn").style.display = "none"; // Oculta botón
-  document.getElementById("userSection").style.display = "flex"; // Muestra login
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const user = localStorage.getItem("loggedInUser");
-  if (user) {
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + user;
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("logoutBtn").style.display = "inline-block";
-  } else {
-    document.getElementById("userSection").style.display = "flex";
-    document.getElementById("logoutBtn").style.display = "none";
-  }
-});
-function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  if (username && password) {
-    localStorage.setItem("loggedInUser", username);
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + username;
-    document.getElementById("userSection").style.display = "none"; // Oculta formulario
-    document.getElementById("logoutBtn").style.display = "inline-block"; // Muestra botón
-  } else {
-    alert("Por favor introduce usuario y contraseña.");
-  }
-}
-
-function logout() {
-  localStorage.removeItem("loggedInUser");
-  document.getElementById("user-welcome").textContent = "";
-  document.getElementById("logoutBtn").style.display = "none"; // Oculta botón
-  document.getElementById("userSection").style.display = "flex"; // Muestra login
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const user = localStorage.getItem("loggedInUser");
-  if (user) {
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + user;
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("logoutBtn").style.display = "inline-block";
-  } else {
-    document.getElementById("userSection").style.display = "flex";
-    document.getElementById("logoutBtn").style.display = "none";
-  }
-});
-// Espera a que el DOM cargue completamente
-document.addEventListener("DOMContentLoaded", function() {
-    // Busca el botón por su texto "Cerrar sesión"
-    const botones = Array.from(document.querySelectorAll("button, a, div"));
-    const logout = botones.find(el => el.textContent.trim() === "Cerrar sesión");
-
-    if (logout) {
-        // Forzar estilo
-        logout.style.position = "relative";  // o absolute si quieres sacarlo del flujo
-        logout.style.top = "-70px";          // sube el botón
-        logout.style.zIndex = "1000";        // asegurarte que esté por encima
-        logout.style.transition = "top 0.3s"; // opcional, animación
-        console.log("Botón de cerrar sesión movido arriba");
+// Inicialización al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    // Asignar los listeners de login/registro a los botones del formulario
+    document.getElementById("entrar").addEventListener("click", login);
+    document.getElementById("crear-cuenta").addEventListener("click", register);
+    document.getElementById("cerrarSesion").addEventListener("click", logout);
+    
+    // Verificar si hay sesión activa
+    const usuarioGuardado = localStorage.getItem("usuario");
+    if (usuarioGuardado) {
+        mostrarPanelUsuario(usuarioGuardado);
     } else {
-        console.log("No se encontró el botón de cerrar sesión");
+        mostrarFormularioLogin();
     }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const loginFields = document.getElementById("loginFields");
-  const userPanel = document.getElementById("userPanel");
-  const welcomeText = document.getElementById("welcomeText");
-
-  // Crear cuenta ejecuta Registrar
-  document.getElementById("crear-cuenta").addEventListener("click", () => {
-    document.getElementById("registrar").click();
-  });
-
-  // Entrar (simula inicio de sesión)
-  document.getElementById("entrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Registrar nuevo usuario (simulado)
-  document.getElementById("registrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      alert(`Usuario ${user} registrado correctamente.`);
-    } else {
-      alert("Por favor, completa los campos.");
-    }
-  });
-
-  // Cancelar limpia los campos
-  document.getElementById("cancelar").addEventListener("click", () => {
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  });
-
-  // Cerrar sesión
-  document.getElementById("cerrarSesion").addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    mostrarFormularioLogin();
-  });
-
-  // Mostrar panel del usuario logueado
-  function mostrarPanelUsuario(usuario) {
-    loginFields.style.display = "none";
-    userPanel.style.display = "block";
-    welcomeText.textContent = `Bienvenido, ${usuario}`;
-  }
-
-  // Mostrar formulario de login
-  function mostrarFormularioLogin() {
-    loginFields.style.display = "block";
-    userPanel.style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  }
-
-  // Verifica si hay sesión activa al cargar
-  const usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioGuardado) {
-    mostrarPanelUsuario(usuarioGuardado);
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const loginFields = document.getElementById("loginFields");
-  const userPanel = document.getElementById("userPanel");
-  const welcomeText = document.getElementById("welcomeText");
-  const registrarBtn = document.getElementById("registrar");
-  const cancelarBtn = document.getElementById("cancelar");
-
-  // Crear cuenta muestra botones de registro
-  document.getElementById("crear-cuenta").addEventListener("click", () => {
-    registrarBtn.style.display = "inline-block";
-    cancelarBtn.style.display = "inline-block";
-  });
-
-  // Entrar (inicia sesión)
-  document.getElementById("entrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Registrar nuevo usuario (simulado)
-  registrarBtn.addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      alert(`Usuario ${user} registrado correctamente.`);
-      registrarBtn.style.display = "none";
-      cancelarBtn.style.display = "none";
-    } else {
-      alert("Por favor, completa los campos.");
-    }
-  });
-
-  // Cancelar oculta los botones de registro
-  cancelarBtn.addEventListener("click", () => {
-    registrarBtn.style.display = "none";
-    cancelarBtn.style.display = "none";
-  });
-
-  // Cerrar sesión
-  document.getElementById("cerrarSesion").addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    mostrarFormularioLogin();
-  });
-
-  // Mostrar panel del usuario logueado
-  function mostrarPanelUsuario(usuario) {
-    loginFields.style.display = "none";
-    userPanel.style.display = "block";
-    welcomeText.textContent = `Bienvenido, ${usuario}`;
-  }
-
-  // Mostrar formulario de login
-  function mostrarFormularioLogin() {
-    loginFields.style.display = "block";
-    userPanel.style.display = "none";
-    registrarBtn.style.display = "none";
-    cancelarBtn.style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  }
-
-  // Verificar sesión activa
-  const usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioGuardado) {
-    mostrarPanelUsuario(usuarioGuardado);
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const loginFields = document.getElementById("loginFields");
-  const userPanel = document.getElementById("userPanel");
-  const welcomeText = document.getElementById("welcomeText");
-
-  // Entrar
-  document.getElementById("entrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Crear Cuenta (solo simula registro)
-  document.getElementById("crear-cuenta").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      alert(`Cuenta creada correctamente para: ${user}`);
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Cerrar sesión
-  document.getElementById("cerrarSesion").addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    mostrarFormularioLogin();
-  });
-
-  function mostrarPanelUsuario(usuario) {
-    loginFields.style.display = "none";
-    userPanel.style.display = "block";
-    welcomeText.textContent = `Bienvenido, ${usuario}`;
-  }
-
-  function mostrarFormularioLogin() {
-    loginFields.style.display = "block";
-    userPanel.style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  }
-
-  // Verificar si hay sesión activa
-  const usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioGuardado) {
-    mostrarPanelUsuario(usuarioGuardado);
-  }
+    
+    console.log("DOM cargado - Inicializando aplicación");
+    renderProducts(); // ¡Llamada para mostrar productos!
+    updateCart(); 
+    updateDeliveryOption(); // Inicializar el cálculo de costo de envío
+    
+    // Add event listeners for delivery method changes
+    document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+        radio.addEventListener('change', updateDeliveryOption);
+    });
+    
+    document.getElementById("paymentModal").style.display = "none";
 });

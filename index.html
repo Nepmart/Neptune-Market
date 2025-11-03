@@ -11,8 +11,7 @@
 </head>
 <body>
   <header>
-    <!-- 🌌 Franja superior animada del sistema solar -->
-<section id="solar-header">
+    <section id="solar-header">
   <div class="solar-system">
     <div class="sun"></div>
     <div class="orbit orbit-1"><div class="planet mercury"></div></div>
@@ -46,136 +45,121 @@
   </div>
 </div>
 
-
-
 <div id="user-welcome"></div>
-    <!-- Sección de registro -->
     
-
-    <!-- Buscador principal -->
     <div class="search-container">
       <input type="text" id="search" placeholder="Buscar productos..." onkeyup="searchProducts()" />
       <label for="searchCategoryMain" class="visually-hidden">Categoría de búsqueda</label>
       <select id="searchCategoryMain">
-  <option value="all">Todas categorías</option>
-  <option value="electronica">Electrónica</option>
-  <option value="ropa">Ropa y Calzados</option>
-  <option value="Hierramienta">Hierramientas</option>
-  <option value="Accesorios Autos">Accesorios de Autos</option>
-  <option value="Suplementos">Suplementos</option>
-  <option value="Deportes">Deportes</option>
-</select>
+        <option value="all">Todas categorías</option>
+        <option value="electronica">Electrónica</option>
+        <option value="ropa">Ropa y Calzados</option>
+        <option value="Hierramienta">Hierramientas</option>
+        <option value="Accesorios Autos">Accesorios de Autos</option>
+        <option value="Suplementos">Suplementos</option>
+        <option value="Deportes">Deportes</option>
+        <option value="ArticulosdeHogar">Articulos de Hogar</option>
+      </select>
       <input type="number" id="minPrice" placeholder="Precio mínimo" />
-  <input type="number" id="searchPrice" placeholder="Precio máximo" />
-  <button onclick="advancedSearch()" title="Buscar">
-    <i class="fas fa-search"></i>
-  </button>
+      <input type="number" id="searchPrice" placeholder="Precio máximo" />
+      <button onclick="advancedSearch()" title="Buscar">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
   </header>
 
   <nav>
-    <!-- Filtros por categoría -->
     <div class="category-filters">
-      <button onclick="filterByCategory('all')"><i class="fas fa-border-all"></i> Todos</button>
-      <button onclick="filterByCategory('electronica')"><i class="fas fa-laptop"></i> Electrónica</button>
-      <button onclick="filterByCategory('ropa')"><i class="fas fa-tshirt"></i> Ropa y Calzados</button>
-      <button onclick="filterByCategory('Hierramienta')"><i class="fas fa-tools"></i> Hierramientas</button>
-      <button onclick="filterByCategory('Accesorios Autos')"><i class="fas fa-car"></i> Accesorios de Autos</button>
-      <button onclick="filterByCategory('Suplementos')"><i class="fas fa-capsules"></i> Suplementos</button>
-      <button onclick="filterByCategory('Deportes')"><i class="fas fa-football-ball"></i> Deportes</button>
+      <button onclick="filterByCategory('all')"><i class="fas fa-grip-horizontal"></i> Todos</button>
+      <button onclick="filterByCategory('electronica')"><i class="fas fa-bolt"></i> Electrónica</button>
+      <button onclick="filterByCategory('Accesorios Autos')"><i class="fas fa-car-side"></i> Accesorios de Autos</button>
+      <button onclick="filterByCategory('ropa')"><i class="fas fa-tshirt"></i> Ropa y Zapatos</button>
+      <button onclick="filterByCategory('Deportes')"><i class="fas fa-dumbbell"></i> Deportes</button>
+      <button onclick="filterByCategory('ArticulosdeHogar')"><i class="fas fa-house-chimney"></i> Hogar</button>
+      <button onclick="filterbycatergory('Hierriamientas')"><i class="fas tools"></i> Hierramientas </button>
     </div>
   </nav>
 
   <main>
-    <section id="productContainer"></section>
-<aside id="cart">
-  <h2><i class="fas fa-shopping-cart"></i> Mi Carrito</h2>
-  <ul id="cartItems"></ul>
-  <p class="total-text">Total: RD$<span id="total">0.00</span></p>
-  <div class="coupon-section">
-    <input type="text" id="coupon" placeholder="Código de cupón" />
-    <button onclick="applyCoupon()">Aplicar</button>
-  </div>
-  
-  <form id="order-form">
-    <h3 class="shipping-data-title">Datos de Envío</h3>
-    <input type="text" name="nombre" id="client-name" placeholder="Nombre completo" required>
-    <input type="tel" name="telefono" id="client-phone" placeholder="Teléfono" required>
-    <input type="text" name="direccion" id="client-address" placeholder="Dirección de envío" required>
-      <select name="envio" id="client-shipping" required>
-      <option value="">Seleccione método de envío</option>
-      <option value="Standard">Envío Estándar</option>
-      <option value="Express">Envío Express</option>
-    </select>
+    <section id="productContainer">
+      </section>
     
-    <input type="hidden" name="productos" id="order-products-data"> 
-    <input type="hidden" name="total" id="order-total-amount">
-    
-    <button type="button" id="sendOrderBtn" onclick="sendOrderEmail()">
-      <i class="fas fa-paper-plane"></i> Enviar Pedido
-    </button>
-  </form>
-  
-  <button id="checkoutBtn" class="checkout-btn" onclick="checkout()">
-    Pagar
-  </button>
-</aside>
-    
-  </main>
-</main>
-<div id="deliveryFormModal" class="modal-overlay">
-  <div class="modal-content">
-    <span class="close-button" onclick="closeDeliveryForm()">&times;</span>
-    <h2>Formulario de Entrega</h2>
-    <p>Completa tus datos para coordinar el envío.</p>
-    <form id="order-form">
-      <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
-      <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
-      <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
-      <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-      <textarea id="address" name="address" placeholder="Dirección de Envío" required rows="3"></textarea>
-      <button type="submit" id="submit-order-btn">Confirmar y Enviar Pedido</button>
-    </form>
-  </div>
-</div>
-  <!-- Modal Detalle Producto -->
-  <div id="productDetailModal" class="modal-overlay">
-    <div class="modal-content modal-content-large">
-      <span class="close-button" onclick="closeProductDetail()">&times;</span>
-      <div id="productDetailContent"></div>
-    </div>
-  </div>
+    <aside id="cart">
+      <h2><i class="fas fa-shopping-cart"></i> Carrito</h2>
+      <ul id="cartItems">
+        </ul>
 
-<div class="modal-favorite-wrapper">
-  
-<div id="deliverySection">
+      <div id="deliverySection">
         <h4>Opciones de Entrega</h4>
         <div class="delivery-option">
           <input type="radio" id="pickup" name="delivery" value="pickup" checked onchange="updateDeliveryOption()">
-          <label for="pickup">Recoger en tienda (Gratis)</label>
+          <label for="pickup">Recogida en tienda (Gratis)</label>
         </div>
         <div class="delivery-option">
           <input type="radio" id="shipping" name="delivery" value="shipping" onchange="updateDeliveryOption()">
-          <label for="shipping">Envío a domicilio (RD$ <span id="shippingCostText">250.00</span>)</label>
+          <label for="shipping">Envío a domicilio (RD$ <span id="shippingCostText">150.00</span>)</label>
+        </div>
+        
+        <div id="pickupPoints">
+          <label for="pickupLocation">Seleccionar punto de entrega:</label>
+          <select id="pickupLocation" name="pickupLocation">
+            <option value="">Seleccione punto</option>
+            <option value="Carrefour Duarte">Carrefour Duarte</option>
+            <option value="Galería 360">Galería 360</option>
+            <option value="Agora Mall">Agora Mall</option>
+            <option value="Sambil">Sambil</option>
+          </select>
         </div>
       </div>
-      ```
 
-</div>
+      <div class="coupon-section">
+        <input type="text" id="couponCode" placeholder="Código de cupón" />
+        <button onclick="applyCoupon()"><i class="fas fa-tag"></i> Aplicar</button>
+      </div>
 
-  <!-- Modal de Pago -->
+      <div class="total-text">
+        Total: RD$ <span id="total">0.00</span>
+      </div>
+
+      <button id="checkoutBtn" onclick="checkout()">
+        <i class="fas fa-money-check-alt"></i> Pagar
+      </button>
+    </aside>
+  </main>
+  <div id="productDetailModal" class="modal-overlay" onclick="if(event.target.id === 'productDetailModal') this.style.display = 'none';">
+    <div class="modal-content">
+      <span class="close-button" onclick="document.getElementById('productDetailModal').style.display = 'none';">&times;</span>
+      <div id="productDetailContent">
+        </div>
+    </div>
+  </div>
+
   <div id="paymentModal" class="modal-overlay">
     <div class="modal-content">
       <span class="close-button" onclick="closePaymentModal()">&times;</span>
-      <h2>Elige un método de pago</h2>
-      <div class="payment-options">
-        <button onclick="goToPayment('pagos/paypal.html')"><i class="fab fa-paypal"></i> PayPal</button>
-        <button onclick="goToPayment('pagos/stripe.html')"><i class="far fa-credit-card"></i> Tarjeta</button>
-        <button onclick="goToPayment('pagos/transferencia.html')"><i class="fas fa-university"></i> Transferencia</button>
+      <h2>Datos para el Pedido</h2>
+      <p>Completa tus datos para coordinar la entrega de tu pedido.</p>
+      
+      <div id="deliveryInfo">
+        <p><strong>Método de Entrega:</strong> <span id="modalDeliveryMethod"></span></p>
+        <p><strong>Lugar:</strong> <span id="modalDeliveryLocation"></span></p>
       </div>
-    </div>
+      
+      <form id="order-form">
+        <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
+        <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
+        <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+        <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+        <textarea id="address" name="address" placeholder="Dirección de Envío" required rows="3"></textarea>
+
+        <button type="button" id="submitOrderBtn" onclick="sendOrder()">
+          <i class="fas fa-paper-plane"></i> Confirmar y Enviar Pedido
+        </button>
+        <p class="small-text">Al enviar tu pedido, confirmas que los datos son correctos.</p>
+      </form>
     </div>
   </div>
+
   <script src="script.js"></script>
-  </body>
+</body>
 </html>
