@@ -126,38 +126,50 @@
   </main>
   <div id="productDetailModal" class="modal-overlay" onclick="if(event.target.id === 'productDetailModal') this.style.display = 'none';">
     <div class="modal-content">
-      <span class="close-button" onclick="document.getElementById('productDetailModal').style.display = 'none';">&times;</span>
+      <span class="close-button" onclick="closeProductDetail()">&times;</span>
       <div id="productDetailContent">
         </div>
     </div>
   </div>
 
   <div id="paymentModal" class="modal-overlay">
-    <div class="modal-content">
-      <span class="close-button" onclick="closePaymentModal()">&times;</span>
-      <h2>Datos para el Pedido</h2>
-      <p>Completa tus datos para coordinar la entrega de tu pedido.</p>
-      
-      <div id="deliveryInfo">
-        <p><strong>Método de Entrega:</strong> <span id="modalDeliveryMethod"></span></p>
-        <p><strong>Lugar:</strong> <span id="modalDeliveryLocation"></span></p>
-      </div>
-      
-      <form id="order-form">
-        <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
-        <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
-        <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
-        <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-        <textarea id="address" name="address" placeholder="Dirección de Envío" required rows="3"></textarea>
+  <div class="modal-content">
+    <span class="close-button" onclick="closePaymentModal()">&times;</span>
+    <h2>Datos para el Pedido</h2>
+    <p>Completa tus datos para coordinar la entrega de tu pedido.</p>
 
-        <button type="button" id="submitOrderBtn" onclick="sendOrder()">
-          <i class="fas fa-paper-plane"></i> Confirmar y Enviar Pedido
-        </button>
-        <p class="small-text">Al enviar tu pedido, confirmas que los datos son correctos.</p>
-      </form>
+    <div id="deliveryInfo">
+      <p><strong>Método de Entrega:</strong> <span id="modalDeliveryMethod"></span></p>
+      <p><strong>Lugar:</strong> <span id="modalDeliveryLocation"></span></p>
     </div>
+
+    <form id="order-form">
+
+      <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
+      <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
+      <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+      <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+      <textarea id="address" name="address" placeholder="Dirección de Envío" required rows="3"></textarea>
+
+      <!-- ✅ NUEVO: Selector de método de pago -->
+      <label for="paymentMethod"><strong>Método de Pago:</strong></label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="">Seleccionar...</option>
+        <option value="paypal">PayPal</option>
+        <option value="transferencia">Transferencia Bancaria</option>
+      </select>
+
+      <button type="submit" id="submitOrderBtn">
+        <i class="fas fa-paper-plane"></i> Confirmar y Enviar Pedido
+      </button>
+
+      <p class="small-text">Al enviar tu pedido confirmas que los datos son correctos.</p>
+    </form>
   </div>
+</div>
+
 
   <script src="script.js"></script>
+  
 </body>
 </html>
