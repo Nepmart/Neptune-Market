@@ -12,18 +12,12 @@
 <body>
   <header>
     <section id="solar-header">
-  <div class="solar-system">
-    <div class="sun"></div>
-    <div class="orbit orbit-1"><div class="planet mercury"></div></div>
-    <div class="orbit orbit-2"><div class="planet venus"></div></div>
-    <div class="orbit orbit-3"><div class="planet earth"></div></div>
-    <div class="orbit orbit-4"><div class="planet mars"></div></div>
+  
   </div>
 </section>
    <div class="header-container">
-      <img src="logo/nepMarket.png" width="300" alt="Logo de Neptune Market" class="logo" />
-      <div id="user-welcome"></div>
-      
+      <img src="logo/nepMarket.png" width="200"  alt="Logo de Neptune Market" class="logo" />
+            
     </div>
 
     <div class="login-form" id="loginContainer">
@@ -59,6 +53,7 @@
         <option value="Suplementos">Suplementos</option>
         <option value="Deportes">Deportes</option>
         <option value="ArticulosdeHogar">Articulos de Hogar</option>
+        <option value="Cosmeticos">Cosméticos</option>
       </select>
       <input type="number" id="minPrice" placeholder="Precio mínimo" />
       <input type="number" id="searchPrice" placeholder="Precio máximo" />
@@ -76,7 +71,10 @@
       <button onclick="filterByCategory('ropa')"><i class="fas fa-tshirt"></i> Ropa y Zapatos</button>
       <button onclick="filterByCategory('Deportes')"><i class="fas fa-dumbbell"></i> Deportes</button>
       <button onclick="filterByCategory('ArticulosdeHogar')"><i class="fas fa-house-chimney"></i> Hogar</button>
-      <button onclick="filterbycatergory('Hierriamientas')"><i class="fas tools"></i> Hierramientas </button>
+      <button onclick="filterByCategory('Hierramientas')"><i class="fas fa-tools"></i> Hierramientas </button>
+      <button onclick="filterByCategory('Suplementos')"><i class="fas fa-capsules"></i> Suplementos</button>
+      <button onclick="filterByCategory('Cosmeticos')"><i class="fas fa-magic"></i> Cosméticos</button>
+          
     </div>
   </nav>
 
@@ -97,7 +95,7 @@
         </div>
         <div class="delivery-option">
           <input type="radio" id="shipping" name="delivery" value="shipping" onchange="updateDeliveryOption()">
-          <label for="shipping">Envío a domicilio (RD$ <span id="shippingCostText">150.00</span>)</label>
+          <label for="shipping">Envío a Puntos: (RD$ <span id="shippingCostText">250.00</span>)</label>
         </div>
         
         <div id="pickupPoints">

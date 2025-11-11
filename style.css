@@ -10,7 +10,7 @@ body {
 header {
   background-color: #030e13;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.5rem;
   box-shadow: 0px 6px rgba(0,0,0,0.1);
   
 }
@@ -20,7 +20,7 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-        }
+    }
 
     
 h1 {
@@ -35,20 +35,19 @@ h1 {
 }
 
 #userSection, #registerSection {
-  margin-top: rem;
+  margin-top: 1rem;
 }
 
 input[type="text"], input[type="password"], input[type="number"], select {
   padding: 0.4rem;
-  margin: 0.1rem;
+  margin: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-
 }
-/* botones de los productos */
+
 button {
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.5rem;
   border: none;
   border-radius: 5px;
   background-color: #226fff;
@@ -297,7 +296,7 @@ main {
 }
 
 #productDetailModal .modal-content {
-  max-width: 1200px;
+  max-width: 900px;
   text-align: left;
 }
 
@@ -352,7 +351,7 @@ main {
 
 .product-main-image {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: contain;
   background: #f9f9f9;
   border-radius: 8px;
@@ -367,8 +366,8 @@ main {
 }
 
 .product-thumbnail {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 4px;
   cursor: pointer;
@@ -670,7 +669,7 @@ main {
   }
 
   .logo {
-    width: 200px !important;
+    width: 100px !important;
     height: auto;
   }
 
@@ -813,7 +812,7 @@ header {
 }
 header {
   background-color: #030e13 !important;
-  height: 250px !important;   /* 🔹 Cambia este valor para subir o bajar el fondo negro */
+  height: 270px !important;   /* 🔹 Cambia este valor para subir o bajar el fondo negro */
   overflow: hidden !important;
   position: relative;
 }
@@ -946,6 +945,22 @@ button:hover {
   opacity: 0.9;
 }
 /* Posiciona el cuadro a la izquierda y arriba */
+.login-form {
+  position: absolute;
+  top: 50px;         /* más arriba: reduce este valor para subir más */
+  left: 60px;        /* mueve hacia la derecha o izquierda */
+  width: 290px;
+  padding: 20px;
+  background: #1c1c1c;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
 
 .login-form h2 {
   color: #00aaff;
@@ -957,9 +972,11 @@ button:hover {
   top: -50px; /* Subir más: reduce el valor, ej. 20px */
   left: 6px; /* Mueve a la izquierda */
   width: 250px;
-  padding: 1px;
+  padding: 20px;
   background: #070707;
   color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -974,7 +991,7 @@ button:hover {
 
 .login-form input {
   padding: 10px;
-  font-size: 16px;
+  font-size: 15px;
   border: 1px solid #555;
   background: #ebe5e5;
   color: #0e0d0d;
