@@ -1061,3 +1061,50 @@ button:hover {
     margin-top: 10px;
   }
 }
+.related-products {
+  margin-top: 2rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.related-item {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.related-item:hover {
+  transform: scale(1.05);
+}
+
+.related-item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-rating {
+  color: gold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.fav-btn {
+  background: none;
+  border: 1px solid #ccc;
+  color: #e74c3c;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.fav-btn:hover {
+  background: #ffeaea;
+}

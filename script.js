@@ -657,6 +657,68 @@ function openProductDetail(id) {
     </div>
   `;
 
+  // 🔹 Mostrar productos relacionados (excepto el mismo)
+  const related = products
+    .filter(p => p.category === product.category && p.id !== id)
+    .slice(0, 4);
+
+  let relatedHTML = "";
+  if (related.length > 0) {
+    relatedHTML = `
+      <div class="related-products">
+        <h3>Productos Relacionados</h3>
+        <div class="related-grid">
+          ${related.map(r => `
+            <div class="related-item" onclick="openProductDetail(${r.id})">
+              <img src="${r.images[0]}" alt="${r.name}" />
+              <h4>${r.name}</h4>
+              <p>RD$ ${r.price.toFixed(2)}</p>
+            </div>`).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  content.innerHTML = `
+    <div class="product-detail">
+      ${galleryHTML}
+      <div class="product-info">
+        <h2 class="product-title">${product.name}</h2>
+        <div class="product-rating">⭐⭐⭐⭐☆ (4.5)</div>
+        <p id="productPrice">RD$ ${product.price.toFixed(2)}</p>
+        ${variantHTML}
+        <p class="product-description">${product.description}</p>
+        <ul>${product.features.map(f => `<li>${f}</li>`).join("")}</ul>
+
+        <div class="product-actions">
+          <button onclick="addToCart(${product.id}, document.getElementById('variantSelect') ? document.getElementById('variantSelect').selectedOptions[0].text : null)">
+            <i class="fas fa-cart-plus"></i> Agregar al carrito
+          </button>
+          <button class="fav-btn" onclick="toggleFavorite(${product.id})">
+            <i class="fas fa-heart"></i> Favorito
+          </button>
+        </div>
+      </div>
+    </div>
+    ${relatedHTML}
+  `;
+
+  modal.style.display = "flex";
+}
+
+
+  // ✅ Mantiene tus imágenes normales (como antes)
+  const galleryHTML = `
+    <div class="product-gallery">
+      <img src="${product.images[0]}" class="product-main-image" id="mainImage">
+      <div class="product-thumbnails">
+        ${product.images.map((img, i) => `
+          <img src="${img}" class="product-thumbnail" onclick="changeMainImage('${img}')">
+        `).join("")}
+      </div>
+    </div>
+  `;
+
   content.innerHTML = `
     <div class="product-detail">
       ${galleryHTML}
@@ -674,7 +736,7 @@ function openProductDetail(id) {
   `;
 
   modal.style.display = "flex";
-}
+
 
 function changeMainImage(imgSrc) {
   document.getElementById("mainImage").src = imgSrc;
@@ -684,6 +746,18 @@ function changeMainImage(imgSrc) {
 
 // Nueva función: actualiza el precio al cambiar la variante
 function updateVariantPrice(id) {
+  function toggleFavorite(id) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(f => f !== id);
+    alert("Eliminado de favoritos ❤️‍🔥");
+  } else {
+    favorites.push(id);
+    alert("Agregado a favoritos ❤️");
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
   const select = document.getElementById("variantSelect");
   if (!select) return;
   const newPrice = parseFloat(select.value);
