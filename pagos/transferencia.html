@@ -14,14 +14,14 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    
+
     h2 {
       color: #2c3e50;
       text-align: center;
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
     }
-    
+
     .payment-section {
       margin-bottom: 2rem;
       padding: 1.5rem;
@@ -29,24 +29,26 @@
       border-radius: 8px;
       border-left: 4px solid #3498db;
     }
-    
+
     .payment-section h3 {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       color: #2c3e50;
+      font-size: 1.2rem;
     }
-    
+
     ul {
       padding-left: 1.2rem;
+      margin-bottom: 1rem;
     }
-    
+
     li {
-      margin-bottom: 0rem;
+      margin-bottom: 0.3rem;
     }
-    
+
     strong {
       color: #2c3e50;
     }
-    
+
     .btn-confirm {
       display: block;
       width: 100%;
@@ -60,18 +62,29 @@
       transition: background-color 0.3s;
       margin-top: 1.5rem;
     }
-    
+
     .btn-confirm:hover {
       background-color: #2980b9;
     }
-    
+
     .bank-icon {
       font-size: 2rem;
       text-align: center;
       margin-bottom: 1rem;
       color: #3498db;
     }
-    
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 1rem;
+      background-color: #e8f7ee;
+      border: 1px solid #2ecc71;
+      border-radius: 6px;
+      color: #2d8659;
+      font-weight: bold;
+    }
+
     @media (max-width: 768px) {
       .payment-container {
         margin: 1rem;
@@ -93,22 +106,20 @@
         <li><strong>Número de Cuenta:</strong> 9601416507</li>
         <li><strong>Titular:</strong> Gabi Jose Gabriel</li>
       </ul>
-      <h3>Datos Bancarios</h3>
       <ul>
-        <li><strong>Banco:</strong> Banco Popular Dominicano </li>
+        <li><strong>Banco:</strong> Banco Popular Dominicano</li>
         <li><strong>Tipo de Cuenta:</strong> Corriente</li>
         <li><strong>Número de Cuenta:</strong> 829103415</li>
         <li><strong>Titular:</strong> Gabi Jose Gabriel</li>
       </ul>
-      <h3>Datos Bancarios</h3>
       <ul>
-        <li><strong>Banco:</strong> Banco BHD </li>
+        <li><strong>Banco:</strong> Banco BHD</li>
         <li><strong>Tipo de Cuenta:</strong> Ahorro</li>
         <li><strong>Número de Cuenta:</strong> 01487550074</li>
         <li><strong>Titular:</strong> Gabi Jose Gabriel</li>
       </ul>
     </div>
-    
+
     <div class="payment-section">
       <h3>Confirmación de Pago</h3>
       <p>Una vez realizado el pago, por favor envía el comprobante a:</p>
@@ -118,18 +129,24 @@
       </ul>
       <p>Incluye en el mensaje tu número de pedido para agilizar el proceso.</p>
     </div>
-    
-    <button class="btn-confirm" onclick="confirmar()">Confirmar Transferencia Realizada</button>
+
+    <button class="btn-confirm" onclick="confirmar()">✅ Confirmar Transferencia Realizada</button>
+
+    <div id="successMsg" class="success-message">
+      ¡Gracias! Hemos recibido tu confirmación y verificaremos tu pago pronto.
+    </div>
   </div>
 
   <script>
     function confirmar() {
       const total = localStorage.getItem("cartTotal") || "0";
-      if(confirm(`¿Has completado la transferencia de RD$ ${total} y enviado el comprobante?`)) {
-        alert("¡Gracias! Estaremos verificando tu pago y te contactaremos pronto.");
-        localStorage.removeItem("cart");
-        localStorage.removeItem("cartTotal");
-        window.location.href = "../index.html";
+      if (confirm(`¿Has completado la transferencia de RD$ ${total} y enviado el comprobante?`)) {
+        document.getElementById("successMsg").style.display = "block";
+        setTimeout(() => {
+          localStorage.removeItem("cart");
+          localStorage.removeItem("cartTotal");
+          window.location.href = "../index.html";
+        }, 2500);
       }
     }
   </script>

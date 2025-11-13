@@ -4,28 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pago con PayPal - Neptune Market</title>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+
+  <!-- ✅ SDK de PayPal con tu Client ID real -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AeR_uA33JLhmp8X7TlvJtD9Bogz8faxPwdnn0NLT98IZTdsEmeuIxu6hePK2z4AUwhlMNjeQAcXJBBPn&currency=USD"></script>
+
+  <!-- ✅ Asegura que el CSS apunte bien según tu estructura -->
   <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
   <main class="paypal-main">
     <h2>💳 Pago con PayPal</h2>
+    <p>Por favor, confirma tu pago para completar tu pedido.</p>
     <div id="paypal-button-container"></div>
   </main>
 
-<script>
+  <script>
+    // ✅ Cargar el total del carrito almacenado en localStorage
     const cartTotal = parseFloat(localStorage.getItem("cartTotal")) || 0;
-    
-    if (!cartTotal || cartTotal === 0) {
-        alert("Error: No se encontró información de pago. Volviendo a la tienda.");
-        window.location.href = "../index.html";
+
+    if (!cartTotal || cartTotal <= 0) {
+      alert("No se encontró información del pedido. Volviendo a la tienda...");
+      window.location.href = "index.html";
     }
 
-    // Convertir el total a USD
+    // 💵 Conversión de RD$ a USD
     const exchangeRateDOPtoUSD = 59.5;
     const totalInUSD = (cartTotal / exchangeRateDOPtoUSD).toFixed(2);
-    
+
+    // 🟢 Configuración del botón de PayPal
     paypal.Buttons({
+      style: {
+        layout: 'vertical',
+        color: 'gold',
+        shape: 'rect',
+        label: 'paypal'
+      },
+
       createOrder: function(data, actions) {
         return actions.order.create({
           purchase_units: [{
@@ -37,20 +52,21 @@
           }]
         });
       },
+
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
-          alert("¡Gracias por tu compra, " + details.payer.name.given_name + "!");
+          alert("✅ ¡Gracias por tu compra, " + details.payer.name.given_name + "!");
           localStorage.removeItem("cart");
           localStorage.removeItem("cartTotal");
-          window.location.href = "../index.html";
+          window.location.href = "index.html";
         });
       },
+
       onError: function(err) {
-        alert("Ocurrió un error con el pago. Por favor, inténtalo de nuevo.");
         console.error("Error de PayPal:", err);
+        alert("Ocurrió un error al procesar el pago. Intenta nuevamente.");
       }
     }).render('#paypal-button-container');
-</script>
+  </script>
 </body>
 </html>
-
