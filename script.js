@@ -1,13 +1,69 @@
-// --- DATOS ---
-const users = JSON.parse(localStorage.getItem("users")) || [{ username: "admin", password: "1234" }];
+// Configuración inicial
+emailjs.init("b83D3JpJuZ0Ke_kgf");
+
+let users = JSON.parse(localStorage.getItem("users")) || [{ username: "admin", password: "1234" }];
+let currentUser = localStorage.getItem("currentUser") || null;
+// ===== INICIALIZAR CARRITO =====
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
-let cartTotal = 0;
+
+// Verificar si el carrito debe vaciarse al iniciar
+window.addEventListener("load", () => {
+  const currentUser = localStorage.getItem("currentUser");
+  
+  // Si no hay usuario activo, el carrito se vacía automáticamente
+  if (!currentUser) {
+    localStorage.removeItem("cart");
+    cart = [];
+  }
+
+  // Siempre renderizar carrito limpio al inicio
+  renderCart();
+});
+
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-let shippingCost = 150.00;
-let deliveryMethod = 'pickup'; // 'pickup' o 'shipping'
+let coupons = { "NEP10": 0.10, "VERANO20": 0.20 };
 
+let deliveryMethod = "pickup"; // pickup o shipping
+let cartTotal = 0;
 
+// ---------------------- LOGIN DE USUARIO ----------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const loginFields = document.getElementById("loginFields");
+  const userPanel = document.getElementById("userPanel");
+  const welcomeText = document.getElementById("welcomeText");
+
+  if (currentUser) {
+    loginFields.style.display = "none";
+    userPanel.classList.remove("hidden");
+    welcomeText.textContent = `Bienvenido, ${currentUser}`;
+  }
+
+  document.getElementById("entrar").addEventListener("click", () => {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    if (!username || !password) return alert("Ingrese usuario y contraseña.");
+    currentUser = username;
+    localStorage.setItem("currentUser", username);
+    loginFields.style.display = "none";
+    userPanel.classList.remove("hidden");
+    welcomeText.textContent = `Bienvenido, ${username}`;
+  });
+
+  document.getElementById("crear-cuenta").addEventListener("click", () => {
+    alert("El registro de usuarios estará disponible próximamente.");
+  });
+
+  cerrarSesion.addEventListener("click", () => {
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("cart");
+  localStorage.removeItem("cartTotal");
+  cart = [];
+  renderCart();
+  userPanel.classList.add("hidden");
+  loginFields.style.display = "block";
+});
+
+});
 // Productos con placeholders temporales
 const products = [
   { 
@@ -121,21 +177,28 @@ const products = [
   },
 
 { 
-    id: 5, 
-    name: "Memoria MicroSD 512MB", 
-    price: 800, 
-    image: "./images/memoriaMicroSD1.png",
-    images: [
-      "./images/memoria128mb.png",
-      "./images/memoria256mb.png",
-      "./images/memoria512mb.png",
-      "./images/memoriaMicroSD1.png",
-      "./images/memoriaMicroSD2.png",
-      "./images/memoriaMicroSD3.png",
-      "./images/memoriaMicroSD4.png",
-                ],
-    category: "electronica",
-    description: "Tarjeta de memoria TF de pequeña capacidad para CCTV o cámara Clase 10, tarjeta de memoria de alta velocidad, 64M, 128M, 256M, 512M",
+  id: 5,
+  name: "Memoria MicroSD (64MB - 512MB)",
+  price: 250, // precio base (se ajustará según selección)
+  image: "./images/memoriaMicroSD1.png",
+  images: [
+    "./images/memoria128mb.png",
+    "./images/memoria256mb.png",
+    "./images/memoria512mb.png",
+    "./images/memoriaMicroSD1.png",
+    "./images/memoriaMicroSD2.png",
+    "./images/memoriaMicroSD3.png",
+    "./images/memoriaMicroSD4.png"
+  ],
+  category: "electronica",
+  description:
+    "Tarjeta de memoria TF de pequeña capacidad ideal para cámaras CCTV o dispositivos de grabación. Clase 10, de alta velocidad.",
+  variants: [
+    { size: "128MB", price: 250 },
+    { size: "256MB", price: 500 },
+    { size: "512MB", price: 900 }
+          ],
+    
 features: [
       "• Origen : China continental",
       "• Marca other : La tarjeta está de la marca 'other', lo que significa que ofrece una excelente relación calidad-precio.",
@@ -541,802 +604,331 @@ EL PAQUETE INCLUYE:
 
 ];
 
-const coupons = { "NEP10": 0.10, "VERANO20": 0.20 };
-
-// --- FUNCIONES DE AUTENTICACIÓN ---
-function login() {
-  const u = document.getElementById("username").value;
-  const p = document.getElementById("password").value;
-  const found = users.find(user => user.username === u && user.password === p);
-
-  if (found) {
-    currentUser = found;
-    localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    alert("Bienvenido " + currentUser.username + "!");
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("registerSection").style.display = "none";
-    const welcomeElement = document.getElementById("user-welcome");
-    if (welcomeElement) {
-      welcomeElement.textContent = "¡Hola, " + currentUser.username + "!";
-    }
-    document.getElementById("search").value = "";
-    renderProducts();
-  } else {
-    alert("Credenciales incorrectas. Inténtalo de nuevo.");
-  }
-}
-
-function showRegister() {
-  document.getElementById("registerSection").style.display = "block";
-}
-
-function register() {
-  const u = document.getElementById("newUsername").value;
-  const p = document.getElementById("newPassword").value;
-  
-  if (!u || !p) {
-    alert("Por favor completa todos los campos.");
-    return;
-  }
-  
-  if (users.find(user => user.username === u)) {
-    alert("Este nombre de usuario ya existe.");
-    return;
-  }
-  
-  users.push({ username: u, password: p });
-  localStorage.setItem("users", JSON.stringify(users));
-  alert("¡Usuario registrado con éxito! Ahora puedes iniciar sesión.");
-  document.getElementById("registerSection").style.display = "none";
-}
-
-// --- FUNCIONES DE PRODUCTOS ---
-function renderProducts(prodList = products) {
+// ---------------------- CARGAR PRODUCTOS ----------------------
+function loadProducts(list = products) {
   const container = document.getElementById("productContainer");
   container.innerHTML = "";
-  
-  if (!container) {
-    console.error("Contenedor de productos no encontrado!");
-    return;
-  }
-  
-  if (prodList.length === 0) {
-    container.innerHTML = '<p class="no-products">No se encontraron productos.</p>';
-    return;
-  }
-  
-  prodList.forEach(p => {
-    const isFavorite = favorites.includes(p.id);
-    const div = document.createElement("div");
-    div.className = "product";
-    div.innerHTML = `
-      <button class='favorite-btn ${isFavorite ? "active" : ""}' onclick='toggleFavorite(${p.id}, this)'>
-        <div><i class="fas fa-heart"></i> <span>Favorito</span></div>
-      </button>
-      <img src="${p.image}" alt="${p.name}" onclick="showProductDetail(${p.id})">
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.classList.add("product");
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.name}" onclick="openProductDetail(${p.id})">
       <div class="product-info">
-        <h3 onclick="showProductDetail(${p.id})">${p.name}</h3>
-        <div class="product-meta">
-          <span class="rating">${'★'.repeat(Math.round(p.rating))}${'☆'.repeat(5 - Math.round(p.rating))}</span>
-          <span>RD$ ${p.price.toFixed(2)}</span>
-        </div>
+        <h3 onclick="openProductDetail(${p.id})">${p.name}</h3>
+        <p>RD$ ${p.price.toFixed(2)}</p>
         <button onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Agregar</button>
-      </div>
-    `;
-    container.appendChild(div);
+      </div>`;
+    container.appendChild(card);
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  loadProducts();      // carga los productos
+  renderCart();        // carga el carrito
+  updateDeliveryOption(); // inicializa la entrega
+});
 
-function toggleFavorite(productId, element) {
-  const index = favorites.indexOf(productId);
-  if (index === -1) {
-    favorites.push(productId);
-    element.classList.add('active');
-    element.innerHTML = '<i class="fas fa-heart"></i>';
-    element.classList.add('pulse');
-    setTimeout(() => element.classList.remove('pulse'), 1500);
-  } else {
-    favorites.splice(index, 1);
-    element.classList.remove('active');
-  }
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-}
-
-function searchProducts() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const filtered = products.filter(p => p.name.toLowerCase().includes(q));
-  renderProducts(filtered);
-}
-
-function advancedSearch() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const category = document.getElementById("searchCategory").value;
-  const maxPrice = parseFloat(document.getElementById("searchPrice").value) || Infinity;
-  
-  const filtered = products.filter(p => 
-    p.name.toLowerCase().includes(q) &&
-    (category === 'all' || p.category === category) &&
-    p.price <= maxPrice
-  );
-  
-  renderProducts(filtered);
-}
-
-function filterByCategory(category) {
-  if (category === 'all') {
-    renderProducts();
-    return;
-  }
-  const filtered = products.filter(p => p.category === category);
-  renderProducts(filtered);
-}
-
-function showProductDetail(id) {
+function openProductDetail(id) {
   const product = products.find(p => p.id === id);
-  if (!product) {
-    return;
-  }
+  if (!product) return;
 
   const modal = document.getElementById("productDetailModal");
   const content = document.getElementById("productDetailContent");
-  
-  // Obtener productos relacionados
-  const relatedProducts = products
-    .filter(p => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
+
+  // 🧩 Si el producto tiene variantes (ej. Memoria MicroSD)
+  let variantHTML = "";
+  if (product.variants) {
+    variantHTML = `
+      <label for="variantSelect"><strong>Seleccionar capacidad:</strong></label>
+      <select id="variantSelect" onchange="updateVariantPrice(${product.id})">
+        ${product.variants.map(v => `<option value="${v.price}">${v.size} - RD$ ${v.price}</option>`).join("")}
+      </select>
+    `;
+  }
+
+  // ✅ Mantiene tus imágenes normales (como antes)
+  const galleryHTML = `
+    <div class="product-gallery">
+      <img src="${product.images[0]}" class="product-main-image" id="mainImage">
+      <div class="product-thumbnails">
+        ${product.images.map((img, i) => `
+          <img src="${img}" class="product-thumbnail" onclick="changeMainImage('${img}')">
+        `).join("")}
+      </div>
+    </div>
+  `;
 
   content.innerHTML = `
     <div class="product-detail">
-      <div class="product-gallery">
-        <img src="${product.image}" alt="${product.name}" class="product-main-image" id="mainProductImage">
-        <div class="product-thumbnails">
-          ${product.images.map((img, index) => `
-            <img src="${img}" alt="Miniatura ${index + 1}" class="product-thumbnail ${index === 0 ? 'active' : ''}" 
-                 onclick="changeProductImage('${img}', this)">
-          `).join('')}
-        </div>
-      </div>
+      ${galleryHTML}
       <div class="product-info">
-        <h1 class="product-title">${product.name}</h1>
-        <div class="product-meta">
-          <span class="rating">${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5 - Math.round(product.rating))} ${product.rating}</span>
-          <span>${product.reviews.length} reseñas</span>
-        </div>
-        <div class="product-price">RD$ ${product.price.toFixed(2)}</div>
-        
-        <div class="product-actions">
-          <button onclick="addToCart(${product.id})"><i class="fas fa-cart-plus"></i> Agregar al Carrito</button>
-          <button class="favorite-btn ${favorites.includes(product.id) ? 'active' : ''}" 
-                  onclick="toggleFavorite(${product.id}, this)">
-            <i class="fas fa-heart"></i> Favorito
-          </button>
-        </div>
-        
-        <div class="product-description">
-          <h3>Descripción</h3>
-          <p>${product.description}</p>
-        </div>
-        
-        <div class="product-features">
-          <h3>Características</h3>
-          <ul>
-            ${product.features.map(f => `<li>${f}</li>`).join('')}
-          </ul>
-        </div>
+        <h2 class="product-title">${product.name}</h2>
+        <p id="productPrice">RD$ ${product.price.toFixed(2)}</p>
+        ${variantHTML}
+        <p class="product-description">${product.description}</p>
+        <ul>${product.features.map(f => `<li>${f}</li>`).join("")}</ul>
+        <button onclick="addToCart(${product.id}, document.getElementById('variantSelect') ? document.getElementById('variantSelect').selectedOptions[0].text : null)">
+          <i class="fas fa-cart-plus"></i> Agregar al carrito
+        </button>
       </div>
     </div>
-    
-    ${relatedProducts.length > 0 ? `
-      <div class="related-products">
-        <h2>Productos relacionados</h2>
-        <div class="related-products-grid">
-          ${relatedProducts.map(p => `
-            <div class="product" style="cursor: pointer;" onclick="showProductDetail(${p.id})">
-              <img src="${p.image}" alt="${p.name}" style="height: 120px;">
-              <div class="product-info">
-                <h4>${p.name}</h4>
-                <p>RD$ ${p.price.toFixed(2)}</p>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    ` : ''}
   `;
-  
+
   modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
 }
+
+function changeMainImage(imgSrc) {
+  document.getElementById("mainImage").src = imgSrc;
+}
+
+
+
+// Nueva función: actualiza el precio al cambiar la variante
+function updateVariantPrice(id) {
+  const select = document.getElementById("variantSelect");
+  if (!select) return;
+  const newPrice = parseFloat(select.value);
+  const product = products.find(p => p.id === id);
+  if (product) {
+    product.price = newPrice;
+    document.getElementById("productPrice").textContent = `RD$ ${newPrice.toFixed(2)}`;
+  }
+}
+
+
 
 function closeProductDetail() {
   document.getElementById("productDetailModal").style.display = "none";
-  document.body.style.overflow = "auto";
 }
 
-function changeProductImage(src, element) {
-  document.getElementById("mainProductImage").src = src;
-  document.querySelectorAll('.product-thumbnail').forEach(img => {
-    img.classList.remove('active');
-  });
-  element.classList.add('active');
-}
+// ---------------------- CARRITO ----------------------
 
-// --- FUNCIONES DEL CARRITO ---
-function addToCart(id) {
-  const productToAdd = products.find(p => p.id === id);
-  if (!productToAdd) {
-    return;
-  }
-  
-  const itemInCart = cart.find(item => item.id === id);
+function addToCart(id, variantText = null) {
+  const product = products.find(p => p.id === id);
+  if (!product) return;
 
-  if (itemInCart) {
-    itemInCart.qty += 1;
+  const variant = variantText ? variantText.split(" - ")[0] : null;
+  const itemName = variant ? `${product.name} (${variant})` : product.name;
+  const existingItem = cart.find(i => i.id === id && i.variant === variant);
+
+  if (existingItem) {
+    existingItem.qty++;
   } else {
-    cart.push({ id: productToAdd.id, name: productToAdd.name, price: productToAdd.price, image: productToAdd.image, qty: 1 });
+    cart.push({
+      id: id,
+      name: itemName,
+      variant: variant,
+      price: product.price,
+      qty: 1
+    });
   }
-  
-  updateCart();
 
-  // Animación de confirmación
-  const button = event.target;
-  button.innerHTML = '<i class="fas fa-check"></i> Agregado';
-  button.style.backgroundColor = '#4caf50';
-  setTimeout(() => {
-    button.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
-    button.style.backgroundColor = '#ff5722';
-  }, 1500);
+  saveCart();
+  renderCart();
 }
 
-function updateCart() {
+function renderCart() {
   const list = document.getElementById("cartItems");
-  list.innerHTML = "";
-  let itemsTotal = 0;
+  const totalEl = document.getElementById("total");
 
-  cart.forEach(item => {
-    itemsTotal += item.price * item.qty;
+  if (!list || !totalEl) return; // seguridad
+
+  list.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
     const li = document.createElement("li");
-    li.innerHTML = `
-      <span>${item.name} x${item.qty}</span>
-      <span>RD$ ${(item.price * item.qty).toFixed(2)}</span>
-      <button onclick="removeFromCart(${item.id})" style="padding: 0.2rem 0.5rem; font-size: 0.8rem;">
-        <i class="fas fa-trash"></i>
-      </button>
-    `;
+    li.style.display = "flex";
+    li.style.justifyContent = "space-between";
+    li.style.alignItems = "center";
+    li.style.gap = "10px";
+    li.style.padding = "6px 0";
+    li.style.borderBottom = "1px solid #ddd";
+
+    const info = document.createElement("span");
+    info.textContent = `${item.name} x${item.qty}`;
+
+    const price = document.createElement("span");
+    price.textContent = `RD$ ${(item.price * item.qty).toFixed(2)}`;
+
+    // 🗑️ Botón visible y funcional
+    const removeBtn = document.createElement("button");
+    removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
+    removeBtn.title = "Eliminar del carrito";
+    removeBtn.style.background = "none";
+    removeBtn.style.border = "none";
+    removeBtn.style.color = "red";
+    removeBtn.style.cursor = "pointer";
+    removeBtn.style.fontSize = "1.1rem";
+    removeBtn.onclick = () => removeFromCart(index);
+
+    const rightSection = document.createElement("div");
+    rightSection.style.display = "flex";
+    rightSection.style.alignItems = "center";
+    rightSection.style.gap = "8px";
+    rightSection.appendChild(price);
+    rightSection.appendChild(removeBtn);
+
+    li.appendChild(info);
+    li.appendChild(rightSection);
     list.appendChild(li);
   });
 
-  // Calculamos el total final incluyendo el envío
-  let finalTotal = itemsTotal;
-  if (deliveryMethod === 'shipping' && itemsTotal > 0) {
-    finalTotal += shippingCost;
-  }
-
-  cartTotal = finalTotal; // Actualizamos la variable global del total
-  document.getElementById("total").textContent = finalTotal.toFixed(2);
+  totalEl.textContent = total.toFixed(2);
+  localStorage.setItem("cartTotal", total.toFixed(2));
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Reemplaza tu función actual con esta
-function updateDeliveryOption() {
-  deliveryMethod = document.querySelector('input[name="delivery"]:checked').value;
-  const checkoutBtn = document.getElementById('checkoutBtn');
-  const sendOrderBtn = document.getElementById('sendOrderBtn');
 
-  if (deliveryMethod === 'shipping') {
-    checkoutBtn.style.display = 'none'; // Oculta el botón de pagar
-    sendOrderBtn.style.display = 'block'; // Muestra el botón de enviar pedido
-  } else {
-    checkoutBtn.style.display = 'block';
-    sendOrderBtn.style.display = 'none';
-  }
-  updateCart(); // Volvemos a calcular el total del carrito
+    totalEl.textContent = total.toFixed(2);
+  localStorage.setItem("cartTotal", total.toFixed(2));
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  saveCart();
+  renderCart();
 }
 
-function removeFromCart(id) {
-  const index = cart.findIndex(item => item.id === id);
-  if (index !== -1) {
-    cart.splice(index, 1);
-    updateCart();
-  }
+
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+  totalEl.textContent = total.toFixed(2);
+  localStorage.setItem("cartTotal", total.toFixed(2));
+
+document.addEventListener("DOMContentLoaded", renderCart);
+
+// ---------------------- CUPONES ----------------------
 function applyCoupon() {
-  const code = document.getElementById("coupon").value.trim();
+  const code = document.getElementById("couponCode").value.trim().toUpperCase();
+  const totalEl = document.getElementById("total");
+  let total = parseFloat(localStorage.getItem("cartTotal")) || 0;
+
   if (coupons[code]) {
     const discount = coupons[code];
-    const discountedTotal = cartTotal * (1 - discount);
-    document.getElementById("total").textContent = discountedTotal.toFixed(2);
-    alert(`Cupón aplicado: ${discount*100}% de descuento!`);
+    total = total - (total * discount);
+    localStorage.setItem("cartTotal", total.toFixed(2));
+    totalEl.textContent = total.toFixed(2);
+    alert(`Cupón aplicado: ${discount * 100}% de descuento.`);
   } else {
-    alert("Cupón inválido o expirado.");
+    alert("Cupón inválido o vencido.");
   }
 }
 
+// ---------------------- OPCIONES DE ENTREGA ----------------------
+function updateDeliveryOption() {
+  const isShipping = document.getElementById("shipping").checked;
+  const pickupPoints = document.getElementById("pickupPoints");
+  pickupPoints.style.display = isShipping ? "block" : "none";
+  deliveryMethod = isShipping ? "shipping" : "pickup";
+
+  // Actualiza el texto del método en el modal (si ya está abierto)
+  const methodEl = document.getElementById("modalDeliveryMethod");
+  if (methodEl) {
+    methodEl.textContent = isShipping ? "Envío a punto" : "Recogida en tienda";
+  }
+}
+
+// ---------------------- CHECKOUT ----------------------
 function checkout() {
-  if (cart.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
+  const delivery = document.querySelector('input[name="delivery"]:checked').value;
+  const point = document.getElementById("pickupLocation").value;
+  const modal = document.getElementById("paymentModal");
+  const methodEl = document.getElementById("modalDeliveryMethod");
+  const locationEl = document.getElementById("modalDeliveryLocation");
+
+  if (delivery === "shipping") {
+    if (!point) {
+      alert("Por favor, selecciona un punto de entrega antes de continuar.");
+      return;
+    }
+    methodEl.textContent = "Envío a punto";
+    locationEl.textContent = point;
+  } else {
+    methodEl.textContent = "Recogida en tienda";
+    locationEl.textContent = "No aplica";
   }
-  
-  if (!currentUser) {
-    alert("Por favor inicia sesión para continuar con la compra.");
-    return;
-  }
-  
-  document.getElementById("paymentModal").style.display = "flex";
-  document.body.style.overflow = "hidden";
+
+  modal.style.display = "flex";
 }
 
 function closePaymentModal() {
   document.getElementById("paymentModal").style.display = "none";
-  document.body.style.overflow = "auto";
 }
 
-function goToPayment(url) {
-  // Guardar carrito y redirigir
-  localStorage.setItem("cart", JSON.stringify(cart));
-  localStorage.setItem("cartTotal", cartTotal.toString());
-  window.location.href = url;
-}
+// ---------------------- FORMULARIO DE PEDIDO ----------------------
+document.getElementById("order-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-// Inicialización al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("DOM cargado - Inicializando aplicación");
-  
-  renderProducts();
-  
-  if (currentUser) {
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("registerSection").style.display = "none";
-    document.getElementById("user-welcome").textContent = `¡Hola, ${currentUser.username}!`;
-  }
-  
-  updateCart();
-  updateDeliveryOption(); // Initialize delivery option display
+  const fullname = document.getElementById("fullname").value.trim();
+  const cedula = document.getElementById("cedula").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const paymentMethod = document.getElementById("paymentMethod").value;
+  const total = localStorage.getItem("cartTotal") || "0.00";
+  const deliveryMethod = document.querySelector('input[name="delivery"]:checked').value;
+  const deliveryPoint =
+    deliveryMethod === "shipping"
+      ? document.getElementById("pickupLocation").value
+      : "Recogida en tienda";
 
-  // Add event listeners for delivery method changes
-  document.querySelectorAll('input[name="delivery"]').forEach(radio => {
-    radio.addEventListener('change', updateDeliveryOption);
-  });
-  
-  // Ocultar modal de pago al inicio
-  document.getElementById("paymentModal").style.display = "none";
-});
-// --- FUNCIONES DE ENVÍO DE PEDIDO ---
-function sendOrder() {
-  if (!currentUser) {
-    alert("Por favor inicia sesión para enviar tu pedido.");
+  if (!fullname || !cedula || !phone || !email || !address) {
+    alert("Por favor, completa todos los campos del formulario.");
     return;
   }
-
-  const name = prompt("Ingresa tu nombre completo:");
-  const email = prompt("Ingresa tu correo electrónico:");
-  const phone = prompt("Ingresa tu teléfono:");
-  const address = prompt("Ingresa tu dirección de envío:");
-
-  if (!name || !email || !phone || !address) {
-    alert("Todos los campos son obligatorios.");
+  if (!paymentMethod) {
+    alert("Selecciona un método de pago antes de continuar.");
     return;
   }
-
-  const orderDetails = cart.map(item => `${item.name} x${item.qty} - RD$ ${item.price.toFixed(2)}`).join("\n");
-  const totalAmount = cartTotal.toFixed(2);
 
   const templateParams = {
-    from_name: currentUser.username,
-    to_name: "Neptune Market",
-    message: `Pedido:\n${orderDetails}\nTotal: RD$ ${totalAmount}\n\nDatos de envío:\nNombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nDirección: ${address}`
+    fullname,
+    cedula,
+    phone,
+    email,
+    address,
+    deliveryMethod: deliveryMethod === "pickup" ? "Recogida en tienda" : "Envío a punto",
+    deliveryPoint,
+    total,
+    paymentMethod:
+      paymentMethod === "paypal" ? "Pago con PayPal" : "Pago por Transferencia Bancaria",
   };
 
-  emailjs.send("service_id", "template_id", templateParams)
-    .then(function(response) {
-       alert("Pedido enviado con éxito!");
-       cart = [];
-       updateCart();
-       closePaymentModal();
-    }, function(error) {
-       alert("Error al enviar el pedido. Intenta de nuevo.");
+  emailjs
+    .send("service_up3dtue", "template_4k5e1m4", templateParams)
+    .then(() => {
+      alert("Pedido enviado correctamente. Serás redirigido a tu método de pago.");
+      document.getElementById("paymentModal").style.display = "none";
+      if (paymentMethod === "paypal") {
+        window.location.href = "/pagos/paypal.html";
+      } else {
+        window.location.href = "/pagos/transferencia.html";
+      }
+    })
+    .catch((error) => {
+      console.error("Error al enviar el pedido:", error);
+      alert("Error al enviar el pedido. Intenta nuevamente.");
     });
-}
-// --- FUNCION CERRAR SESIÓN ---
-function logout() {
-  // Borrar usuario actual
-  currentUser = null;
-  localStorage.removeItem('currentUser');
-
-  // Restaurar vistas de login y registro
-  document.getElementById("userSection").style.display = "block";
-  document.getElementById("registerSection").style.display = "none";
-  document.getElementById("user-welcome").textContent = "";
-
-  // Opcional: limpiar carrito al cerrar sesión
-  // cart = [];
-  // updateCart();
-
-  alert("Has cerrado sesión correctamente.");
-}
-// Event Listener para el envío del formulario
-document.getElementById('order-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previene que la página se recargue
-
-    const submitBtn = document.getElementById('submit-order-btn');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-
-    // 1. Formatear los productos del carrito para el correo
-    let orderDetails = '';
-    cart.forEach(item => {
-        orderDetails += `${item.name} (x${item.qty}) - RD$ ${(item.price * item.qty).toFixed(2)}\n`;
-    });
-    orderDetails += `\nSubtotal: RD$ ${(cartTotal - (deliveryMethod === 'shipping' ? shippingCost : 0)).toFixed(2)}`;
-    orderDetails += `\nCosto de Envío: RD$ ${shippingCost.toFixed(2)}`;
-    orderDetails += `\n--------------------------------------`;
-    orderDetails += `\nTotal del Pedido: RD$ ${cartTotal.toFixed(2)}`;
-
-
-    // 2. Preparar los parámetros para la plantilla de EmailJS
-    const templateParams = {
-        from_name: document.getElementById('fullname').value,
-        cedula: document.getElementById('cedula').value,
-        phone: document.getElementById('phone').value,
-        from_email: document.getElementById('email').value,
-        address: document.getElementById('address').value,
-        order_details: orderDetails,
-    };
-
-    // 3. Enviar el correo usando EmailJS
-    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams) // <-- REEMPLAZA ESTO
-        .then(function(response) {
-           console.log('SUCCESS!', response.status, response.text);
-           alert('✅ ¡Tu pedido ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
-
-           // Limpiar carrito y formulario
-           cart = [];
-           localStorage.setItem("cart", JSON.stringify(cart));
-           updateCart();
-           document.getElementById('order-form').reset();
-           closeDeliveryForm();
-
-           submitBtn.disabled = false;
-           submitBtn.textContent = 'Confirmar y Enviar Pedido';
-
-        }, function(error) {
-           console.log('FAILED...', error);
-           alert('❌ Hubo un error al enviar tu pedido. Por favor, intenta de nuevo.');
-           submitBtn.disabled = false;
-           submitBtn.textContent = 'Confirmar y Enviar Pedido';
-        });
 });
-function openDeliveryForm() {
-  document.getElementById('deliveryFormModal').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+
+// ---------------------- BÚSQUEDA ----------------------
+function searchProducts() {
+  const query = document.getElementById("search").value.toLowerCase();
+  const results = products.filter(p => p.name.toLowerCase().includes(query));
+  loadProducts(results);
 }
 
-function closeDeliveryForm() {
-  document.getElementById('deliveryFormModal').style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-// Cargar la librería de EmailJS y el PUBLIC KEY
-(function(){
-  emailjs.init("b83D3JpJuZ0Ke_kgf"); 
-})();
-
-const SERVICE_ID = "service_up3dtue"; 
-const TEMPLATE_ID = "template_4k5e1m4"; 
-
-function sendOrderEmail() {
-  if (cart.length === 0) {
-    alert("Tu carrito está vacío. Añade productos para enviar un pedido.");
-    return;
-  }
-  
-  // 1. Recolección y validación de campos visibles
-  const nombre = document.getElementById("client-name").value;
-  const telefono = document.getElementById("client-phone").value;
-  const direccion = document.getElementById("client-address").value;
-  const envio = document.getElementById("client-shipping").value;
-
-  if (!nombre || !telefono || !direccion || !envio) {
-    alert("Por favor, rellena todos los datos de envío.");
-    return;
-  }
-  
-  // 2. Preparación de la lista de productos para EmailJS (formato JSON)
-  // EmailJS usa una sintaxis similar a Handlebars para iterar arrays DE OBJETOS.
-  const productosArray = cart.map(item => ({
-    nombre: item.name,
-    cantidad: item.qty.toString(), // Convertir a string
-    precio: `RD$ ${item.price.toFixed(2)}`
-  }));
-
-  // 3. Llenar los campos ocultos del formulario con la DATA JSON y el total
-  // OJO: La lista de productos NO se envía directamente, sino el JSON STRINGIFIED.
-  // EmailJS procesará este JSON string en el campo 'productos'.
-  document.getElementById("order-products-data").value = JSON.stringify(productosArray);
-  document.getElementById("order-total-amount").value = document.getElementById("total").textContent;
-
-  // 4. Obtener el formulario y enviar
-  const form = document.getElementById('order-form');
-
-  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
-    .then(function() {
-      alert("✅ ¡Pedido enviado con éxito! Recibirás la confirmación pronto.");
-      // Opcional: limpiar el carrito
-      cart = [];
-      updateCart();
-    }, function(error) {
-      // Este error debería ser el último recurso, el error de corrupción debería desaparecer.
-      alert(`❌ Error al enviar el pedido. Por favor, inténtalo de nuevo. Error: ${error.text}`);
-      console.error("EmailJS Error:", error);
-    });
-}
-function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  if (username && password) {
-    localStorage.setItem("loggedInUser", username);
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + username;
-    document.getElementById("userSection").style.display = "none"; // Oculta formulario
-    document.getElementById("logoutBtn").style.display = "inline-block"; // Muestra botón
+// ---------------------- FILTRO POR CATEGORÍA ----------------------
+function filterByCategory(category) {
+  if (category === "all") {
+    loadProducts(products);
   } else {
-    alert("Por favor introduce usuario y contraseña.");
+    const filtered = products.filter(p => p.category === category);
+    loadProducts(filtered);
   }
 }
-
-function logout() {
-  localStorage.removeItem("loggedInUser");
-  document.getElementById("user-welcome").textContent = "";
-  document.getElementById("logoutBtn").style.display = "none"; // Oculta botón
-  document.getElementById("userSection").style.display = "flex"; // Muestra login
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const user = localStorage.getItem("loggedInUser");
-  if (user) {
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + user;
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("logoutBtn").style.display = "inline-block";
-  } else {
-    document.getElementById("userSection").style.display = "flex";
-    document.getElementById("logoutBtn").style.display = "none";
-  }
-});
-function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  if (username && password) {
-    localStorage.setItem("loggedInUser", username);
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + username;
-    document.getElementById("userSection").style.display = "none"; // Oculta formulario
-    document.getElementById("logoutBtn").style.display = "inline-block"; // Muestra botón
-  } else {
-    alert("Por favor introduce usuario y contraseña.");
-  }
-}
-
-function logout() {
-  localStorage.removeItem("loggedInUser");
-  document.getElementById("user-welcome").textContent = "";
-  document.getElementById("logoutBtn").style.display = "none"; // Oculta botón
-  document.getElementById("userSection").style.display = "flex"; // Muestra login
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const user = localStorage.getItem("loggedInUser");
-  if (user) {
-    document.getElementById("user-welcome").textContent = "Bienvenido, " + user;
-    document.getElementById("userSection").style.display = "none";
-    document.getElementById("logoutBtn").style.display = "inline-block";
-  } else {
-    document.getElementById("userSection").style.display = "flex";
-    document.getElementById("logoutBtn").style.display = "none";
-  }
-});
-// Espera a que el DOM cargue completamente
-document.addEventListener("DOMContentLoaded", function() {
-    // Busca el botón por su texto "Cerrar sesión"
-    const botones = Array.from(document.querySelectorAll("button, a, div"));
-    const logout = botones.find(el => el.textContent.trim() === "Cerrar sesión");
-
-    if (logout) {
-        // Forzar estilo
-        logout.style.position = "relative";  // o absolute si quieres sacarlo del flujo
-        logout.style.top = "-70px";          // sube el botón
-        logout.style.zIndex = "1000";        // asegurarte que esté por encima
-        logout.style.transition = "top 0.3s"; // opcional, animación
-        console.log("Botón de cerrar sesión movido arriba");
-    } else {
-        console.log("No se encontró el botón de cerrar sesión");
-    }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const loginFields = document.getElementById("loginFields");
-  const userPanel = document.getElementById("userPanel");
-  const welcomeText = document.getElementById("welcomeText");
-
-  // Crear cuenta ejecuta Registrar
-  document.getElementById("crear-cuenta").addEventListener("click", () => {
-    document.getElementById("registrar").click();
-  });
-
-  // Entrar (simula inicio de sesión)
-  document.getElementById("entrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Registrar nuevo usuario (simulado)
-  document.getElementById("registrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      alert(`Usuario ${user} registrado correctamente.`);
-    } else {
-      alert("Por favor, completa los campos.");
-    }
-  });
-
-  // Cancelar limpia los campos
-  document.getElementById("cancelar").addEventListener("click", () => {
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  });
-
-  // Cerrar sesión
-  document.getElementById("cerrarSesion").addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    mostrarFormularioLogin();
-  });
-
-  // Mostrar panel del usuario logueado
-  function mostrarPanelUsuario(usuario) {
-    loginFields.style.display = "none";
-    userPanel.style.display = "block";
-    welcomeText.textContent = `Bienvenido, ${usuario}`;
-  }
-
-  // Mostrar formulario de login
-  function mostrarFormularioLogin() {
-    loginFields.style.display = "block";
-    userPanel.style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  }
-
-  // Verifica si hay sesión activa al cargar
-  const usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioGuardado) {
-    mostrarPanelUsuario(usuarioGuardado);
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const loginFields = document.getElementById("loginFields");
-  const userPanel = document.getElementById("userPanel");
-  const welcomeText = document.getElementById("welcomeText");
-  const registrarBtn = document.getElementById("registrar");
-  const cancelarBtn = document.getElementById("cancelar");
-
-  // Crear cuenta muestra botones de registro
-  document.getElementById("crear-cuenta").addEventListener("click", () => {
-    registrarBtn.style.display = "inline-block";
-    cancelarBtn.style.display = "inline-block";
-  });
-
-  // Entrar (inicia sesión)
-  document.getElementById("entrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Registrar nuevo usuario (simulado)
-  registrarBtn.addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      alert(`Usuario ${user} registrado correctamente.`);
-      registrarBtn.style.display = "none";
-      cancelarBtn.style.display = "none";
-    } else {
-      alert("Por favor, completa los campos.");
-    }
-  });
-
-  // Cancelar oculta los botones de registro
-  cancelarBtn.addEventListener("click", () => {
-    registrarBtn.style.display = "none";
-    cancelarBtn.style.display = "none";
-  });
-
-  // Cerrar sesión
-  document.getElementById("cerrarSesion").addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    mostrarFormularioLogin();
-  });
-
-  // Mostrar panel del usuario logueado
-  function mostrarPanelUsuario(usuario) {
-    loginFields.style.display = "none";
-    userPanel.style.display = "block";
-    welcomeText.textContent = `Bienvenido, ${usuario}`;
-  }
-
-  // Mostrar formulario de login
-  function mostrarFormularioLogin() {
-    loginFields.style.display = "block";
-    userPanel.style.display = "none";
-    registrarBtn.style.display = "none";
-    cancelarBtn.style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  }
-
-  // Verificar sesión activa
-  const usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioGuardado) {
-    mostrarPanelUsuario(usuarioGuardado);
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const loginFields = document.getElementById("loginFields");
-  const userPanel = document.getElementById("userPanel");
-  const welcomeText = document.getElementById("welcomeText");
-
-  // Entrar
-  document.getElementById("entrar").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Crear Cuenta (solo simula registro)
-  document.getElementById("crear-cuenta").addEventListener("click", () => {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-      alert(`Cuenta creada correctamente para: ${user}`);
-      localStorage.setItem("usuario", user);
-      mostrarPanelUsuario(user);
-    } else {
-      alert("Por favor, introduce un usuario.");
-    }
-  });
-
-  // Cerrar sesión
-  document.getElementById("cerrarSesion").addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    mostrarFormularioLogin();
-  });
-
-  function mostrarPanelUsuario(usuario) {
-    loginFields.style.display = "none";
-    userPanel.style.display = "block";
-    welcomeText.textContent = `Bienvenido, ${usuario}`;
-  }
-
-  function mostrarFormularioLogin() {
-    loginFields.style.display = "block";
-    userPanel.style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
-  }
-
-  // Verificar si hay sesión activa
-  const usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioGuardado) {
-    mostrarPanelUsuario(usuarioGuardado);
-  }
-});

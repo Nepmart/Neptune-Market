@@ -20,7 +20,7 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    }
+        }
 
     
 h1 {
@@ -44,8 +44,9 @@ input[type="text"], input[type="password"], input[type="number"], select {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-}
 
+}
+/* botones de los productos */
 button {
   padding: 0.4rem 1.5rem;
   border: none;
@@ -70,14 +71,23 @@ nav {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.search-container {
-  display: flex;
-  gap: 5rem;
+/* ⬅️ Contenedor principal que envuelve al usuario y a la búsqueda ➡️ */
+.header-main {
+    display: flex; 
+    /* Esta es la clave: empuja los elementos a los extremos opuestos */
+    justify-content: space-between; 
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    padding: 10px 0; /* Espaciado superior e inferior, si es necesario */
 }
 
-.search-container input, .search-container select {
-  flex: 1;
+/* --- Esto es opcional, si quieres que el contenedor de búsqueda esté a la derecha --- */
+
+.search-and-logo-container {
+    /* Si el logo no es parte del contenedor de búsqueda y está en el centro,
+       probablemente necesites mover todo lo que NO es usuario a la derecha. */
+    margin-right: auto; /* Otra técnica común para empujar un elemento a la derecha */
 }
+
 
 .search-container button {
   padding: 0 1.5rem;
@@ -296,7 +306,7 @@ main {
 }
 
 #productDetailModal .modal-content {
-  max-width: 900px;
+  max-width: 1200px;
   text-align: left;
 }
 
@@ -812,7 +822,7 @@ header {
 }
 header {
   background-color: #030e13 !important;
-  height: 270px !important;   /* 🔹 Cambia este valor para subir o bajar el fondo negro */
+  height: 250px !important;   /* 🔹 Cambia este valor para subir o bajar el fondo negro */
   overflow: hidden !important;
   position: relative;
 }
@@ -945,22 +955,6 @@ button:hover {
   opacity: 0.9;
 }
 /* Posiciona el cuadro a la izquierda y arriba */
-.login-form {
-  position: absolute;
-  top: 50px;         /* más arriba: reduce este valor para subir más */
-  left: 60px;        /* mueve hacia la derecha o izquierda */
-  width: 290px;
-  padding: 20px;
-  background: #1c1c1c;
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 10;
-}
 
 .login-form h2 {
   color: #00aaff;
@@ -972,11 +966,9 @@ button:hover {
   top: -50px; /* Subir más: reduce el valor, ej. 20px */
   left: 6px; /* Mueve a la izquierda */
   width: 250px;
-  padding: 20px;
+  padding: 1px;
   background: #070707;
   color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1030,4 +1022,42 @@ button:hover {
 button:hover {
   transform: scale(1.05);
   opacity: 0.9;
+}
+
+/* === Ajuste de la barra de búsqueda === */
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end; /* mueve todo a la derecha */
+  gap: 8px; /* separa los campos entre sí */
+  margin-right: 20px; /* separa del borde derecho */
+}
+
+.search-container input,
+.search-container select,
+.search-container button {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+/* En pantallas pequeñas, que se acomoden en varias líneas */
+@media (max-width: 768px) {
+  .search-container {
+    justify-content: center;
+    margin-top: 10px;
+  }
 }
