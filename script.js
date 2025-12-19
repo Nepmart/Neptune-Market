@@ -602,6 +602,753 @@ EL PAQUETE INCLUYE:
   rating: 4.8
 },
 
+{
+  id: 16,
+  name: "Echinacea GoldenSeal 1400Mg. 120Cap.",
+  price: 0,
+  image: "./images/Echinacea GoldenSeal 1400mg. 120Vcap 1.jpg",
+  images: [
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 1.jpg",
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 2.jpg",
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 3.jpg",
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 4.jpg",
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 5.jpg",  
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 6.jpg",
+    "./images/Echinacea GoldenSeal 1400mg. 120Vcap 7.jpg"
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Suplemento herbal formulado con Echinacea y Goldenseal, dos plantas tradicionalmente utilizadas para apoyar el sistema inmunológico y ayudar al cuerpo en sus procesos naturales de limpieza interna.
+      Esta combinación ha sido usada por generaciones en la herbolaria tradicional como apoyo al bienestar general.
+    </p>
+
+    <p>
+      Cada porción aporta 1400 mg de extractos vegetales en cápsulas vegetarianas, libres de gluten y Non-GMO.
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>Apoya el funcionamiento saludable del sistema inmunológico</li>
+      <li>Contribuye a los procesos naturales de limpieza del organismo</li>
+      <li>Tradicionalmente utilizado como apoyo para la purificación de la sangre</li>
+      <li>Ayuda al bienestar general durante cambios de clima o temporadas exigentes</li>
+      <li>Fórmula herbal natural para uso diario como complemento nutricional</li>
+      <li>Ingredientes clave:</li>
+
+      <li>Echinacea – Planta tradicionalmente utilizada para apoyar las defensas naturales del cuerpo.</li>
+      <li>Goldenseal – Raíz herbal usada históricamente para apoyar procesos de limpieza interna y bienestar general.</li>
+
+      <li>Cápsulas vegetales, libres de gluten y Non-GMO</li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      Este producto es un suplemento dietético.
+      No está destinado a diagnosticar, tratar, curar ni prevenir enfermedades.
+      Consultar a un profesional de la salud si estás embarazada, amamantando o tomando medicamentos.
+      Mantener fuera del alcance de los niños.
+    </p>
+  `,
+
+  // Ya no es obligatorio usar features si los beneficios están en description,
+  // pero lo dejo vacío por compatibilidad
+  features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+  id: 17,
+  name: "Vitamina E-1000 IU 60Sgel.",
+  price: 0,
+  image: "./images/Vitamina E1000 60Sgel 365 1.jpg", 
+  images: [
+    "./images/Vitamina E1000 60Sgel 365 1.jpg",
+    "./images/Vitamina E1000 60Sgel 365 2.jpg",
+    "./images/Vitamina E1000 60Sgel 365 3.jpg",
+    "./images/Vitamina E1000 60Sgel 365 4.jpg",
+    "./images/Vitamina E1000 60Sgel 365 5.jpg",  
+    "./images/Vitamina E1000 60Sgel 365 6.jpg",
+    "./images/Vitamina E1000 60Sgel 365 7.jpg"
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      La Vitamina E 1000 IU es un suplemento de alta potencia que actúa como un potente antioxidante, ayudando a proteger las células del cuerpo contra el daño causado por los radicales libres. Es ampliamente utilizada para apoyar la salud de la piel, el sistema inmunológico y el bienestar cardiovascular.
+Este suplemento es ideal para personas que buscan complementar su alimentación diaria con vitamina E de calidad, en una presentación práctica de cápsulas blandas fáciles de ingerir.
+
+    </p>
+
+    <p>
+      Los beneficios antioxidantes ayudan al funcionamiento normal del organismo, sin sustituir tratamientos médicos.
+
+      
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 cápsula blanda al día, preferiblemente con alimentos, o según recomendación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>Ingrediente activo
+      Vitamina E (d-alfa tocoferol) – Nutriente esencial con acción antioxidante que ayuda a proteger las células del cuerpo.ógico</li>
+       </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+     	Suplemento dietético.
+      No usar como sustituto de una dieta equilibrada.
+      Consultar a un médico si está embarazada, en lactancia o tomando medicamentos.
+      Mantener fuera del alcance de los niños.
+
+    </p>
+  `,
+
+  // Ya no es obligatorio usar features si los beneficios están en description,
+  // pero lo dejo vacío por compatibilidad
+  features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+  id: 18,
+  name: "Garlic 6000mg. 200Sgel Fito Medic",
+  price: 0,
+  image: "./images/Garlic 6000mg. 200Sgel Fito Medic 6.jpg",
+  images: [
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 6.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 2.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 3.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 4.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 7.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 8.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 9.jpg",
+    "./images/Garlic 6000mg. 200Sgel Fito Medic 10.jpg"
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Los Garlic Supplements de Fito Medic’s son cápsulas blandas de ajo sin olor formuladas para apoyar la salud cardiovascular, la circulación y el sistema inmunológico. El ajo es reconocido por sus propiedades naturales que pueden ayudar a mantener niveles saludables de colesterol y presión arterial, además de contribuir al bienestar general.
+Este suplemento es ideal para adultos que buscan integrar los beneficios del ajo en su rutina diaria de manera cómoda y sin el inconveniente del olor fuerte.
+ 
+
+    </p>
+
+    <p>
+      🧪 Ingrediente clave
+•	Ajo (Garlic) en cápsulas blandas – Con propiedades tradicionales para la salud cardiovascular e inmunológica
+•	Excipientes de calidad, softgels sin olor
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya la salud del corazón y la circulación
+✔️ Contribuye al mantenimiento de niveles saludables de colesterol
+✔️ Favorece el sistema inmunológico
+✔️ Ajo sin olor, fácil de consumir diariamente
+✔️ Cápsulas blandas para mejor absorción
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      	•	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar a un profesional de la salud si está embarazada, en lactancia o bajo medicación.
+•	Mantener fuera del alcance de los niños.
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+  id: 19,
+  name: "Glucosamine Chondroitin MSM 180caps.",
+  price: 0,
+  image: "./images/Glucosamine Chondroitin MSM 1.jpg",
+  images: [
+    "./images/Glucosamine Chondroitin MSM 1.jpg",
+    "./images/Glucosamine Chondroitin MSM 2.jpg",
+    "./images/Glucosamine Chondroitin MSM 3.jpg",
+    "./images/Glucosamine Chondroitin MSM 4.jpg",
+    "./images/Glucosamine Chondroitin MSM 5.jpg",  
+    "./images/Glucosamine Chondroitin MSM 6.jpg",
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Suplemento combinado de Glucosamina Sulfato, Condroitina Sulfato y MSM (Metilsulfonilmetano), formulado para apoyar la salud de las articulaciones, cartílagos y tejidos conectivos. Esta mezcla avanzada ayuda a mantener la flexibilidad y movilidad articular, especialmente en personas activas o con necesidad de apoyo adicional en sus articulaciones como parte de un estilo de vida saludable.
+La fórmula puede ser una opción nutritiva para quienes desean mantener su bienestar articular con componentes de alta calidad en una sola cápsula diaria. 
+
+    </p>
+
+    <p>
+      ¿Qué contiene?
+•	Glucosamina Sulfato – ayuda con la estructura y salud de cartílagos
+•	Condroitina Sulfato – contribuye a la elasticidad y soporte articular
+•	MSM (Metilsulfonilmetano) – favorece tejido conectivo saludable 
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 cápsula antes de cada comida, o según indicación de un profesional de la salud. La dosis puede ajustarse bajo supervisión médica o nutricional.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>Apoya la salud de las articulaciones
+•	✔️ Favorece la flexibilidad y movilidad natural
+•	✔️ Contribuye al mantenimiento de cartílagos y tejidos conectivos
+•	✔️ Mezcla combinada de ingredientes conocidos por su uso tradicional en bienestar articular
+•	✔️ Fórmula conveniente para uso diario como parte de una vida saludable 
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      	Este producto es un suplemento dietético, no está diseñado para diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Amazon
+        Consulta a tu médico si estás embarazada, amamantando, tomando medicamentos o tienes condiciones médicas preexistentes.
+	      Mantener fuera del alcance de los niños.
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+  id: 20,
+  name: "B-Complex + Vitamina C 100Caps Nature Truth",
+  price: 0,
+  image: "./images/B-Complex + Vitamina C 100cap. Nature Truth 1.jpg",
+  images: [
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 1.jpg",
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 2.jpg",
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 3.jpg",
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 4.jpg",
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 5.jpg",  
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 6.jpg",
+    "./images/B-Complex + Vitamina C 100cap. Nature Truth 7.jpg"
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Vitamin B Complex + Vitamin C es un suplemento formulado para apoyar la energía diaria, el sistema nervioso y el sistema inmunológico. Combina todas las vitaminas del complejo B con Vitamina C, nutrientes esenciales que ayudan al cuerpo a convertir los alimentos en energía y a proteger las células del estrés diario.
+Ideal para personas con rutinas exigentes, cansancio frecuente o que desean reforzar su nutrición diaria de forma práctica.
+
+    </p>
+
+    <p>
+      Ingredientes clave
+•	Complejo de Vitaminas B (B1, B2, B3, B5, B6, B7, B9 y B12) – Apoyan energía, metabolismo y sistema nervioso.
+•	Vitamina C – Potente antioxidante que contribuye a la función inmunológica y al bienestar general.
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 tableta al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+   🌟 Beneficios principales
+✔️ Apoya la producción natural de energía
+✔️ Contribuye al funcionamiento saludable del sistema nervioso
+✔️ Ayuda a reducir la sensación de cansancio y fatiga
+✔️ Apoya el sistema inmunológico
+✔️ Contribuye al metabolismo de carbohidratos, proteínas y grasas
+✔️ Fórmula vegana, Non-GMO y libre de gluten
+       </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      		Suplemento dietético.
+No sustituye una dieta equilibrada.
+Consultar con un profesional de la salud si está embarazada, en lactancia o bajo medicación.
+Mantener fuera del alcance de los niños.
+
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+  id: 21,
+  name: "Chlorophyll Chewable 300Tab. Horbaach.",
+  price: 0,
+  image: "./images/Chlorophyll 300Tab Horbaach 1.jpg",
+  images: [
+    "./images/Chlorophyll 300Tab Horbaach 1.jpg",
+    "./images/Chlorophyll 300Tab Horbaach 2.jpg",
+    "./images/Chlorophyll 300Tab Horbaach 3.jpg",
+    "./images/Chlorophyll 300Tab Horbaach 4.jpg",
+    "./images/Chlorophyll 300Tab Horbaach 5.jpg",  
+    "./images/Chlorophyll 300Tab Horbaach 6.jpg",
+    "./images/Chlorophyll 300Tab Horbaach 7.jpg"
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Las Chlorophyll Pills de Horbäach son un suplemento en tabletas masticables formulado con clorofila natural y sabor a menta, diseñado para apoyar la desintoxicación natural del cuerpo, ayudar a mantener un aliento fresco y contribuir al bienestar general.
+Este suplemento es vegano, libre de gluten y Non-GMO, ideal para quienes buscan integrar los beneficios de la clorofila en su rutina diaria de forma práctica y agradable.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Clorofila – Pigmento vegetal con propiedades antioxidantes y de apoyo a la limpieza interna
+•	Excipientes de calidad y sabor a menta natural
+•	Tabletas veganas, libres de gluten y Non-GMO
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1–2 tabletas masticables al día, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Ayuda a neutralizar olores y mantener aliento fresco
+✔️ Contribuye a la desintoxicación y limpieza interna natural
+✔️ Apoya el bienestar general y la vitalidad
+✔️ Tabletas masticables con sabor a menta para consumo fácil y agradable
+✔️ Fórmula vegana, Non-GMO y libre de gluten
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      	•	Suplemento dietético.
+•	Mantener fuera del alcance de los niños.
+•	Consultar a un profesional de la salud si está embarazada, en lactancia o bajo tratamiento médico.
+
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 22,
+  name: "Milk Thistle Extract 1000mg. 60caps. Nature's",
+  price: 0,
+  image: "./images/Milk Thistle 1000mg. 1.jpg",
+  images: [
+    "./images/Milk Thistle 1000mg. 1.jpg",
+    "./images/Milk Thistle 1000mg. 2.jpg",
+    "./images/Milk Thistle 1000mg. 3.jpg",
+    "./images/Milk Thistle 1000mg. 4.jpg",
+    "./images/Milk Thistle 1000mg. 5.jpg",  
+    "./images/Milk Thistle 1000mg. 6.jpg",
+    "./images/Milk Thistle 1000mg. 7.jpg",
+    "./images/Milk Thistle 1000mg. 8.jpg",
+    "./images/Milk Thistle 1000mg. 9.jpg"
+    
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      El Milk Thistle Extract 1000 mg es un suplemento herbal diseñado para apoyar la salud del hígado, su desintoxicación natural y el bienestar general del organismo. Contiene Silymarin (del Cardo Mariano) y extracto de diente de león, ingredientes tradicionales utilizados para proteger y regenerar las células hepáticas.
+Ideal para adultos que buscan mantener una función hepática saludable y promover la limpieza interna natural del cuerpo mediante un suplemento de calidad.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Milk Thistle (Silymarin / Cardo Mariano) – Apoya la protección y regeneración del hígado
+•	Dandelion Extract (Diente de León) – Contribuye a la desintoxicación natural del cuerpo
+•	Cápsula y excipientes de calidad, aptos para adultos
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya la salud y función del hígado
+✔️ Contribuye a la desintoxicación y limpieza interna natural
+✔️ Favorece la protección y regeneración de las células hepáticas
+✔️ Contiene extractos herbales tradicionales como Cardo Mariano y Diente de León
+✔️ Suplemento natural para bienestar general
+
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      	•	Suplemento dietético.
+•	Mantener fuera del alcance de los niños.
+•	Consultar a un profesional de la salud si está embarazada, en lactancia o bajo medicación.
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 23,
+  name: "Zinc 50mg. 60cap AMS",
+  price: 0,
+  image: "./images/Zinc 50mg. 60cap AMS 1.jpg",
+  images: [
+    "./images/Zinc 50mg. 60cap AMS 1.jpg",
+    "./images/Zinc 50mg. 60cap AMS 2.jpg",
+    "./images/Zinc 50mg. 60cap AMS 3.jpg",
+    "./images/Zinc 50mg. 60cap AMS 4.jpg",
+    "./images/Zinc 50mg. 60cap AMS 5.jpg",  
+    "./images/Zinc 50mg. 60cap AMS 6.jpg",
+        
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      El Zinc Quelado 50 mg es un suplemento mineral formulado para apoyar la función inmunológica, el bienestar general y la salud celular. Su forma quelada permite una alta absorción, asegurando que tu cuerpo pueda aprovechar al máximo este mineral esencial.
+Ideal para hombres y mujeres adultos que buscan reforzar sus defensas, mejorar el metabolismo y mantener un estado saludable físico y mental, incluyendo apoyo a la piel, uñas y metabolismo energético.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+  •	Zinc Quelado 50 mg – Mineral esencial que contribuye a la función inmunológica, síntesis proteica y metabolismo celular.
+•	Excipientes de calidad, tabletas de fácil consumo.
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar 1 tableta al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya el funcionamiento normal del sistema inmunológico
+✔️ Contribuye a la salud de la piel, uñas y cabello
+✔️ Ayuda a mantener función cognitiva y bienestar emocional
+✔️ Mineral quelado de alta absorción
+✔️ Puede contribuir a la mejora del estado de ánimo y sueño saludable
+✔️ Apto para adultos, hombres y mujeres
+
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+      	•	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o tomando medicamentos.
+•	Mantener fuera del alcance de los niños.
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 24,
+  name: "Hair Skin Nails 60cap.",
+  price: 0,
+  image: "./images/Hair Skin Nail 1.jpg",
+  images: [
+    "./images/Hair Skin Nail 1.jpg",
+    "./images/Hair Skin Nail 2.jpg",
+    "./images/Hair Skin Nail 3.jpg",
+    "./images/Hair Skin Nail 4.jpg",
+    "./images/Hair Skin Nail 5.jpg",  
+    "./images/Hair Skin Nail 6.jpg",
+    "./images/Hair Skin Nail 7.jpg",
+    "./images/Hair Skin Nail 8.jpg"
+        
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Las Hair, Skin & Nails Gummies con Biotina son un suplemento en forma de gomitas sabor fruta, formulado para apoyar la salud del cabello, la piel y las uñas de manera práctica y agradable. Contienen biotina, una vitamina esencial que contribuye al mantenimiento normal del cabello y las uñas, ideal para quienes prefieren una alternativa a las cápsulas o tabletas.
+Este suplemento es Non-GMO y libre de gluten, adecuado para hombres y mujeres que buscan complementar su rutina diaria de cuidado personal.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+  •	Biotina (Vitamina B7) – Contribuye al metabolismo normal de nutrientes y al mantenimiento del cabello, la piel y las uñas.
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Consumir 2 gomitas al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya el crecimiento y fortalecimiento del cabello
+✔️ Contribuye a mantener uñas más fuertes y saludables
+✔️ Ayuda a conservar una piel de apariencia saludable
+✔️ Fácil de consumir gracias a su presentación en gomitas
+✔️ Sabor agradable, ideal para consumo diario
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+    •	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o tomando medicamentos.
+•	Mantener fuera del alcance de los niños.
+	
+
+    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 25,
+  name: "Calcium 1200mg. 120Sgel. Tahoe Nutritional",
+  price: 0,
+  image: "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 1.jpg",
+  images: [
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 1.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 2.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 3.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 4.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 5.jpg",  
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 6.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 7.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 8.jpg",
+    "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 9.jpg"
+        
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+      Suplemento nutricional formulado con Calcio 1200 mg junto con Vitamina D3, diseñado para apoyar la salud de los huesos y dientes, así como funciones esenciales del organismo relacionadas con el bienestar óseo y muscular. Esta combinación ayuda a mantener niveles adecuados de calcio y facilita su absorción y utilización en el cuerpo, como parte de una dieta equilibrada y un estilo de vida saludable. 
+El producto se presenta en cápsulas blandas de fácil ingestión y está elaborado sin gluten, sin lactosa y sin organismos genéticamente modificados (non-GMO), ideal para complementar la rutina diaria de personas que desean reforzar su salud ósea de forma natural. 
+
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+  •	Calcio (1200 mg) – Mineral esencial para huesos y dientes
+•	Vitamina D3 – Nutriente que ayuda a mejorar la absorción de calcio
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+      Tomar según las indicaciones del envase o bajo supervisión de un profesional de la salud. Generalmente, se recomienda una dosis diaria con alimentos para una mejor absorción.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+•	✔️ Apoya la salud de los huesos y dientes
+•	✔️ Ayuda a mantener niveles saludables de calcio en el organismo
+•	✔️ Vitamina D3 favorece una mejor absorción de calcio
+•	✔️ Contribuye al funcionamiento normal del sistema muscular
+•	✔️ Fórmula sin gluten, sin lactosa y non-GMO para mayor tolerancia diaria 
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+    •	Este producto es un suplemento dietético y no está destinado a diagnosticar, tratar, curar ni prevenir enfermedades.
+•	Consultar a un profesional de la salud si estás embarazada, amamantando, tomando medicamentos o tienes alguna condición médica preexistente.
+•	Mantener fuera del alcance de los niños.
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 26,
+  name: "Raw Flora 50 Billon",
+  price: 0,
+  image: "./images/Raw Flora 50 Billon 1.jpg",
+  images: [
+    "./images/Raw Flora 50 Billon 1.jpg",
+    "./images/Raw Flora 50 Billon 2.jpg",
+    "./images/Raw Flora 50 Billon 3.jpg",
+    "./images/Raw Flora 50 Billon 4.jpg",
+    "./images/Raw Flora 50 Billon 5.jpg",  
+    "./images/Raw Flora 50 Billon 6.jpg",
+    "./images/Raw Flora 50 Billon 7.jpg",
+    
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+     Raw Flora Probiotic con Prebióticos es un suplemento avanzado diseñado para apoyar la salud digestiva e intestinal mediante una potente fórmula de 50 mil millones de UFC (CFU) por porción. Combina probióticos (bacterias beneficiosas) con prebióticos, que ayudan a alimentar y mantener el equilibrio natural de la flora intestinal.
+Ideal para hombres y mujeres que buscan mejorar la digestión, el bienestar intestinal y el soporte inmunológico como parte de su rutina diaria.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+ •	Probióticos (50 Billion CFU) – Bacterias beneficiosas que apoyan la salud intestinal.
+•	Prebióticos – Fibras que alimentan la flora intestinal y ayudan a mantener su equilibrio.
+
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+     Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud. 
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya el equilibrio de la flora intestinal
+✔️ Contribuye a una digestión saludable
+✔️ Ayuda a mantener el funcionamiento normal del sistema inmunológico
+✔️ Favorece la absorción eficiente de nutrientes
+✔️ Contiene probióticos + prebióticos para un soporte digestivo completo
+✔️ Apto para vegetarianos y libre de gluten
+
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+    •	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o tomando medicamentos.
+•	Mantener fuera del alcance de los niños.
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 // ---------------------- CARGAR PRODUCTOS ----------------------
