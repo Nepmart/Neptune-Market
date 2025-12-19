@@ -671,15 +671,15 @@ EL PAQUETE INCLUYE:
   id: 17,
   name: "Vitamina E-1000 IU 60Sgel.",
   price: 0,
-  image: "./images/Vitamina E1000 60Sgel 365 1.jpg", 
+  image: "./images/Vitamina E1000 60sgel 365 1.jpg", 
   images: [
-    "./images/Vitamina E1000 60Sgel 365 1.jpg",
-    "./images/Vitamina E1000 60Sgel 365 2.jpg",
-    "./images/Vitamina E1000 60Sgel 365 3.jpg",
-    "./images/Vitamina E1000 60Sgel 365 4.jpg",
-    "./images/Vitamina E1000 60Sgel 365 5.jpg",  
-    "./images/Vitamina E1000 60Sgel 365 6.jpg",
-    "./images/Vitamina E1000 60Sgel 365 7.jpg"
+    "./images/Vitamina E1000 60sgel 365 1.jpg",
+    "./images/Vitamina E1000 60sgel 365 2.jpg",
+    "./images/Vitamina E1000 60sgel 365 3.jpg",
+    "./images/Vitamina E1000 60sgel 365 4.jpg",
+    "./images/Vitamina E1000 60sgel 365 5.jpg",  
+    "./images/Vitamina E1000 60sgel 365 6.jpg",
+    "./images/Vitamina E1000 60sgel 365 7.jpg"
   ],
   category: "Suplementos",
 
