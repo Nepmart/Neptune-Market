@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Productos con placeholders temporales
 const products = [
-  { 
+  /*{ 
     id: 1, 
     name: "Scanner Automotriz", 
     price: 1200, 
@@ -88,7 +88,8 @@ const products = [
     ],
     reviews: [],
     rating: 4.5
-  },
+  },*/
+  
   { 
     id: 2, 
     name: "Cargador Celular para Vehiculo 250Watts", 
@@ -115,6 +116,7 @@ const products = [
     reviews: [],
     rating: 5
   },
+  /*
   { 
     id: 3, 
     name: "Regleta Cuadrada\"", 
@@ -135,11 +137,12 @@ const products = [
     ],
     reviews: [],
     rating: 4.8
-  },
+  },*/
+
   { 
     id: 4, 
-    name: "LAXASFIT Reloj Inteligente", 
-    price: 1000, 
+    name: "LAXASFIT Reloj Inteligente Q11 Cuadrado", 
+    price: 1200, 
     image: "./images/relojLaxafit1.png", 
     images: [
       "./images/relojLaxafit1.png",
@@ -224,7 +227,7 @@ features: [
 
 { 
     id: 6, 
-    name: "KESHUYOU 2025 Reloj Inteligente", 
+    name: "LaxasFit 2025 Reloj Inteligente K22 Redondo", 
     price: 1200, 
     image: "./images/relojSmartWatch60.png",
     images: [
@@ -271,8 +274,8 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 
   { 
     id: 7, 
-    name: "Punta de Presentacion Laser", 
-    price: 900, 
+    name: "Punta de Presentacion Laser S9 Tipo Lapiz", 
+    price: 700, 
     image: "./images/puntero1.png",
     images: [
       "./images/puntero1.png",
@@ -307,15 +310,17 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   { 
     id: 8, 
     name: "Cartera de Caballero Negro",
-    price: 450, 
+    price: 500, 
     image: "./images/cartera1.webp",
     images: [
       "./images/cartera1.webp",
       "./images/cartera2.png",
-      "./images/cartera3.webp",
-      "./images/cartera4.webp",
-      "./images/cartera5.webp",
-          ],
+      "./images/Bolso Negro de Caballeros 1.avif",
+      "./images/Bolso Negro de Caballeros 1.webp",
+      "./images/Bolso Negro de Caballeros 2.webp",
+      "./images/Bolso Negro de Caballeros 3.webp",
+
+         ],
     category: "ropa",
     description: " cartera para hombre, bolso de hombro de tela Oxford a la moda, informal, cruzado Diagonal, máquina de mano a la moda, bolso cuadrado pequeño",
     features: [
@@ -339,8 +344,8 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 
 { 
   id: 9,
-  name: "Linterna de Cabeza Recargable",
-  price: 575,
+  name: "Linterna de Cabezal Frontal Recargable",
+  price: 500,
   image: "./images/linternacabeza1.jpeg",
   images: [
     "./images/linternacabeza1.jpeg",
@@ -350,7 +355,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
     "./images/linternacabeza5.jpeg",
     "./images/linternacabeza6.jpeg",
   ],
-  category: "electronica",
+  category: "Hierramientas",
   description: "Tecnología de detección inteligente: a diferencia de otros productos, nuestro faro está equipado con los últimos sensores inteligentes. Controla fácilmente la luz encendida y apagada agitando tu mano incluso si tienes guantes puestos, no ensuciará la unidad. Enciende la lámpara frontal y el interruptor de inducción al mismo tiempo.",
   features: [
     "Haz amplio de 230°: estos faros delanteros de barra de luz brillante proporcionan una excelente iluminación de gran angular de 230° y 350 lúmenes, en lugar de iluminar solo una pequeña zona delante de ti como los faros tradicionales. También diseñado con un foco lateral LED extra brillante para satisfacer tus diferentes necesidades de escenarios, por ejemplo, camping, correr, ciclismo, trabajo y reparación.",
@@ -365,8 +370,8 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
 
 { 
   id: 10,
-  name: "Puntadores de presentador inalámbricos de 2,4G",
-  price: 0,
+  name: "Puntadores de presentador inalámbricos de 2,4G Negro-Gris 8018",
+  price: 800,
   image: "./images/wirelessPresenter1.avif",
   images: [
     "./images/wirelessPresenter1.avif",
@@ -383,7 +388,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   reviews: [],
   rating: 4.8
 },
-
+/*
 { 
   id: 11,
   name: "Cargador portátil de batería de 50000 mAh, cargador de batería de carga rápida de 22.5 W con cables integrados, cargador de teléfono portátil USB-C esencial para viajes, campamento, para iPhone",
@@ -454,6 +459,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   reviews: [],
   rating: 4.8
 },
+*/
 
 { 
   id: 13,
@@ -605,7 +611,7 @@ EL PAQUETE INCLUYE:
 {
   id: 16,
   name: "Echinacea GoldenSeal 1400Mg. 120Cap.",
-  price: 0,
+  price: 650,
   image: "./images/Echinacea GoldenSeal 1400mg. 120Vcap 1.jpg",
   images: [
     "./images/Echinacea GoldenSeal 1400mg. 120Vcap 1.jpg",
@@ -670,7 +676,7 @@ EL PAQUETE INCLUYE:
 {
   id: 17,
   name: "Vitamina E-1000 IU 60Sgel.",
-  price: 0,
+  price: 550,
   image: "./images/Vitamina E1000 60sgel 365 1.jpg", 
   images: [
     "./images/Vitamina E1000 60sgel 365 1.jpg",
@@ -731,7 +737,7 @@ Este suplemento es ideal para personas que buscan complementar su alimentación 
 {
   id: 18,
   name: "Garlic 6000mg. 200Sgel Fito Medic",
-  price: 0,
+  price: 550,
   image: "./images/Garlic 6000mg. 200Sgel Fito Medic 6.jpg",
   images: [
     "./images/Garlic 6000mg. 200Sgel Fito Medic 6.jpg",
@@ -799,7 +805,7 @@ Este suplemento es ideal para adultos que buscan integrar los beneficios del ajo
 {
   id: 19,
   name: "Glucosamine Chondroitin MSM 180caps.",
-  price: 0,
+  price: 850,
   image: "./images/Glucosamine Chondroitin MSM 1.jpg",
   images: [
     "./images/Glucosamine Chondroitin MSM 1.jpg",
@@ -861,7 +867,7 @@ La fórmula puede ser una opción nutritiva para quienes desean mantener su bien
 {
   id: 20,
   name: "B-Complex + Vitamina C 100Caps Nature Truth",
-  price: 0,
+  price: 600,
   image: "./images/B-Complex + Vitamina C 100cap. Nature Truth 1.jpg",
   images: [
     "./images/B-Complex + Vitamina C 100cap. Nature Truth 1.jpg",
@@ -927,7 +933,7 @@ Mantener fuera del alcance de los niños.
 {
   id: 21,
   name: "Chlorophyll Chewable 300Tab. Horbaach.",
-  price: 0,
+  price: 650,
   image: "./images/Chlorophyll 300Tab Horbaach 1.jpg",
   images: [
     "./images/Chlorophyll 300Tab Horbaach 1.jpg",
@@ -993,7 +999,7 @@ Este suplemento es vegano, libre de gluten y Non-GMO, ideal para quienes buscan 
 {
 id: 22,
   name: "Milk Thistle Extract 1000mg. 60caps. Nature's",
-  price: 0,
+  price: 500,
   image: "./images/Milk Thistle 1000mg. 1.jpg",
   images: [
     "./images/Milk Thistle 1000mg. 1.jpg",
@@ -1062,7 +1068,7 @@ Ideal para adultos que buscan mantener una función hepática saludable y promov
 {
 id: 23,
   name: "Zinc 50mg. 60cap AMS",
-  price: 0,
+  price: 650,
   image: "./images/Zinc 50mg. 60cap AMS 1.jpg",
   images: [
     "./images/Zinc 50mg. 60cap AMS 1.jpg",
@@ -1129,7 +1135,7 @@ Ideal para hombres y mujeres adultos que buscan reforzar sus defensas, mejorar e
 {
 id: 24,
   name: "Hair Skin Nails 60cap.",
-  price: 0,
+  price: 800,
   image: "./images/Hair Skin Nail 1.jpg",
   images: [
     "./images/Hair Skin Nail 1.jpg",
@@ -1196,7 +1202,7 @@ Este suplemento es Non-GMO y libre de gluten, adecuado para hombres y mujeres qu
 {
 id: 25,
   name: "Calcium 1200mg. 120Sgel. Tahoe Nutritional",
-  price: 0,
+  price: 800,
   image: "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 1.jpg",
   images: [
     "./images/Calcium 1200mg. 120Sgel. Tahoe Nutritional 1.jpg",
@@ -1265,7 +1271,7 @@ El producto se presenta en cápsulas blandas de fácil ingestión y está elabor
 {
 id: 26,
   name: "Raw Flora 50 Billon",
-  price: 0,
+  price: 750,
   image: "./images/Raw Flora 50 Billon 1.jpg",
   images: [
     "./images/Raw Flora 50 Billon 1.jpg",
@@ -1333,13 +1339,766 @@ Ideal para hombres y mujeres que buscan mejorar la digestión, el bienestar inte
 },
 
 
+{
+id: 27,
+  name: "Acidosphilus Probiotics 200cap",
+  price: 650,
+  image: "./images/Acidosphilus Probiotics 200cap 1.jpg",
+  images: [
+    "./images/Acidosphilus Probiotics 200cap 1.jpg",
+    "./images/Acidosphilus Probiotics 200cap 2.jpg",
+    "./images/Acidosphilus Probiotics 200cap 3.jpg",
+    "./images/Acidosphilus Probiotics 200cap 4.jpg",
+    "./images/Acidosphilus Probiotics 200cap 5.jpg",  
+    "./images/Acidosphilus Probiotics 200cap 6.jpg",
+    "./images/Acidosphilus Probiotics 200cap 7.jpg",
+    "./images/Acidosphilus Probiotics 200cap 8.jpg",
+    
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+    Acidophilus Probiotic de Carlyle es un suplemento diseñado para apoyar la salud digestiva e intestinal mediante la incorporación de Lactobacillus acidophilus, un probiótico clave que ayuda a mantener un equilibrio saludable de la flora intestinal.
+Con 500 millones de CFU por cápsula, este suplemento es ideal para hombres y mujeres que buscan mejorar la digestión, reforzar el bienestar intestinal y apoyar el sistema inmunológico de forma natural. Fórmula Non-GMO y libre de gluten, apta para uso diario.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Lactobacillus acidophilus (500 Million CFU por cápsula) – Bacteria beneficiosa que ayuda a mantener la salud intestinal
+•	Cápsula y excipientes de calidad, libres de gluten y Non-GMO
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+     Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya el equilibrio natural de la flora intestinal
+✔️ Contribuye a una digestión saludable
+✔️ Favorece la absorción de nutrientes
+✔️ Ayuda a mantener el funcionamiento normal del sistema inmunológico
+✔️ Apto para hombres y mujeres
+✔️ Fórmula Non-GMO y libre de gluten
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+    •	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o tomando medicamentos.
+•	Mantener fuera del alcance de los niños.
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 28,
+  name: "Multi Collagen 2000Mg. 180cap. Best Nature",
+  price: 800,
+  image: "./images/Collagen Pill 2000mg. 1.jpg",
+  images: [
+    "./images/Collagen Pill 2000mg. 1.jpg",
+    "./images/Collagen Pill 2000mg. 2.jpg",
+    "./images/Collagen Pill 2000mg. 3.jpg",
+    "./images/Collagen Pill 2000mg. 4.jpg",
+    "./images/Collagen Pill 2000mg. 5.jpg",  
+    "./images/Collagen Pill 2000mg. 6.jpg",
+    "./images/Collagen Pill 2000mg. 7.jpg",
+        
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+    Acidophilus Probiotic de Carlyle es un suplemento diseñado para apoyar la salud digestiva e intestinal mediante la incorporación de Lactobacillus acidophilus, un probiótico clave que ayuda a mantener un equilibrio saludable de la flora intestinal.
+Con 500 millones de CFU por cápsula, este suplemento es ideal para hombres y mujeres que buscan mejorar la digestión, reforzar el bienestar intestinal y apoyar el sistema inmunológico de forma natural. Fórmula Non-GMO y libre de gluten, apta para uso diario.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Lactobacillus acidophilus (500 Million CFU por cápsula) – Bacteria beneficiosa que ayuda a mantener la salud intestinal
+•	Cápsula y excipientes de calidad, libres de gluten y Non-GMO
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+     Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya el equilibrio natural de la flora intestinal
+✔️ Contribuye a una digestión saludable
+✔️ Favorece la absorción de nutrientes
+✔️ Ayuda a mantener el funcionamiento normal del sistema inmunológico
+✔️ Apto para hombres y mujeres
+✔️ Fórmula Non-GMO y libre de gluten
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+    •	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o tomando medicamentos.
+•	Mantener fuera del alcance de los niños.
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 29,
+  name: "Echinacea 1300Mg. 100cap. Nature Truth's",
+  price: 600,
+  image: "./images/Echinacea 1300Mg 100cap 1.jpg",
+  images: [
+    "./images/Echinacea 1300Mg 100cap 1.jpg",
+    "./images/Echinacea 1300Mg 100cap 2.jpg",
+    "./images/Echinacea 1300Mg 100cap 3.jpg",
+    "./images/Echinacea 1300Mg 100cap 4.jpg",
+    "./images/Echinacea 1300Mg 100cap 5.jpg",  
+    "./images/Echinacea 1300Mg 100cap 6.jpg",
+    "./images/Echinacea 1300Mg 100cap 7.jpg",
+        
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+   El Echinacea Extract de Nature's Truth es un suplemento herbal diseñado para apoyar el sistema inmunológico y contribuir al bienestar general. Cada cápsula contiene 1300 mg de extracto de Echinacea, una planta tradicionalmente utilizada para ayudar al cuerpo a mantener sus defensas naturales.
+Esta fórmula es Non-GMO y libre de gluten, apta para uso diario en hombres y mujeres que buscan reforzar su salud de manera natural.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Echinacea purpurea (extracto) – Planta herbal utilizada históricamente para reforzar las defensas naturales del organismo.
+•	Cápsula y excipientes de calidad, libres de gluten y Non-GMO.
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+    Tomar 1 cápsula al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya el funcionamiento saludable del sistema inmunológico
+✔️ Favorece el bienestar general del organismo
+✔️ Contribuye a la resistencia natural frente a cambios ambientales
+✔️ Fórmula tradicional a base de extracto de Echinacea
+✔️ Non-GMO y libre de gluten
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+    •	Suplemento dietético.
+•	Mantener fuera del alcance de los niños.
+•	Consultar a un profesional de la salud si está embarazada, en lactancia o bajo medicación.
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 30,
+  name: "Folic Acid 400mcg",
+  price: 450,
+  image: "./images/Folic Acid 400mcg 1.jpg",
+  images: [
+    "./images/Folic Acid 400mcg 1.jpg",
+    "./images/Folic Acid 400mcg 2.jpg",
+    "./images/Folic Acid 400mcg 3.jpg",
+    "./images/Folic Acid 400mcg 4.jpg",
+    "./images/Folic Acid 400mcg 5.jpg",  
+    "./images/Folic Acid 400mcg 6.jpg",
+    
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+  El Folic Acid 400 mcg de Carlyle es un suplemento esencial de ácido fólico, diseñado para apoyar la salud celular, la producción de glóbulos rojos y la síntesis normal del ADN. Es especialmente recomendado para mujeres en edad fértil, así como para cualquier persona que busque reforzar su bienestar general y la salud metabólica.
+Esta fórmula es vegetariana, Non-GMO y libre de gluten, ideal para consumo diario seguro y confiable.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Folic Acid 400 mcg – Vitamina B9 esencial para salud celular y producción sanguínea
+•	Excipientes de calidad, tabletas vegetarianas
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+    <p>
+    Tomar 1 tableta al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya la producción normal de glóbulos rojos
+✔️ Contribuye a la síntesis normal de ADN y salud celular
+✔️ Ayuda a mantener bienestar general y metabolismo saludable
+✔️ Fórmula vegetariana, Non-GMO y libre de gluten
+✔️ Suplemento diario seguro y práctico
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+   •	Suplemento dietético.
+•	No exceder la dosis recomendada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o bajo medicación.
+•	Mantener fuera del alcance de los niños.
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 31,
+  name: "Hydrocortisone Cream",
+  price: 250,
+  image: "./images/Hydrocortisone Cream 1.jpg",
+  images: [
+    "./images/Hydrocortisone Cream 1.jpg",
+    "./images/Hydrocortisone Cream 2.jpg",
+    "./images/Hydrocortisone Cream 3.jpg",
+    "./images/Hydrocortisone Cream 4.jpg",
+    "./images/Hydrocortisone Cream 5.jpg",  
+    "./images/Hydrocortisone Cream 6.jpg",
+    "./images/Hydrocortisone Cream 7.jpg",
+    
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+  CareAll Hydrocortisone 1% es una crema tópica de máxima potencia sin receta médica diseñada para aliviar temporalmente la picazón, enrojecimiento e inflamación de la piel causados por diversas irritaciones comunes. Su fórmula con hidrocortisona al 1% ayuda a calmar la piel afectada y restaurar el confort cutáneo de manera rápida y efectiva.
+Este producto es ideal para el uso diario en casos leves de irritación y viene en un paquete de 3 tubos de 1 onza, práctico para el hogar, viajes o botiquín personal.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Hidrocortisona 1% – corticosteroide tópico que ayuda a reducir inflamación, picazón y enrojecimiento de la piel.
+
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+   •	Aplicar una capa fina sobre el área afectada
+•	Usar hasta 3–4 veces al día, según necesidad
+•	Solo para uso externo
+•	No usar por períodos prolongados sin indicación médica
+
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+•	✔️ Alivia picazón e inflamación de la piel
+•	✔️ Ayuda a reducir enrojecimiento y molestia
+•	✔️ Efectivo contra irritaciones causadas por picaduras de insectos
+•	✔️ Útil en casos leves de eczema, psoriasis y dermatitis
+•	✔️ Ayuda a aliviar molestias por hiedra venenosa, roble y zumaque
+•	✔️ Fórmula de máxima potencia (1%) sin receta médica
+
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+  •	Este producto es un medicamento de uso tópico sin receta.
+•	No usar en heridas abiertas, infecciones o piel severamente dañada.
+•	Evitar el contacto con ojos, boca y mucosas.
+•	Suspender el uso si la condición empeora o no mejora en 7 días.
+•	Consultar a un médico antes de usar en niños menores de 2 años.
+•	Mantener fuera del alcance de los niños.
+•	Consultar a un profesional de la salud si estás embarazada, amamantando o tomando medicamentos.
+•	Mantener fuera del alcance de los niños.
+
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+
+{
+id: 32,
+  name: "Iron Chelate 240cap. Nutricost",
+  price: 800,
+  image: "./images/Iron Chelate 240cap. Nuricost 1.jpg",
+  images: [
+    "./images/Iron Chelate 240cap. Nuricost 1.jpg",
+    "./images/Iron Chelate 240cap. Nuricost 2.jpg",
+    "./images/Iron Chelate 240cap. Nuricost 3.jpg",
+    "./images/Iron Chelate 240cap. Nuricost 4.jpg",
+    "./images/Iron Chelate 240cap. Nuricost 5.jpg",  
+        
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+  El Hierro Quelado (Ferrochel®) es un suplemento esencial diseñado para apoyar la producción de glóbulos rojos y el transporte adecuado de oxígeno en el organismo. Su forma quelada permite una mejor absorción y mayor tolerancia, reduciendo molestias digestivas comunes asociadas al hierro tradicional.
+Este suplemento es ideal para personas que buscan mantener niveles saludables de hierro como parte de una dieta equilibrada, ayudando a combatir la sensación de cansancio y apoyar la energía diaria de forma segura y eficaz.
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Personas con bajo consumo de hierro en la dieta
+•	Quienes buscan más energía y vitalidad
+•	Apoyo nutricional diario bajo recomendación profesional
 
 
 
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+   •	Aplicar una capa fina sobre el área afectada
+•	Usar hasta 3–4 veces al día, según necesidad
+•	Solo para uso externo
+•	No usar por períodos prolongados sin indicación médica
+
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+•	Apoya la formación de glóbulos rojos
+•	Contribuye al transporte de oxígeno en la sangre
+•	Ayuda a mantener niveles saludables de energía
+•	Favorece el funcionamiento del sistema inmunológico
+•	Fórmula de alta absorción y buena tolerancia digestiva
+
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+  
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+
+{
+id: 33,
+  name: "Men Multi 50+",
+  price: 650,
+  image: "./images/Men Multi 50+ 1.jpg",
+  images: [
+    "./images/Men Multi 50+ 1.jpg",
+    "./images/Men Multi 50+ 2.jpg",
+    "./images/Men Multi 50+ 3.jpg",
+    "./images/Men Multi 50+ 4.jpg",
+    "./images/Men Multi 50+ 5.jpg",  
+    "./images/Men Multi 50+ 6.jpg", 
+    "./images/Men Multi 50+ 7,jpg",
+    "./images/Men Multi 50+ 8.jpg"
 
 
 
+        
+  ],
+  category: "Suplementos",
 
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+ El Multivitamínico para Hombres 50+ está especialmente formulado para cubrir las necesidades nutricionales de los hombres mayores de 50 años. Contiene una combinación balanceada de vitaminas del complejo B, Vitamina D, Magnesio y Zinc, nutrientes esenciales que apoyan la energía diaria, la salud ósea, muscular e inmunológica.
+Este suplemento está diseñado para ayudar a mantener el bienestar general, apoyar el metabolismo y contribuir a un estilo de vida activo y saludable con el paso del tiempo.
+
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Vitaminas del complejo B – Apoyan la producción de energía y el metabolismo.
+•	Vitamina D – Contribuye a la absorción del calcio y a la salud ósea.
+•	Magnesio – Apoya la función muscular y nerviosa.
+•	Zinc – Contribuye al funcionamiento normal del sistema inmunológico y la salud general.
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+   Tomar 1 tableta al día, preferiblemente con alimentos, o según indicación de un profesional de la salud.
+
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+✔️ Apoya la energía y vitalidad diaria
+✔️ Contribuye al funcionamiento normal del sistema inmunológico
+✔️ Ayuda a mantener huesos y músculos saludables
+✔️ Apoya el metabolismo y la función celular
+✔️ Fórmula adaptada a las necesidades del hombre 50+
+✔️ Non-GMO y libre de gluten
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+  •	Suplemento dietético.
+•	No sustituye una dieta equilibrada.
+•	Consultar con un profesional de la salud si está embarazada, en lactancia o bajo tratamiento médico.
+•	Mantener fuera del alcance de los niños.
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{
+id: 34,
+  name: "Vitamina A 10,000",
+  price: 450,
+  image: "./images/Vitamina A 10,000 1.jpg",
+  images: [
+    "./images/Vitamina A 10,000 1.jpg",
+    "./images/Vitamina A 10,000 2.jpg",
+    "./images/Vitamina A 10,000 3.jpg",
+    "./images/Vitamina A 10,000 4.jpg",
+    "./images/Vitamina A 10,000 5.jpg",  
+    "./images/Vitamina A 10,000 6.jpg",
+    "./images/Vitamina A 10,000 7.jpg",
+               
+  ],
+  category: "Suplementos",
+
+  description: `
+    <p style="font-size:18px; font-weight:600;">Detalles del producto</p>
+
+    <p>
+ Suplemento de Vitamina A en cápsulas blandas de alta potencia, diseñado para apoyar funciones esenciales del organismo como la salud de la piel, visión y sistema inmunológico. Cada cápsula proporciona una dosis eficaz de 10,000 UI (3,000 mcg) para complementar la alimentación diaria y mantener niveles adecuados de este nutriente importante para el bienestar general. 
+Nature’s Truth es una marca conocida por su compromiso con productos de calidad, sin gluten y sin ingredientes artificiales, elaborados para integrarse fácilmente en tu rutina de bienestar. 
+
+    </p>
+
+    <p>
+      🧪 Ingredientes clave
+•	Vitamina A (Retinol o equivalente) – Nutriente esencial para funciones visuales, inmunitarias y mantenimiento de tejidos.
+
+    </p>
+
+    <p style="font-weight:600;">Modo de uso</p>
+   Tomar 1 cápsula blanda al día o según indicación de un profesional de la salud. Ideal para complementar dietas que no aportan suficiente vitamina A.
+    </p>
+
+    <p style="font-weight:600;">Beneficios</p>
+    <ul>
+      <li>🌟 Beneficios principales
+•	✔️ Apoya la visión saludable, especialmente en condiciones de poca luz
+•	✔️ Favorece la salud de la piel y mucosas
+•	✔️ Contribuye al sistema inmunológico
+•	✔️ Su forma en cápsulas blandas facilita su absorción
+•	✔️ Producto libre de gluten, trigo y colorantes artificiales 
+
+/li>
+    </ul>
+
+    <p style="font-weight:600;">Advertencias</p>
+    <p>
+  •	Este producto es un suplemento dietético, no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad.
+•	Consulta a un médico si estás embarazada, amamantando, bajo medicación o tienes alguna condición médica.
+•	Mantener fuera del alcance de los niños. 
+
+
+	    </p>
+  `,
+
+    features: [],
+
+  reviews: [],
+  rating: 4.8
+},
+
+{ 
+    id: 35, 
+    name: "Scanner Automotriz V519 Multilenguaje OBD2", 
+    price: 1200, 
+    image: "./images/Escaner Automotriz V519 0.avif",  
+    images: [
+      "./images/Escaner Automotriz V519 0.avif",
+      "./images/Escaner Automotriz V519 1.avif",
+      "./images/Escaner Automotriz V519 2.avif",
+      "./images/Escaner Automotriz V519 3.avif",
+      "./images/Escaner Automotriz V519 4.avif",
+      "./images/Escaner Automotriz V519 5.avif",
+      "./images/Escaner Automotriz V519 5.webp",
+      "./images/Escaner Automotriz V519 7.webp", 
+      "/images/Escaner Automotriz V519 8.webp",
+
+    ],
+    category: "Accesorios Autos",
+    description: "Escáner OBD2 V410 es una herramienta de escaneo de diagnóstico",
+    features: [
+      "El escáner OBD2 V410 es una herramienta de escaneo de diagnóstico diseñada para vehículos de pasajeros fabricados después de 1996 en los Estados Unidos.", 
+      "Esta herramienta es compatible con nueve protocolos estándar OBDII/EOBD y ofrece funciones como prueba EVAP, prueba de voltaje, consulta de código de falla y más.", 
+      "Viene con una guía del usuario, cable adaptador, cable USB y cuenta con una pantalla LCD para facilitar la lectura.",
+      "Con soporte para varios idiomas y compatibilidad con varias interfaces OBD,", 
+      "este escáner es una herramienta conveniente y versátil para solucionar problemas de fallas del motor en tu vehículo",
+    ],
+    reviews: [],
+    rating: 4.5
+  },
+  { 
+    id: 36, 
+    name: "Scanner Automotriz V519 Multilenguaje OBD2 Azul", 
+    price: 1200,
+    image: "./images/Escaner Automotriz V519 Azul.avif", 
+    images: [
+      "./images/Escaner Automotriz V519 Azul.avif",
+      "./images/Escaner Automotriz V519 1.avif",
+      "./images/Escaner Automotriz V519 2.avif",
+      "./images/Escaner Automotriz V519 3.avif",
+      "./images/Escaner Automotriz V519 4.avif",
+      "./images/Escaner Automotriz V519 5.webp",
+      "./images/Escaner Automotriz V519 5.avif",
+      "./images/Escaner Automotriz V519 7.webp",
+      "/images/Escaner Automotriz V519 8.webp",
+      
+    ],
+    category: "Accesorios Autos",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    features: [
+      "Nombre del producto: Pantalla digital 4USB + 2PD",
+      "Parámetros de entrada: 12-24V",
+      "Parámetro de salida: Verde Súper Puerto: 5V/3A 9V/2.2A12V/1.6A (pantalla carga súper rápida)",
+      "3 puertos USB: 5V/3,1A",
+      "PD: 5V/3,1A",
+      "Tamaño del producto: 65 mm * 40 mm * 40 mm",
+      "Color del producto: negro",
+      "Peso del producto: 27 g (peso desnudo)",
+      "Material del producto: material ignífugo ABS + anillo de aleación de aluminio",
+    ],
+    reviews: [],
+    rating: 5
+  },
+{
+id: 37, 
+    name: "Cubo de Sensor de Oxigeno 22mm", 
+    price: 800,
+    image: "./images/Cubo Sensor Oxigeno 1.jpg", 
+    images: [
+      "./images/Cubo Sensor Oxigeno 1.jpg",
+      "./images/Cubo Sensor Oxigeno 2.jpg",
+      "./images/Cubo Sensor Oxigeno 3.jpg",
+      "./images/Cubo Sensor Oxigeno 4.jpg",
+      "./images/Cubo Sensor Oxigeno 5.jpg",
+      "./images/Cubo Sensor Oxigeno 6.jpg",
+      "./images/Cubo Sensor Oxigeno 7.jpg",
+            
+    ],
+    category: "Hierramientas",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    features: [
+      "Nombre del producto: Pantalla digital 4USB + 2PD",
+      "Parámetros de entrada: 12-24V",
+      "Parámetro de salida: Verde Súper Puerto: 5V/3A 9V/2.2A12V/1.6A (pantalla carga súper rápida)",
+      "3 puertos USB: 5V/3,1A",
+      "PD: 5V/3,1A",
+      "Tamaño del producto: 65 mm * 40 mm * 40 mm",
+      "Color del producto: negro",
+      "Peso del producto: 27 g (peso desnudo)",
+      "Material del producto: material ignífugo ABS + anillo de aleación de aluminio",
+    ],
+    reviews: [],
+    rating: 5
+  },
+
+{
+id: 38, 
+    name: "Linterna de Cabezal Frontal Recargable 3 Lineas", 
+    price: 600,
+    image: "./images/Luces Led de Cabeza Frontal 3 Lineas 1.avif", 
+    images: [
+      "./images/Luces Led de Cabeza Frontal 3 Lineas 1.avif",
+      "./images/Luces Led de Cabeza Frontal 3 Lineas 2.avif",
+      "./images/Luces Led de Cabeza Frontal 3 Lineas 3.avif",
+      "./images/Luces Led de Cabeza Frontal 3 Lineas 4.avif",
+      "./images/Luces Led de Cabeza Frontal 3 Lineas 5.avif",
+      "./images/Luces Led de Cabeza Frontal 3 Lineas 8.avif",
+            
+    ],
+    category: "Hierramientas",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    features: [
+        "SÚPER BRILLANTE y 230° HAYA COB ANCHA: Linterna frontal LED con haz ancho COB súper brillante de 4,7 pulgadas, el nuevo 230° El faro de haz amplio le permite iluminar el área de visión sin mover la cabeza, un brillo de 450 lúmenes y una salida de distancia de 350 pies.Ideal para entusiastas del aire libre como equipo de camping.Ya sea que esté acampando, explorando, haciendo senderismo, montando en bicicleta, pescando, escalando, reparando y otras actividades al aire libre o en interiores, nuestros faros son sus excelentes asistentes.",
+"Diadema ligera y ajustable: la diadema LED está hecha de ABS suave y silicona, y pesa solo 3,5 onzas.La diadema elástica ajustable es plegable sin afectar su uso, y su diseño liviano y compacto hace que sea fácil de guardar en el bolsillo.Adecuado para adultos o niños, el faro recargable se puede utilizar para actividades en interiores y exteriores sin presión, especialmente para reparaciones de automóviles, trabajos de bricolaje o situaciones de emergencia.",
+"Faro con control de sensor de movimiento manos libres: la linterna frontal LED está equipada con una función avanzada de sensor de movimiento de gestos, lo que le permite controlar el interruptor de la lámpara frontal con un simple movimiento de la mano dentro de un rango de detección de 5 pulgadas.Cuando enciendes el faro, puedes presionar el botón del sensor para activar el modo del sensor (indicado por el LED que cambia de rojo a verde).En el modo sensor, también puede ajustar el modo de iluminación mediante el interruptor de encendido.",
+"IPX4 resistente al agua y múltiples opciones de carga: el faro está diseñado con clasificación de impermeabilidad IPX4. Se puede utilizar normalmente en climas tormentosos. Admite múltiples opciones de carga a través de un versátil sistema de carga USB, incluida la carga tipo C, que permite una carga rápida con alta corriente y es segura y práctica. Es un equipo de camping ideal para los entusiastas del aire libre."
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 39, 
+    name: "Sombrero de Sol", 
+    price: 500,
+    image: "./images/Sombrero de sol 0.jpg", 
+    images: [
+      "./images/Sombrero de Sol Gris 1.Avif",
+      "./images/Sombrero de Sol Negro.jpg",
+      "./images/Sombrero de Sol Gris 2.Avif",
+      "./images/Sombrero de Sol Gris 3.Avif",
+      "./images/Sombrero de Sol Gris 4.Avif",
+      "./images/Sombrero de Sol Gris 5.Avif",
+      "./images/Sombrero de Sol Gris 6.Avif",
+      "./images/Sombrero de Sol Gris 7.Avif",
+            
+    ],
+    category: "ropa",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    features: [
+       
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 40, 
+    name: "Bolso Marron y Negro de Cuerro", 
+    price: 700,
+    image: "./images/Bolso Negro y Marron Cuero.jpg", 
+    images: [
+      "./images/Bolso Marron de Cuero para caballeros 1.avif",
+      "./images/Bolso Negro Cuero Caballeros.avif",
+      "./images/Bolso Marron de Cuero para caballeros 2.webp",
+      "./images/Bolso Marron de Cuero para caballeros 3.avif",
+                  
+    ],
+    category: "ropa",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    features: [
+      
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 40, 
+    name: "Bolso Negro Ejecutivo de Cuero", 
+    price: 700,
+    image: "./images/Bolso Negro Cuero Ejecutivo 1.avif", 
+    images: [
+      "./images/Bolso Negro Cuero Ejecutivo 1.avif",
+      
+                  
+    ],
+    category: "ropa",
+    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    features: [
+        "SÚPER BRILLANTE y 230° HAYA COB ANCHA: Linterna frontal LED con haz ancho COB súper brillante de 4,7 pulgadas, el nuevo 230° El faro de haz amplio le permite iluminar el área de visión sin mover la cabeza, un brillo de 450 lúmenes y una salida de distancia de 350 pies.Ideal para entusiastas del aire libre como equipo de camping.Ya sea que esté acampando, explorando, haciendo senderismo, montando en bicicleta, pescando, escalando, reparando y otras actividades al aire libre o en interiores, nuestros faros son sus excelentes asistentes.",
+"Diadema ligera y ajustable: la diadema LED está hecha de ABS suave y silicona, y pesa solo 3,5 onzas.La diadema elástica ajustable es plegable sin afectar su uso, y su diseño liviano y compacto hace que sea fácil de guardar en el bolsillo.Adecuado para adultos o niños, el faro recargable se puede utilizar para actividades en interiores y exteriores sin presión, especialmente para reparaciones de automóviles, trabajos de bricolaje o situaciones de emergencia.",
+"Faro con control de sensor de movimiento manos libres: la linterna frontal LED está equipada con una función avanzada de sensor de movimiento de gestos, lo que le permite controlar el interruptor de la lámpara frontal con un simple movimiento de la mano dentro de un rango de detección de 5 pulgadas.Cuando enciendes el faro, puedes presionar el botón del sensor para activar el modo del sensor (indicado por el LED que cambia de rojo a verde).En el modo sensor, también puede ajustar el modo de iluminación mediante el interruptor de encendido.",
+"IPX4 resistente al agua y múltiples opciones de carga: el faro está diseñado con clasificación de impermeabilidad IPX4. Se puede utilizar normalmente en climas tormentosos. Admite múltiples opciones de carga a través de un versátil sistema de carga USB, incluida la carga tipo C, que permite una carga rápida con alta corriente y es segura y práctica. Es un equipo de camping ideal para los entusiastas del aire libre."
+    ],
+reviews: [],
+    rating: 5
+  },
+
+
+{
+id: 41, 
+    name: "Bolso Tela Negro Franja Verde y Gris", 
+    price: 600,
+    image: "./images/Bolso Caballero Negro con Gris Verde.jpg", 
+    images: [
+      "./images/Bolso Caballero Negro con Gris 1.avif",
+      "./images/Bolso Caballero Negro con Gris 2.avif",
+      "./images/Bolso Caballero Negro con Gris 3.avif",
+      "./images/Bolso Caballero Negro con Verde 1.avif",
+      "./images/Bolso Caballero Negro con Verde 2.avif",
+      "./images/Bolso Caballero Negro con Verde 3.avif",
+      "./images/Bolso Caballero Negro con Verde 4.avif"
+                  
+    ],
+    category: "ropa",
+    description: "Mini Bolso Color Gris y Verde",
+    features: [
+      "Nuevo 2025: Mini bolso cruzado para hombre de tela Oxford, estilo minimalista y casual, bolso de un solo hombro, compacto y práctico, con espacio para el teléfono móvil, bolso pequeño para hombre ideal para uso diario y casual."
+    ],
+reviews: [],
+    rating: 5
+  },
 
 
 
