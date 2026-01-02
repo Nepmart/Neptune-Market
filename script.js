@@ -1404,15 +1404,15 @@ Con 500 millones de CFU por cápsula, este suplemento es ideal para hombres y mu
 id: 28,
   name: "Multi Collagen 2000Mg. 180cap. Best Nature",
   price: 800,
-  image: "./images/Collagen Pill 2000mg. 1.jpg",
+  image: "./images/Collagen Pill 2000Mg. 1.jpg",
   images: [
-    "./images/Collagen Pill 2000mg. 1.jpg",
-    "./images/Collagen Pill 2000mg. 2.jpg",
-    "./images/Collagen Pill 2000mg. 3.jpg",
-    "./images/Collagen Pill 2000mg. 4.jpg",
-    "./images/Collagen Pill 2000mg. 5.jpg",  
-    "./images/Collagen Pill 2000mg. 6.jpg",
-    "./images/Collagen Pill 2000mg. 7.jpg",
+    "./images/Collagen Pill 2000Mg. 1.jpg",
+    "./images/Collagen Pill 2000Mg. 2.jpg",
+    "./images/Collagen Pill 2000Mg. 3.jpg",
+    "./images/Collagen Pill 2000Mg. 4.jpg",
+    "./images/Collagen Pill 2000Mg. 5.jpg",  
+    "./images/Collagen Pill 2000Mg. 6.jpg",
+    "./images/Collagen Pill 2000Mg. 7.jpg",
         
   ],
   category: "Suplementos",
@@ -2042,7 +2042,7 @@ reviews: [],
   },
 
 {
-id: 40, 
+id: 41, 
     name: "Bolso Negro Ejecutivo de Cuero", 
     price: 700,
     image: "./images/Bolso Negro Cuero Ejecutivo 1.avif", 
@@ -2064,7 +2064,7 @@ reviews: [],
 
 
 {
-id: 41, 
+id: 42, 
     name: "Bolso Tela Negro Franja Verde y Gris", 
     price: 600,
     image: "./images/Bolso Caballero Negro con Gris Verde.jpg", 
@@ -2088,7 +2088,7 @@ reviews: [],
   },
 
 {
-id: 42, 
+id: 43, 
     name: "Presentacion Puntero Laser Inalambrico MRVI", 
     price: 700,
     image: "./images/Presentacion Puntero MRVI 1.avif", 
@@ -2120,7 +2120,7 @@ id: 42,
   },
 
 {
-id: 43, 
+id: 44, 
     name: "Mini Sopladora Portatil de Aire 130,000RPM", 
     price: 2200,
     image: "./images/Sopladora de Aire 5.avif", 
@@ -2169,7 +2169,7 @@ reviews: [],
   },
 
 {
-id: 44, 
+id: 45, 
     name: "Lampara Leds 3 Tono con Sensor", 
     price: 600,
     image: "./images/Luces Led Para Vitrinas.avif", 
@@ -2202,7 +2202,7 @@ id: 44,
   },
 
 {
-id: 45, 
+id: 46, 
     name: "Shampoo Tinte Negro 3 en 1", 
     price: 1200,
     image: "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 1.avif", 
@@ -2233,7 +2233,7 @@ reviews: [],
   },
 
 {
-id: 46, 
+id: 47, 
     name: "Bolso Negro Cruzado Tela Oxford", 
     price: 600,
     image: "./images/bolsocruzadonegro1.avif", 
@@ -2254,7 +2254,7 @@ reviews: [],
 
 
 {
-id: 47, 
+id: 48, 
     name: "Protector de Cinturo Chevrolet Z71", 
     price: 900,
     image: "./images/Protector de Cinturon Z71 7.avif", 
@@ -2278,7 +2278,7 @@ reviews: [],
   },
 
 {
-id: 48, 
+id: 49, 
     name: "Cubo de Sensor de Oxigeno Niquelado 22mm. 7/8", 
     price: 1000,
     image: "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 1.jpg", 
@@ -2306,7 +2306,7 @@ reviews: [],
   },
 
 {
-id: 49, 
+id: 50, 
     name: "Cubo de Sensor de Oxigeno Niquelado 22mm. 1/2", 
     price: 1000,
     image: "./images/cubo sensor oxigeno 22mm 1-2 Niquelado 1.jpg", 
@@ -2335,7 +2335,7 @@ reviews: [],
 
 
 {
-id: 50, 
+id: 51, 
     name: "Cubo de Sensor de Oxigeno Negro Corto 22mm. 7/8", 
     price: 1000,
     image: "./images/cubo sensor oxigeno 22mm negro 7-8 corto.jpg", 
@@ -2362,7 +2362,7 @@ reviews: [],
   },
 
 {
-id: 51, 
+id: 52, 
     name: "Estuche para Lentes en diferentes Colores", 
     price: 350,
     image: "./images/Estuche de Lentes 1.jpg", 
