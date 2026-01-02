@@ -64,31 +64,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 });
-// Productos con placeholders temporales
+
 const products = [
-  /*{ 
+  { 
     id: 1, 
-    name: "Scanner Automotriz", 
-    price: 1200, 
-    image: "./images/ecanner0.png",  
+    name: "Medidor de Neumaticos Pantalla con Luz Rojo", 
+    price: 600, 
+    image: "./images/Medidor de Neumaticos Pantalla con Luz 4.avif",  
     images: [
-      "./images/ecanner0.png",
-      "./images/escanner1.png",
-      "./images/escanner2.png",
-      "./images/escanner3.png",
+      "./images/Medidor de Neumaticos Pantalla con Luz 1.avif",
+      "./images/Medidor de Neumaticos Pantalla con Luz 2.webp",
+      "./images/Medidor de Neumaticos Pantalla con Luz 3.avif",
+      "./images/Medidor de Neumaticos Pantalla con Luz 4.avif",
+      "./images/Medidor de Neumaticos Pantalla con Luz 5.webp",
+      "./images/Medidor de Neumaticos Pantalla con Luz 6.avif"
     ],
     category: "Accesorios Autos",
-    description: "Escáner OBD2 V410 es una herramienta de escaneo de diagnóstico",
+    description: "Medidor de presión de neumáticos con retroiluminación, monitoreo Digital de presión de neumáticos de alta precisión, medidor de presión de aire de neumáticos de coche, pantalla LCD",
     features: [
-      "El escáner OBD2 V410 es una herramienta de escaneo de diagnóstico diseñada para vehículos de pasajeros fabricados después de 1996 en los Estados Unidos.", 
-      "Esta herramienta es compatible con nueve protocolos estándar OBDII/EOBD y ofrece funciones como prueba EVAP, prueba de voltaje, consulta de código de falla y más.", 
-      "Viene con una guía del usuario, cable adaptador, cable USB y cuenta con una pantalla LCD para facilitar la lectura.",
-      "Con soporte para varios idiomas y compatibilidad con varias interfaces OBD,", 
-      "este escáner es una herramienta conveniente y versátil para solucionar problemas de fallas del motor en tu vehículo",
+      "Descripción:",
+      "Nuevo y de alta calidad",
+      "Tamaño: 13*4,5*2,5 cm/5,12*1,77*0,98 pulgadas",
+      "Cuatro rangos de medición: PSI: 0-150, Bar,KPA,Kgf/cm2",
+      "Incremento mínimo: 0,5 PSI",
+      "Color: rojo, plata, azul, oro, negro, gris",
+      "Fuente de alimentación: 3 * AG13 (incluido)",
+      "Especificación:",
+      "Boquilla iluminada y pantalla de visualización para máxima visibilidad con poca luz o de noche",
+      "La pantalla digital muestra instantánea y claramente la lectura exacta, eliminando las conjeturas de los medidores analógicos.",
+      "La boquilla se sella al vástago de la válvula para mediciones rápidas y precisas",
+      "El control simple con botón enciende la unidad y selecciona el rango deseado"
     ],
     reviews: [],
     rating: 4.5
-  },*/
+  },
   
   { 
     id: 2, 
@@ -116,28 +125,32 @@ const products = [
     reviews: [],
     rating: 5
   },
-  /*
+  
   { 
     id: 3, 
-    name: "Regleta Cuadrada\"", 
-    price: 0, 
-    image: "./images/regletaCuadrada1.jpg",
+    name: "Medidor de Neumaticos Llavero LCD Digital", 
+    price: 400, 
+    image: "./images/Medidor de Neumaticos tipo llavero LCD 0.avif",
     images: [
-      "./images/regletaCuadrada1.jpg",
-      "./images/regletaCuadrada2.jpg",
-      "./images/regletaCuadrada3.jpg",
-      "./images/regletaCuadrada4.jpg",
-      "./images/regletaCuadrada5.jpg",
-      "./images/regletaCuadrada6.jpg",
+      "./images/Medidor de Neumaticos tipo llavero LCD 1.avif",
+      "./images/Medidor de Neumaticos tipo llavero LCD 2.avif",
+      "./images/Medidor de Neumaticos tipo llavero LCD 3.avif",
+      "./images/Medidor de Neumaticos tipo llavero LCD 4.avif",
+      "./images/Medidor de Neumaticos tipo llavero LCD 5.avif",
+      "./images/Medidor de Neumaticos tipo llavero LCD 6.avif",
     ],
-    category: "electronica",
-    description: "Regleta protectora de sobretensiones – Cable de extensión de enchufe plano de 6 pies con 8 tomas amplias y 4 puertos USB (1 USB C), extensor de salida de 3 lados para oficina en casa, blanco",
+    category: "Accesorios Autos",
+    description: "Probador de presión de aire de neumáticos de coche, medidor de neumáticos, pantalla LCD Digital, alarma de seguridad de neumáticos de motocicleta y coche",
     features: [
-      "Incombustible, Montable, Protección contra Sobretensiones, Protección contra sobrecarga, Protección contra sobretensiones, Ranura USB, Ranura Usb"
+      "Pantalla clara: este medidor de presión de neumáticos de automóvil está equipado con una pantalla digital LCD transparente y botones de función. Con un rango de medición de presión de 5-150 PSI y lecturas precisas de 0.1 PSI, el indicador, combinado con una boquilla de válvula bien sellada, te ayuda a obtener datos de presión de neumáticos de forma rápida y precisa, por lo que es ideal para el monitoreo diario de la presión de los neumáticos y los controles de emergencia.",
+      "【4 ajustes】: Este medidor de presión de neumáticos puede mostrar 4 unidades de presión de neumáticos: PSI, kPa, Bar y Kg/cm². Sin la necesidad de conversiones, cumple con los requisitos de uso de diferentes grupos de usuarios, brindándole una experiencia eficiente y conveniente.",
+      "【Útil】: este medidor de presión de neumáticos de automóvil te ayuda a controlar y mantener los valores de presión de los neumáticos en tiempo real. No solo reduce el desgaste anormal de los neumáticos y prolonga la vida útil de los neumáticos, sino que también optimiza el rendimiento de manejo del vehículo, evita posibles riesgos de seguridad por adelantado y reduce los costos de mantenimiento de la fuente. Es una herramienta práctica para salvaguardar la seguridad de conducción y el mantenimiento económico del automóvil.",
+      "【Fácil uso】: este medidor de presión de neumáticos es fácil de operar. Simplemente presione un botón para medir rápidamente la presión sin pasos complejos. Cuenta con un diseño de ahorro de energía que se apaga automáticamente cuando está inactivo. Adecuado para varios tipos de vehículos, como automóviles, camiones, SUV y motocicletas, cumple con las necesidades de medición de presión de neumáticos de diferentes vehículos y es un práctico accesorio para vehículos. Nota: Este producto no incluye pilas.",
+      "Tamaño y material: este medidor de presión de neumáticos de automóvil mide aproximadamente 1.32 x 2.56 pulgadas, por lo que es compacto y ligero. Viene con un llavero, lo que permite colocarlo fácilmente en un bolsillo, cartera o compartimento de almacenamiento del vehículo sin ocupar mucho espacio, por lo que es adecuado para llevar y comprobar la presión de los neumáticos. Su carcasa de plástico ABS es impermeable, resistente al desgaste y cuenta con una textura antideslizante para un fácil agarre"
     ],
     reviews: [],
     rating: 4.8
-  },*/
+  },
 
   { 
     id: 4, 
@@ -181,46 +194,29 @@ const products = [
 
 { 
   id: 5,
-  name: "Memoria MicroSD (64MB - 512MB)",
-  price: 250, // precio base (se ajustará según selección)
-  image: "./images/memoriaMicroSD1.png",
+  name: "Inflador de Neumaticos 150PSI)",
+  price: 2200, 
+  image: "./images/Inflador de neumaticos 1.avif",
   images: [
-    "./images/memoria128mb.png",
-    "./images/memoria256mb.png",
-    "./images/memoria512mb.png",
-    "./images/memoriaMicroSD1.png",
-    "./images/memoriaMicroSD2.png",
-    "./images/memoriaMicroSD3.png",
-    "./images/memoriaMicroSD4.png"
-  ],
-  category: "electronica",
-  description:
-    "Tarjeta de memoria TF de pequeña capacidad ideal para cámaras CCTV o dispositivos de grabación. Clase 10, de alta velocidad.",
-  variants: [
-    { size: "128MB", price: 250 },
-    { size: "256MB", price: 500 },
-    { size: "512MB", price: 900 }
-          ],
+    "./images/Inflador de neumaticos 1.avif",
+    "./images/Inflador de neumaticos 2.avif",
+    "./images/Inflador de neumaticos 3.avif",
+    "./images/Inflador de neumaticos 4.avif",
+    "./images/Inflador de neumaticos 5.avif",
+    "./images/Inflador de neumaticos 6.avif",
     
-features: [
-      "• Origen : China continental",
-      "• Marca other : La tarjeta está de la marca 'other', lo que significa que ofrece una excelente relación calidad-precio.",
-      "• Tipo TF / Micro SD Card : Es un tipo TF / Micro SD Card, lo que permite una gran capacidad de almacenamiento y una alta velocidad de acceso.",
-      "• Aplicación : Tachógrafo",
-      "• Capacidad de alta velocidad : Con capacidades que van desde 64M hasta 512M, esta tarjeta ofrece una alta velocidad de memoria para soportar todas sus necesidades de grabación de video.",
-      "• Clase 10 : Es una tarjeta de clase 10, lo que garantiza su compatibilidad con los dispositivos más modernos y eficientes.",
-      "Notas de capacidad: 128M = aprox. 110M-115M, 256M = aprox. 220M-230M, 512M = aproximadamente 460M-480M. Esta es la diferencia en el cálculo entre el fabricante y su PC, por favor Google 'capacidad de almacenamiento del producto' para obtener más información.",
-      "PC define 1GB = 1,073,741,824 bytes, mientras que el mercado define 1GB = 1,000,000,000 bytes. 100% de Capacidad real, a través de H2testw.",
-      "Por favor, no utilice los lectores de tarjetas baratas para probar la velocidad, se reducirá debido a los lectores de tarjetas de baja calidad.",
-      "Descripción del producto:",
-      "Nombre: Tarjeta de memoria",
-      "Capacidad: 128M, 256M, 512M",
-      "Equipo aplicable: computadoras de escritorio, teléfonos celulares, computadoras portátiles y más dispositivos",
-      "Temperatura de funcionamiento: -13°F a 185°F (-25°C a 85°C)",
-      "Temperatura de almacenamiento: -40°F a 185°F (-40°C a 85°C)",
-      "Tamaño: 49*18*10mm, peso: 14.2g",
-      "El paquete incluye: 1X TARJETA DE Memoria"
-    ],
+  ],
+  category: "Accesorios Autos",
+  description:
+    "Compresor de aire portátil del inflador de neumáticos, bomba de aire pequeña de DC 12V para neumáticos de coche, bomba de neumáticos eléctrica de 150PSI",
+     
+    features: [
+      " 【Inflación de neumáticos 2 veces más rápida y tamaño mini】: hasta 150 PSI, estos potentes compresores de aire inteligentes tienen un chip incorporado de alto rendimiento.Eleve la presión de los neumáticos de 28 a 35 PSI en solo 56 segundos o infle completamente los neumáticos del automóvil (0-36 PSI) en solo 5 minutos.Con solo 2,6 x 1,8 x 6,9 pulgadas y 0,8 LB, esta pequeña bomba de aire es compacta, cómoda de transportar y se guarda fácilmente en cualquier lugar de un vehículo.",
+      "【Bomba de aire portátil de 12 V】: Con un cable de alimentación de 12 V CC de 10 pies, este inflador de neumáticos facilita el inflado de neumáticos delanteros y traseros.Se conecta directamente al encendedor de un automóvil, eliminando la necesidad de una batería separada.Puedes usarlo para inflar neumáticos, pelotas u otros objetos inflables: una excelente solución de emergencia en el camino.(※Nota: este modelo no contiene batería incorporada y debe conectarse al encendedor del automóvil).",
+      "【4 modos y preajuste con un clic】: ofrece 4 modos de inflado preestablecidos (bicicletas, motocicletas, automóviles y pelotas), con un apagado automático cuando se alcanza el valor preestablecido.También puede configurar su propio valor de presión usando el botón 'R' para seleccionar la unidad de presión deseada y luego ajustarla con los botones '+' y '-' para cumplir con diversos requisitos de inflado.",
+      "【Pantalla digital LCD y apagado automático】La gran pantalla LED muestra valores de presión en tiempo real y la presión preestablecida de solo un vistazo.La bomba del compresor de aire se apagará automáticamente cuando alcance la presión de los neumáticos deseada.No más inflado excesivo: es simple y seguro.Equipado con un chip mejorado de alta precisión, nuestro compresor de aire cuenta con una precisión mejorada de detección de presión de neumáticos a ±1 PSI.",
+      "【Luz LED y boquilla multifuncional】 La bomba de aire también cuenta con una luz LED en la parte superior, lo que facilita su uso en la oscuridad. Ofrece 3 modos de iluminación (SOS, siempre brillante, estroboscópica). Las boquillas incluidas ayudan al compresor de aire a inflar automóviles, SUV, motocicletas, bicicletas y pelotas, etc. compactos o de tamaño mediano. Disfrute de una mejor experiencia de uso."
+          ],
     reviews: [],
     rating: 4.8
   },
@@ -388,24 +384,23 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   reviews: [],
   rating: 4.8
 },
-/*
+
 { 
   id: 11,
-  name: "Cargador portátil de batería de 50000 mAh, cargador de batería de carga rápida de 22.5 W con cables integrados, cargador de teléfono portátil USB-C esencial para viajes, campamento, para iPhone",
-  price: 0,
-  image: "./images/PowerBank1.jpg"
+  name: "Encloser Transparente Sata USB 3.0",
+  price: 500,
+  image: "./images/Encloser Transparente 1.avif"
   ,images: [
-    "./images/PowerBank1.jpg",
-    "./images/PowerBank2.jpg",
-    "./images/PowerBank3.jpg",
-    "./images/PowerBank4.jpg",
-    "./images/PowerBank5.jpg",
-    "./images/PowerBank6.jpg",
-    "./images/PowerBank7.jpg",
-    "./images/PowerBank8.jpg",
-    "./images/PowerBank9.jpg",
-    "./images/PowerBank10.jpg",
-  ],
+    "./images/Encloser Transparente 1.avif",
+    "./images/Encloser Transparente 2.avif",
+    "./images/Encloser Transparente 3.avif",
+    "./images/Encloser Transparente 4.avif",
+    "./images/Encloser Transparente 5.avif",
+    "./images/Encloser Transparente 6.avif",
+    "./images/Encloser Transparente 7.avif",
+    "./images/Encloser Transparente 8.avif",
+
+     ],
   category: "electronica",
   description:
 `• Gran capacidad de 50000 mAh: el cargador portátil OHOVIV de capacidad masiva ultra alta proporciona 10 cargas para iPhone 15, que hacen de una nueva batería de polímero de alta densidad. Dependiendo del tamaño de la batería, la mayoría de los teléfonos inteligentes obtendrán más de 10 cargas completas. El banco de energía portátil funciona y no ocupa ningún espacio adicional, adecuado para camping, senderismo, vacaciones, viajes y otros espacios al aire libre.
@@ -459,7 +454,7 @@ Cuerpo de aleación de zinc I BT llamada/música/múltiples idiomas/esfera perso
   reviews: [],
   rating: 4.8
 },
-*/
+
 
 { 
   id: 13,
@@ -579,16 +574,16 @@ EL PAQUETE INCLUYE:
 
 { 
   id: 15,
-  name: `UTHAI T22 2,5 \"SATA a USB3.0 HDD carcasa de disco duro móvil para SSD caja de almacenamiento HDD externo con Cable USB3.0/2,0 ABS.`
-  ,price: 0,
-  image: "./images/Encloser0.png",
+  name: `Encloser Negro Sata USB 3.0`
+  ,price: 600,
+  image: "./images/Encloser Negro 1.avif",
   images: [
-    "./images/encloser1.jpeg",
-    "./images/encloser2.jpeg",
-    "./images/encloser3.jpeg",
-    "./images/encloser4.jpeg",
-    "./images/encloser5.png",
-    "./images/encloser6.png"
+    "./images/Encloser Negro 1.avif",
+    "./images/Encloser Negro 2.avif",
+    "./images/Encloser Negro 3.avif",
+    "./images/Encloser Negro 4.avif",
+    "./images/Encloser Negro 5.avif",
+    "./images/Encloser Negro 6.avif"
     
   ],
   category: "electronica",
@@ -1761,12 +1756,10 @@ id: 33,
     "./images/Men Multi 50+ 4.jpg",
     "./images/Men Multi 50+ 5.jpg",  
     "./images/Men Multi 50+ 6.jpg", 
-    "./images/Men Multi 50+ 7,jpg",
+    "./images/Men Multi 50+ 7.jpg",
     "./images/Men Multi 50+ 8.jpg"
 
-
-
-        
+       
   ],
   category: "Suplementos",
 
@@ -1889,7 +1882,7 @@ Nature’s Truth es una marca conocida por su compromiso con productos de calida
 
 { 
     id: 35, 
-    name: "Scanner Automotriz V519 Multilenguaje OBD2", 
+    name: "Scanner Automotriz V519 Multilenguaje OBD2 Rojo", 
     price: 1200, 
     image: "./images/Escaner Automotriz V519 0.avif",  
     images: [
@@ -1934,24 +1927,20 @@ Nature’s Truth es una marca conocida por su compromiso con productos de calida
       
     ],
     category: "Accesorios Autos",
-    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    description: "Escáner OBD2 V410 es una herramienta de escaneo de diagnóstico",
     features: [
-      "Nombre del producto: Pantalla digital 4USB + 2PD",
-      "Parámetros de entrada: 12-24V",
-      "Parámetro de salida: Verde Súper Puerto: 5V/3A 9V/2.2A12V/1.6A (pantalla carga súper rápida)",
-      "3 puertos USB: 5V/3,1A",
-      "PD: 5V/3,1A",
-      "Tamaño del producto: 65 mm * 40 mm * 40 mm",
-      "Color del producto: negro",
-      "Peso del producto: 27 g (peso desnudo)",
-      "Material del producto: material ignífugo ABS + anillo de aleación de aluminio",
+      "El escáner OBD2 V410 es una herramienta de escaneo de diagnóstico diseñada para vehículos de pasajeros fabricados después de 1996 en los Estados Unidos.", 
+      "Esta herramienta es compatible con nueve protocolos estándar OBDII/EOBD y ofrece funciones como prueba EVAP, prueba de voltaje, consulta de código de falla y más.", 
+      "Viene con una guía del usuario, cable adaptador, cable USB y cuenta con una pantalla LCD para facilitar la lectura.",
+      "Con soporte para varios idiomas y compatibilidad con varias interfaces OBD,", 
+      "este escáner es una herramienta conveniente y versátil para solucionar problemas de fallas del motor en tu vehículo",  
     ],
     reviews: [],
     rating: 5
   },
 {
 id: 37, 
-    name: "Cubo de Sensor de Oxigeno 22mm", 
+    name: "Cubo de Sensor de Oxigeno Negro 7/8 22mm", 
     price: 800,
     image: "./images/Cubo Sensor Oxigeno 1.jpg", 
     images: [
@@ -1965,17 +1954,13 @@ id: 37,
             
     ],
     category: "Hierramientas",
-    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    description: "Toma de sensor de oxígeno, herramienta de extracción de sensor O2 de 7/8 pulgadas (0.866 in) con corte de cable lateral, llave de 6 puntos de accionamiento de 1/2 pulgada para una fácil instalación",
     features: [
-      "Nombre del producto: Pantalla digital 4USB + 2PD",
-      "Parámetros de entrada: 12-24V",
-      "Parámetro de salida: Verde Súper Puerto: 5V/3A 9V/2.2A12V/1.6A (pantalla carga súper rápida)",
-      "3 puertos USB: 5V/3,1A",
-      "PD: 5V/3,1A",
-      "Tamaño del producto: 65 mm * 40 mm * 40 mm",
-      "Color del producto: negro",
-      "Peso del producto: 27 g (peso desnudo)",
-      "Material del producto: material ignífugo ABS + anillo de aleación de aluminio",
+      "1. Diseño de alcance extendido: enchufe de 3.583 in de largo cuenta con un cuerpo extralargo de 3.583 in para alcanzar fácilmente ubicaciones de sensores de oxígeno empotrados o difíciles en compartimentos estrechos del motor.",
+      "2. Ajuste de precisión para sensores O2 estándar Diseñado para adaptarse a la mayoría de sensores de oxígeno de 7/8 pulgadas (0.866 in), compatible con una amplia gama de vehículos, incluyendo automóviles, SUV y camiones ligeros.",
+      "3. Recorte de cable lateral para un acceso sin daños, la apertura lateral integrada permite un acceso seguro alrededor del cable del sensor, evitando daños durante la extracción o el reemplazo.",
+      "4. Accionamiento duradero de 1/2 pulgada, agarre de 6 puntos diseñado para su uso con un trinquete o llave estándar de 1/2 pulgada, ofreciendo un agarre firme y un par máximo sin redondear los bordes.",
+      "5. Acero al cromo vanadio resistente Hecho de acero Cr-V de alta resistencia para un rendimiento duradero en talleres o aplicaciones automotrices de bricolaje."
     ],
     reviews: [],
     rating: 5
@@ -2024,7 +2009,7 @@ id: 39,
             
     ],
     category: "ropa",
-    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    description: "Sombrero unisex de ala ancha - Sombrero de pesca y senderismo transpirable con correa ajustable, protección solar ligera para exteriores para hombres y mujeres, diseño elegante negro para pesca, montañismo y uso casual, sombrero de pesca, equipo de montañismo, accesorio de cabeza elegante, ropa de cabeza duradera",
     features: [
        
     ],
@@ -2045,9 +2030,13 @@ id: 40,
                   
     ],
     category: "ropa",
-    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    description: "Bolso bandolera para hombre disponible en varios colores, con muchos bolsillos y gran capacidad, ideal para actividades al aire libre, viajes, compras y más. Un bolso de hombro elegante para hombre.",
     features: [
-      
+      "Estilo: Casual",
+      "Instrucciones de cuidado: No lavable",
+      "Detalles: Multi-compartimento",
+      "Modo de alimentación: Sin carga de batería",
+      "Tipo de impresión: Sin estampado"
     ],
 reviews: [],
     rating: 5
@@ -2060,16 +2049,15 @@ id: 40,
     image: "./images/Bolso Negro Cuero Ejecutivo 1.avif", 
     images: [
       "./images/Bolso Negro Cuero Ejecutivo 1.avif",
-      
-                  
+                        
     ],
     category: "ropa",
-    description: "Cargador de Coche 2-6 Puertos, Carga Rapida (Iphone, Samsung,Xiaomi",
+    description: "Bolsos de hombro tipo bandolera para hombre, bolsos Vintage impermeables para hombre, bolso de cuero PU de gran capacidad, bolsos de mensajero para hombre, bolso de mano",
     features: [
-        "SÚPER BRILLANTE y 230° HAYA COB ANCHA: Linterna frontal LED con haz ancho COB súper brillante de 4,7 pulgadas, el nuevo 230° El faro de haz amplio le permite iluminar el área de visión sin mover la cabeza, un brillo de 450 lúmenes y una salida de distancia de 350 pies.Ideal para entusiastas del aire libre como equipo de camping.Ya sea que esté acampando, explorando, haciendo senderismo, montando en bicicleta, pescando, escalando, reparando y otras actividades al aire libre o en interiores, nuestros faros son sus excelentes asistentes.",
-"Diadema ligera y ajustable: la diadema LED está hecha de ABS suave y silicona, y pesa solo 3,5 onzas.La diadema elástica ajustable es plegable sin afectar su uso, y su diseño liviano y compacto hace que sea fácil de guardar en el bolsillo.Adecuado para adultos o niños, el faro recargable se puede utilizar para actividades en interiores y exteriores sin presión, especialmente para reparaciones de automóviles, trabajos de bricolaje o situaciones de emergencia.",
-"Faro con control de sensor de movimiento manos libres: la linterna frontal LED está equipada con una función avanzada de sensor de movimiento de gestos, lo que le permite controlar el interruptor de la lámpara frontal con un simple movimiento de la mano dentro de un rango de detección de 5 pulgadas.Cuando enciendes el faro, puedes presionar el botón del sensor para activar el modo del sensor (indicado por el LED que cambia de rojo a verde).En el modo sensor, también puede ajustar el modo de iluminación mediante el interruptor de encendido.",
-"IPX4 resistente al agua y múltiples opciones de carga: el faro está diseñado con clasificación de impermeabilidad IPX4. Se puede utilizar normalmente en climas tormentosos. Admite múltiples opciones de carga a través de un versátil sistema de carga USB, incluida la carga tipo C, que permite una carga rápida con alta corriente y es segura y práctica. Es un equipo de camping ideal para los entusiastas del aire libre."
+      "100% nuevo y de alta calidad",
+      "Material: PU",
+      "Paquete incluido: 1 ud.",
+      "Conversión: 1 pulgada = 2,54 cm, 1 cm = 0,393 pulgadas"
     ],
 reviews: [],
     rating: 5
@@ -2099,6 +2087,316 @@ id: 41,
 reviews: [],
     rating: 5
   },
+
+{
+id: 42, 
+    name: "Presentacion Puntero Laser Inalambrico MRVI", 
+    price: 700,
+    image: "./images/Presentacion Puntero MRVI 1.avif", 
+    images: [
+      "./images/Presentacion Puntero MRVI 1.avif",
+      "./images/Presentacion Puntero MRVI 2.avif",
+      "./images/Presentacion Puntero MRVI 3.avif",
+      "./images/Presentacion Puntero MRVI 4.avif",
+      "./images/Presentacion Puntero MRVI 5.avif",
+      "./images/Presentacion Puntero MRVI 6.avif",
+      "./images/Presentacion Puntero MRVI 7.avif"
+                  
+    ],
+    category: "electronica",
+    description: "Presentación Powerpoint USB inalámbrica de 2,4 Ghz Y400 Ppt Flip Pen puntero Clicker presentador luz roja Control remoto para Powerpoint",
+    features: [
+      "Características:",
+      "*Material de alta calidad: este presentador está hecho de material de alta calidad, que es resistente al desgaste, no es fácil de romper, se puede usar durante mucho tiempo y es duradero.",
+      "*Operación con un solo botón: un botón y una función, puede operar el clicker inalámbrico para presentaciones durante la presentación sin mirar hacia abajo y controlar fácilmente el espectáculo deslizante.",
+      "*Portátil: el presentador es pequeño y compacto, liviano y fácil de transportar, es fácil de guardar en cualquier bolsillo o maletín.",
+      "*Amplia aplicación: adecuado para computadoras de escritorio, portátiles, etc.",
+      "*Multifuncional: el presentador inalámbrico tiene una variedad de funciones: indicación de láser rojo, control de volumen, avance y retroceso de página, cambio de ventana, hiperlinks y pantalla completa/negra.",
+      "Material: plástico",
+      "Tamaño: 12*6*3cm",
+      "Modo de alimentación: batería AAA*2 (no incluida) "
+    ],
+    reviews: [],
+    rating: 5
+  },
+
+{
+id: 43, 
+    name: "Mini Sopladora Portatil de Aire 130,000RPM", 
+    price: 2200,
+    image: "./images/Sopladora de Aire 5.avif", 
+    images: [
+      "./images/Sopladora de Aire 1.webp",
+      "./images/Sopladora de Aire 2.webp",
+      "./images/Sopladora de Aire 3.avif",
+      "./images/Sopladora de Aire 4.webp",
+      "./images/Sopladora de Aire 5.avif",
+      "./images/Sopladora de Aire 6.avif",
+      "./images/Sopladora de Aire 7.avif",
+      "./images/Sopladora de Aire 8.webp",
+      "./images/Sopladora de Aire 8.avif",
+      "./images/Sopladora de Aire 9.avif",
+      "./images/Sopladora de Aire 10.avif"
+
+    ],
+    category: "Hierramientas",
+    description: "Mini ventilador de 130000RPM, plumero de aire eléctrico, velocidad del viento ajustable, ventilador portátil, soplador violento, limpieza de coche recargable",
+    features: [
+      "Especificaciones",
+      "Velocidad sin carga: 130.000 rpm",
+      "Velocidad del viento: 52 metros/segundo",
+      "Voltaje de funcionamiento: 5,5 V-9 V",
+      "Tiempo de carga: >2,5 h",
+      "Voltaje de carga: DC5v 1A",
+      "Potencia máxima: 100W",
+      "Número de alas :13",
+      "Protección contra altas temperaturas: 150℃",
+      "2 baterías integradas: 18650 4000MAh",
+      "Características",
+      "Potencia potente y rendimiento eficiente",
+
+"2 baterías integradas de alto rendimiento, gran capacidad de 8000 mAh, el nivel 1 se puede usar durante 4 horas, duraderas, equipadas con cable de datos USB, carga conveniente.",
+"La velocidad máxima es de aproximadamente 130.000 RPM, la velocidad máxima del viento es de más de 52 m/s y el gran rendimiento es adecuado para diversos escenarios de eliminación de polvo.", 
+"Utilizando tecnología de control numérico de mecanizado de precisión de gran tamaño, funcionamiento silencioso, proporciona un fuerte flujo de aire al mismo tiempo y disfruta de una brisa fresca sin ruido.",
+"Operación conveniente y uso flexible",
+"Con la función de regulación de velocidad continua, la velocidad se puede ajustar fácilmente y se pueden seleccionar los tres niveles de lentamente para satisfacer diferentes necesidades y personalizar la velocidad de soplado requerida.",
+"Compacto, fácil de transportar, adecuado para uso en exteriores, en cualquier momento y en cualquier lugar para disfrutar del fuerte viento.",
+"Seguridad y uso confiable",
+"Equipado con un controlador de velocidad electrónico de 30 A para gestionar eficazmente el calor y ofrecer una potencia máxima de 100 W, segura y confiable, experimente un rendimiento potente y eficiente sin sacrificar la seguridad y la comodidad.",
+    ],
+
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 44, 
+    name: "Lampara Leds 3 Tono con Sensor", 
+    price: 600,
+    image: "./images/Luces Led Para Vitrinas.avif", 
+    images: [
+      "./images/Luces Led Para Vitrinas.avif",
+      "./images/Luces Led Para Vitrinas 2.avif",
+      "./images/Luces Led Para Vitrinas 3.avif",
+      "./images/Luces Led Para Vitrinas 4.avif",
+      "./images/Luces Led Para Vitrinas 5.avif",
+      "./images/Luces Led Para Vitrinas 6.jpg",
+      "./images/Luces Led Para Vitrinas 7.jpg",
+      "./images/Luces Led Para Vitrinas 8.jpg",
+    ],
+    category: "Hogar",
+    description: "Luces LED con Sensor de Movimiento para Gabinetes, Recargables por USB, 3 Modos Ajustables, Luz Nocturna Inalámbrica para Dormitorio, Escaleras, Cocina, Oficinas Inteligentes, Sala de Piano y Estudio de Baile, Luces de Lectura para Mesita de Noche, Luces para Gabinetes, Iluminación de Cocina",
+    features: [
+      "Tipo de fijación: Desmontable",
+      "Tipo de montaje: Candelabro de pared, Imán",
+      "Material de la pantalla: Plástico",
+      "Terminado del metal: Matte",
+      "Accesorios incluidos: Componentes múltiples",
+      "Fuente de alimentación: Carga por USB",
+      "Características de la batería: Batería recargable",
+      "Pila recargable: Batería de litio integrada",
+      "Marca: GTQPS",
+      "Capacidad de la batería (mAh): 400MAh"
+    ],
+    reviews: [],
+    rating: 5
+  },
+
+{
+id: 45, 
+    name: "Shampoo Tinte Negro 3 en 1", 
+    price: 1200,
+    image: "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 1.avif", 
+    images: [
+      "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 1.avif",
+      "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 2.avif",
+      "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 3.avif",
+      "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 4.avif",
+      "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 5.avif",
+      "./images/Shampoo Tinte Negro 3-1 Extracto Ginseng Ajonjoli 6.avif",
+      
+    ],
+    category: "Cosmeticos",
+    description: "3 en 1 Tintado instantáneo shampo cambia el color del cabello gris a negro natural para hombres y mujeres tinte profundo nutritivo.",
+    features: [
+      "Funciones:",
+"1. Ayudar a mejorar el entorno del cuero cabelludo, despertar los folículos pilosos, complementar la nutrición y hacer que el cabello sea negro.",
+"2. Hecho con ingredientes herbales seguros y suaves, sin irritación de la piel.",
+"3. Sacuda este producto bien antes de usarlo. Aplica en la zona afectada y masajea durante un minuto.",
+"4. Anticaspa, mejora el picor del cuero cabelludo, hidrata y repara el cabello dañado.",
+
+"FÁCIL DE USAR:",
+"No requiere bol ni cepillo, solo hay que ponerse guantes y usarlo igual que el champú normal, esperar solo 15-20 minutos. No mancha tu piel.",
+"Lista de equipaje: tinte para el pelo."
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 46, 
+    name: "Bolso Negro Cruzado Tela Oxford", 
+    price: 600,
+    image: "./images/Bolso Cruzado negro 1.avif", 
+    images: [
+      "./images/Bolso Cruzado negro 1.avif",
+      "./images/Bolso Cruzado negro 2.avif",
+      "./images/Bolso Cruzado negro 3.avif",
+           
+      
+    ],
+    category: "ropa",
+    description: "Mini Bolso Color Gris y Verde",
+    features: [
+      "Nuevo 2025: Mini bolso cruzado para hombre de tela Oxford, estilo minimalista y casual, bolso de un solo hombro, compacto y práctico, con espacio para el teléfono móvil, bolso pequeño para hombre ideal para uso diario y casual."
+    ],
+reviews: [],
+    rating: 5
+  },
+
+
+{
+id: 47, 
+    name: "Protector de Cinturo Chevrolet Z71", 
+    price: 900,
+    image: "./images/Protector de Cinturon Z71 7.avif", 
+    images: [
+      "./images/Protector de Cinturon Z71 1.avif",
+      "./images/Protector de Cinturon Z71 2.avif",
+      "./images/Protector de Cinturon Z71 3.avif",
+      "./images/Protector de Cinturon Z71 4.avif",  
+      "./images/Protector de Cinturon Z71 5.avif",  
+      "./images/Protector de Cinturon Z71 6.avif",
+      "./images/Protector de Cinturon Z71 7.avif"
+
+    ],
+    category: "Accesorios Autos",
+    description: "Protector Cinturon para Modelos Chevrolet Colorado, Silverado Z71",
+    features: [
+      
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 48, 
+    name: "Cubo de Sensor de Oxigeno Niquelado 22mm. 7/8", 
+    price: 1000,
+    image: "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 1.jpg", 
+    images: [
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 1.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 2.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 3.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 4.jpg",  
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 5.jpg",  
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 6.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 7.jpg"
+
+    ],
+    category: "Hierramientas",
+    description: "Eliminación de sensores de osígeno: Diseñada con un enchufe hexagonal de 22 mm (7/8 in), la toma de sensor de oxígeno es ideal para retirar e instalar sensores de oxígeno en coches, SUVs, camiones ligeros y vehículos diésel. Garantiza un ajuste seguro y preciso para los sensores de oxígeno estándar.",
+    features: [
+                  "Compatibilidad de herramientas de 3/8 de pulgada: La herramienta de extracción de sensores de O2 presenta un diseño de empuñadura de 6 puntos y es compatible con trinquetes de accionamiento de 3/8 de pulgada, llaves dinamométricas y barras de extensión. Esto permite una retirada eficiente y sin esfuerzo de los sensores, minimizando el riesgo de desmontar tuercas y asegurando un ajuste perfecto.",
+                  "Diseño: El ancho del corte del alambre es de 0,40 pulgadas, la longitud del corte es de 2,4 pulgadas, con un agujero cuadrado de 3/8 de pulgada y una longitud total de 3,15 pulgadas (80 mm). El recorte lateral permite que los cables del sensor pasen libremente, evitando daños en el cable durante la retirada e instalación, asegurando un proceso de reparación más seguro y eficiente.",
+                  "Uso versátil: La herramienta de eliminación de sensores de O2 es compatible con la mayoría de los sensores estándar de oxígeno de 22 mm (7/8 in), lo que la convierte en imprescindible para reparaciones de automóviles y mantenimiento del sistema de escape. Permite una instalación rápida, incluso en espacios reducidos. Nota: Por favor, verifica la talla antes de la compra para asegurar la compatibilidad con el sensor de oxígeno de tu vehículo.",
+                  "Alta durabilidad: Fabricado con acero de alta calidad con cromo vanadio (CR-V), el zócalo sensor de oxígeno ofrece una resistencia, durabilidad y resistencia a la corrosión excepcionales. Construido para soportar aplicaciones de alto par, no se deformará ni se romperá bajo presión.",
+
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 49, 
+    name: "Cubo de Sensor de Oxigeno Niquelado 22mm. 1/2", 
+    price: 1000,
+    image: "./images/cubo sensor oxigeno 22mm 1-2 Niquelado 1.jpg", 
+    images: [
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 1.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 2.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 3.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 4.jpg",  
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 5.jpg",  
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 6.jpg",
+      "./images/cubo sensor oxigeno 22mm 7-8 Niquelado 7.jpg"
+
+    ],
+    category: "Hierramientas",
+    description: "Eliminación de sensores de osígeno: Diseñada con un enchufe hexagonal de 22 mm (7/8 in), la toma de sensor de oxígeno es ideal para retirar e instalar sensores de oxígeno en coches, SUVs, camiones ligeros y vehículos diésel. Garantiza un ajuste seguro y preciso para los sensores de oxígeno estándar.",
+    features: [
+                  "Compatibilidad de herramientas de 3/8 de pulgada: La herramienta de extracción de sensores de O2 presenta un diseño de empuñadura de 6 puntos y es compatible con trinquetes de accionamiento de 3/8 de pulgada, llaves dinamométricas y barras de extensión. Esto permite una retirada eficiente y sin esfuerzo de los sensores, minimizando el riesgo de desmontar tuercas y asegurando un ajuste perfecto.",
+                  "Diseño: El ancho del corte del alambre es de 0,40 pulgadas, la longitud del corte es de 2,4 pulgadas, con un agujero cuadrado de 3/8 de pulgada y una longitud total de 3,15 pulgadas (80 mm). El recorte lateral permite que los cables del sensor pasen libremente, evitando daños en el cable durante la retirada e instalación, asegurando un proceso de reparación más seguro y eficiente.",
+                  "Uso versátil: La herramienta de eliminación de sensores de O2 es compatible con la mayoría de los sensores estándar de oxígeno de 22 mm (7/8 in), lo que la convierte en imprescindible para reparaciones de automóviles y mantenimiento del sistema de escape. Permite una instalación rápida, incluso en espacios reducidos. Nota: Por favor, verifica la talla antes de la compra para asegurar la compatibilidad con el sensor de oxígeno de tu vehículo.",
+                  "Alta durabilidad: Fabricado con acero de alta calidad con cromo vanadio (CR-V), el zócalo sensor de oxígeno ofrece una resistencia, durabilidad y resistencia a la corrosión excepcionales. Construido para soportar aplicaciones de alto par, no se deformará ni se romperá bajo presión.",
+
+    ],
+reviews: [],
+    rating: 5
+  },
+
+
+{
+id: 50, 
+    name: "Cubo de Sensor de Oxigeno Negro Corto 22mm. 7/8", 
+    price: 1000,
+    image: "./images/cubo sensor oxigeno 22mm negro 7-8 corto.jpg", 
+    images: [
+      "./images/cubo sensor oxigeno 22mm negro 7-8 corto 1.jpg",
+      "./images/cubo sensor oxigeno 22mm negro 7-8 corto 2.jpg",
+      "./images/cubo sensor oxigeno 22mm negro 7-8 corto 3.jpg",
+      "./images/cubo sensor oxigeno 22mm negro 7-8 corto 4.jpg",  
+      "./images/cubo sensor oxigeno 22mm negro 7-8 corto 5.jpg",  
+      "./images/cubo sensor oxigeno 22mm negro 7-8 corto 6.jpg",
+      
+
+    ],
+    category: "Hierramientas",
+    description: "Construcción duradera de acero aleado  Fabricado en acero aleado 50BV30 de alta resistencia con un proceso forjado en frío, este conector sensor de oído ofrece una tenacidad superior y alta resistencia a la deformación, garantizando un rendimiento duradero sin romperse",
+    features: [
+      "Diseño optimizado para eficiencia  Cuenta con un diseño hexagonal para reducir el deslizamiento y maximizar el agarre, una estructura compacta desplazada para mejor palanca en espacios reducidos y un canal de alambre para proteger los arneses de cables durante la retirada de sensores",
+      "Ajuste preciso para sensores de oxígeno Con un accionamiento de 3/8 y un tamaño de 7/8 (22 mm) este portaobjetos se adapta a la mayoría de los sensores de oxígeno y garantiza una retirada e instalación precisos y sin daños",
+      "Fácil de usar con carracas estándar  Diseñada para un funcionamiento rápido y sencillo, esta herramienta para eliminar sensores de O2 funciona con cualquier carraca o barra diferencial estándar de 3/8, ahorrando tiempo y esfuerzo durante las reparaciones",
+      "Herramienta Versátil para Automoción  No solo es ideal para eliminar sensores de O2 y NOX, sino también adecuada para otras tareas de reparación y mantenimiento automovilístico, lo que la convierte en una herramienta imprescindible para profesionales y entusiastas del bricolaje"
+    ],
+reviews: [],
+    rating: 5
+  },
+
+{
+id: 51, 
+    name: "Estuche para Lentes en diferentes Colores", 
+    price: 350,
+    image: "./images/Estuche de Lentes 1.jpg", 
+    images: [
+      "./images/Estuche de Lentes 1.jpg",
+      "./images/Estuche de Lentes 2.jpg",
+      "./images/Estuche de Lentes 3.jpg",
+      "./images/Estuche de Lentes 4.jpg",  
+      "./images/Estuche de Lentes 5.jpg",  
+      "./images/Estuche de Lentes 6.jpg",
+      "./images/Estuche de Lentes 7.jpg",
+      
+
+    ],
+    category: "Hierramientas",
+    description: "Estuche rígido para gafas de sol y gafas de lectura, disponible en varios colores.",
+    features: [
+      "PROTECCIÓN DE POZO: hecho de esqueleto de acero inoxidable, el diseño de carcasa dura protege los vidrios de aplastarse y es cómodo de transportar.",
+      "MANTIENE LAS GAFAS LIMPIAS: Debido a un forro tipo terciopelo, el forro suave también es ideal para proteger las lentes de la suciedad y los residuos, manteniéndolas limpias. Evita que tus gafas favoritas se arañen.",
+      "TAMAÑO ADECUADO: el tamaño es de unos 16 x 6 x 4 cm/6,4 x 2,4 x 1,5 pulgadas, adecuado para la mayoría de las gafas de talla de todos.",
+      "UN REGALO CON ESTILO: esta funda viene en cuatro colores. El diseño de un concepto sencillo y elegante es un regalo ideal para tus amigos y familia."  
+    ],
+reviews: [],
+    rating: 5
+  },
+
+
+
+
+
+
+
 
 
 
